@@ -1,0 +1,123 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    APR
+    COMENTARIO
+    ENTRY
+    FPR
+    VIRGULA
+
+Grammar
+
+Rule 0     S' -> atrib
+Rule 1     atrib -> VAR_NAME IGUAL element
+Rule 2     element -> NUMERO
+Rule 3     element -> PALAVRA
+Rule 4     element -> BOOLEAN
+Rule 5     element -> DATE
+Rule 6     element -> TEMPO
+
+Terminals, with rules where they appear
+
+APR                  : 
+BOOLEAN              : 4
+COMENTARIO           : 
+DATE                 : 5
+ENTRY                : 
+FPR                  : 
+IGUAL                : 1
+NUMERO               : 2
+PALAVRA              : 3
+TEMPO                : 6
+VAR_NAME             : 1
+VIRGULA              : 
+error                : 
+
+Nonterminals, with rules where they appear
+
+atrib                : 0
+element              : 1
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . atrib
+    (1) atrib -> . VAR_NAME IGUAL element
+
+    VAR_NAME        shift and go to state 2
+
+    atrib                          shift and go to state 1
+
+state 1
+
+    (0) S' -> atrib .
+
+
+
+state 2
+
+    (1) atrib -> VAR_NAME . IGUAL element
+
+    IGUAL           shift and go to state 3
+
+
+state 3
+
+    (1) atrib -> VAR_NAME IGUAL . element
+    (2) element -> . NUMERO
+    (3) element -> . PALAVRA
+    (4) element -> . BOOLEAN
+    (5) element -> . DATE
+    (6) element -> . TEMPO
+
+    NUMERO          shift and go to state 5
+    PALAVRA         shift and go to state 6
+    BOOLEAN         shift and go to state 7
+    DATE            shift and go to state 8
+    TEMPO           shift and go to state 9
+
+    element                        shift and go to state 4
+
+state 4
+
+    (1) atrib -> VAR_NAME IGUAL element .
+
+    $end            reduce using rule 1 (atrib -> VAR_NAME IGUAL element .)
+
+
+state 5
+
+    (2) element -> NUMERO .
+
+    $end            reduce using rule 2 (element -> NUMERO .)
+
+
+state 6
+
+    (3) element -> PALAVRA .
+
+    $end            reduce using rule 3 (element -> PALAVRA .)
+
+
+state 7
+
+    (4) element -> BOOLEAN .
+
+    $end            reduce using rule 4 (element -> BOOLEAN .)
+
+
+state 8
+
+    (5) element -> DATE .
+
+    $end            reduce using rule 5 (element -> DATE .)
+
+
+state 9
+
+    (6) element -> TEMPO .
+
+    $end            reduce using rule 6 (element -> TEMPO .)
+
