@@ -5,6 +5,9 @@ import sys
 with open('example.toml','r') as f:
     code = f.read()
     #print(code)
+#LEXICAL ANALYSIS
+#GRAMMAR ANALYSIS
+#CONVERT TOML-> JSON
 
 toml = '''time = 21:30:00
 name = "Tom Preston-Werner"'''

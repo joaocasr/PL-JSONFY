@@ -1,4 +1,6 @@
 title = "TOML Example"
+title2 = "TOML2 Example2"
+
 
 [owner]
 name = "Tom Preston-Werner"
@@ -6,6 +8,8 @@ date = 2010-04-23
 time = 21:30:00
 
 [database]
+[database.uminho]
+[database.uminho.mail]
 server = "192.168.1.1"
 ports = [ 8001, 8001, 8002 ]
 connection_max = 5000
