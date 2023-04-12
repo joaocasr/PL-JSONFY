@@ -64,9 +64,10 @@ def p_termo5(p): "termo : TIME"
 def p_termo6(p): "termo : lista"
 
 def p_lista(p): "lista : APR conteudo FPR"
-def p_conteudo1(p):"conteudo :"
-def p_conteudo2(p):"conteudo : termo"
-def p_conteudo3(p):"conteudo : termo VIRGULA conteudo"
+def p_conteudo1(p):"conteudo : "
+def p_conteudo2(p):"conteudo : termo auxconteudo"
+def p_auxconteudo1(p): "auxconteudo : VIRGULA conteudo"
+def p_auxconteudo2(p) : "auxconteudo : "
 
 
 def p_error(p):

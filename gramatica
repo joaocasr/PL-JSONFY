@@ -26,4 +26,6 @@ termo: lista
 lista: APR conteudo FPR
 conteudo:
 conteudo: termo
-conteudo: termo VIRGULA conteudo
+conteudo: termo auxconteudo
+auxconteudo : VIRGULA conteudo
+auxconteudo:

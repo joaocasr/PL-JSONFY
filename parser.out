@@ -27,8 +27,9 @@ Rule 17    termo -> TIME
 Rule 18    termo -> lista
 Rule 19    lista -> APR conteudo FPR
 Rule 20    conteudo -> <empty>
-Rule 21    conteudo -> termo
-Rule 22    conteudo -> termo VIRGULA conteudo
+Rule 21    conteudo -> termo auxconteudo
+Rule 22    auxconteudo -> VIRGULA conteudo
+Rule 23    auxconteudo -> <empty>
 
 Terminals, with rules where they appear
 
@@ -50,6 +51,7 @@ Nonterminals, with rules where they appear
 
 TOML                 : 0
 atribuicao           : 2 10 11
+auxconteudo          : 21
 body                 : 6 10
 conteudo             : 19 22
 grupo                : 4
@@ -57,7 +59,7 @@ header               : 7 8
 lheaders             : 6 7
 lista                : 18
 seccoes              : 1 4
-termo                : 12 21 22
+termo                : 12 21
 titulos              : 1 2
 
 Parsing method: LALR
@@ -327,8 +329,7 @@ state 23
 
     (19) lista -> APR . conteudo FPR
     (20) conteudo -> .
-    (21) conteudo -> . termo
-    (22) conteudo -> . termo VIRGULA conteudo
+    (21) conteudo -> . termo auxconteudo
     (13) termo -> . PALAVRA
     (14) termo -> . NUMERO
     (15) termo -> . BOOLEAN
@@ -366,12 +367,14 @@ state 25
 
 state 26
 
-    (21) conteudo -> termo .
-    (22) conteudo -> termo . VIRGULA conteudo
+    (21) conteudo -> termo . auxconteudo
+    (22) auxconteudo -> . VIRGULA conteudo
+    (23) auxconteudo -> .
 
-    FPR             reduce using rule 21 (conteudo -> termo .)
-    VIRGULA         shift and go to state 28
+    VIRGULA         shift and go to state 29
+    FPR             reduce using rule 23 (auxconteudo -> .)
 
+    auxconteudo                    shift and go to state 28
 
 state 27
 
@@ -386,10 +389,16 @@ state 27
 
 state 28
 
-    (22) conteudo -> termo VIRGULA . conteudo
+    (21) conteudo -> termo auxconteudo .
+
+    FPR             reduce using rule 21 (conteudo -> termo auxconteudo .)
+
+
+state 29
+
+    (22) auxconteudo -> VIRGULA . conteudo
     (20) conteudo -> .
-    (21) conteudo -> . termo
-    (22) conteudo -> . termo VIRGULA conteudo
+    (21) conteudo -> . termo auxconteudo
     (13) termo -> . PALAVRA
     (14) termo -> . NUMERO
     (15) termo -> . BOOLEAN
@@ -406,13 +415,13 @@ state 28
     TIME            shift and go to state 21
     APR             shift and go to state 23
 
+    conteudo                       shift and go to state 30
     termo                          shift and go to state 26
-    conteudo                       shift and go to state 29
     lista                          shift and go to state 22
 
-state 29
+state 30
 
-    (22) conteudo -> termo VIRGULA conteudo .
+    (22) auxconteudo -> VIRGULA conteudo .
 
-    FPR             reduce using rule 22 (conteudo -> termo VIRGULA conteudo .)
+    FPR             reduce using rule 22 (auxconteudo -> VIRGULA conteudo .)
 

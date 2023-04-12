@@ -6,9 +6,9 @@ _tabversion = '3.10'
 
 _lr_method = 'LALR'
 
-_lr_signature = 'APR BOOLEAN COMENTARIO DATE ENTRY FPR IGUAL NUMERO PALAVRA TIME VAR_NAME VIRGULATOML : titulos seccoestitulos : atribuicao titulostitulos : seccoes : grupo seccoesseccoes : grupo : lheaders bodylheaders : header lheaderslheaders : headerheader : ENTRYbody : atribuicao bodybody : atribuicaoatribuicao : VAR_NAME IGUAL termotermo : PALAVRAtermo : NUMEROtermo : BOOLEANtermo : DATEtermo : TIMEtermo : listalista : APR conteudo FPRconteudo :conteudo : termoconteudo : termo VIRGULA conteudo'
+_lr_signature = 'APR BOOLEAN COMENTARIO DATE ENTRY FPR IGUAL NUMERO PALAVRA TIME VAR_NAME VIRGULATOML : titulos seccoestitulos : atribuicao titulostitulos : seccoes : grupo seccoesseccoes : grupo : lheaders bodylheaders : header lheaderslheaders : headerheader : ENTRYbody : atribuicao bodybody : atribuicaoatribuicao : VAR_NAME IGUAL termotermo : PALAVRAtermo : NUMEROtermo : BOOLEANtermo : DATEtermo : TIMEtermo : listalista : APR conteudo FPRconteudo : conteudo : termo auxconteudoauxconteudo : VIRGULA conteudoauxconteudo : '
     
-_lr_action_items = {'ENTRY':([0,2,3,6,8,9,10,13,14,16,17,18,19,20,21,22,24,27,],[-3,9,-3,9,9,-9,-2,-6,-11,-12,-13,-14,-15,-16,-17,-18,-10,-19,]),'$end':([0,1,2,3,5,6,10,12,13,14,16,17,18,19,20,21,22,24,27,],[-3,0,-5,-3,-1,-5,-2,-4,-6,-11,-12,-13,-14,-15,-16,-17,-18,-10,-19,]),'VAR_NAME':([0,3,7,8,9,14,15,16,17,18,19,20,21,22,27,],[4,4,4,-8,-9,4,-7,-12,-13,-14,-15,-16,-17,-18,-19,]),'IGUAL':([4,],[11,]),'PALAVRA':([11,23,28,],[17,17,17,]),'NUMERO':([11,23,28,],[18,18,18,]),'BOOLEAN':([11,23,28,],[19,19,19,]),'DATE':([11,23,28,],[20,20,20,]),'TIME':([11,23,28,],[21,21,21,]),'APR':([11,23,28,],[23,23,23,]),'VIRGULA':([17,18,19,20,21,22,26,27,],[-13,-14,-15,-16,-17,-18,28,-19,]),'FPR':([17,18,19,20,21,22,23,25,26,27,28,29,],[-13,-14,-15,-16,-17,-18,-20,27,-21,-19,-20,-22,]),}
+_lr_action_items = {'ENTRY':([0,2,3,6,8,9,10,13,14,16,17,18,19,20,21,22,24,27,],[-3,9,-3,9,9,-9,-2,-6,-11,-12,-13,-14,-15,-16,-17,-18,-10,-19,]),'$end':([0,1,2,3,5,6,10,12,13,14,16,17,18,19,20,21,22,24,27,],[-3,0,-5,-3,-1,-5,-2,-4,-6,-11,-12,-13,-14,-15,-16,-17,-18,-10,-19,]),'VAR_NAME':([0,3,7,8,9,14,15,16,17,18,19,20,21,22,27,],[4,4,4,-8,-9,4,-7,-12,-13,-14,-15,-16,-17,-18,-19,]),'IGUAL':([4,],[11,]),'PALAVRA':([11,23,29,],[17,17,17,]),'NUMERO':([11,23,29,],[18,18,18,]),'BOOLEAN':([11,23,29,],[19,19,19,]),'DATE':([11,23,29,],[20,20,20,]),'TIME':([11,23,29,],[21,21,21,]),'APR':([11,23,29,],[23,23,23,]),'VIRGULA':([17,18,19,20,21,22,26,27,],[-13,-14,-15,-16,-17,-18,29,-19,]),'FPR':([17,18,19,20,21,22,23,25,26,27,28,29,30,],[-13,-14,-15,-16,-17,-18,-20,27,-23,-19,-21,-20,-22,]),}
 
 _lr_action = {}
 for _k, _v in _lr_action_items.items():
@@ -17,7 +17,7 @@ for _k, _v in _lr_action_items.items():
       _lr_action[_x][_k] = _y
 del _lr_action_items
 
-_lr_goto_items = {'TOML':([0,],[1,]),'titulos':([0,3,],[2,10,]),'atribuicao':([0,3,7,14,],[3,3,14,14,]),'seccoes':([2,6,],[5,12,]),'grupo':([2,6,],[6,6,]),'lheaders':([2,6,8,],[7,7,15,]),'header':([2,6,8,],[8,8,8,]),'body':([7,14,],[13,24,]),'termo':([11,23,28,],[16,26,26,]),'lista':([11,23,28,],[22,22,22,]),'conteudo':([23,28,],[25,29,]),}
+_lr_goto_items = {'TOML':([0,],[1,]),'titulos':([0,3,],[2,10,]),'atribuicao':([0,3,7,14,],[3,3,14,14,]),'seccoes':([2,6,],[5,12,]),'grupo':([2,6,],[6,6,]),'lheaders':([2,6,8,],[7,7,15,]),'header':([2,6,8,],[8,8,8,]),'body':([7,14,],[13,24,]),'termo':([11,23,29,],[16,26,26,]),'lista':([11,23,29,],[22,22,22,]),'conteudo':([23,29,],[25,30,]),'auxconteudo':([26,],[28,]),}
 
 _lr_goto = {}
 for _k, _v in _lr_goto_items.items():
@@ -27,26 +27,27 @@ for _k, _v in _lr_goto_items.items():
 del _lr_goto_items
 _lr_productions = [
   ("S' -> TOML","S'",1,None,None,None),
-  ('TOML -> titulos seccoes','TOML',2,'p_TOML','tomlex.py',46),
-  ('titulos -> atribuicao titulos','titulos',2,'p_titulos1','tomlex.py',47),
-  ('titulos -> <empty>','titulos',0,'p_titulos2','tomlex.py',48),
-  ('seccoes -> grupo seccoes','seccoes',2,'p_seccoes1','tomlex.py',49),
-  ('seccoes -> <empty>','seccoes',0,'p_seccoes2','tomlex.py',50),
-  ('grupo -> lheaders body','grupo',2,'p_grupo','tomlex.py',51),
-  ('lheaders -> header lheaders','lheaders',2,'p_lheaders1','tomlex.py',52),
-  ('lheaders -> header','lheaders',1,'p_lheaders2','tomlex.py',53),
-  ('header -> ENTRY','header',1,'p_header','tomlex.py',54),
-  ('body -> atribuicao body','body',2,'p_body1','tomlex.py',55),
-  ('body -> atribuicao','body',1,'p_body2','tomlex.py',56),
-  ('atribuicao -> VAR_NAME IGUAL termo','atribuicao',3,'p_atribuicao','tomlex.py',57),
-  ('termo -> PALAVRA','termo',1,'p_termo1','tomlex.py',59),
-  ('termo -> NUMERO','termo',1,'p_termo2','tomlex.py',60),
-  ('termo -> BOOLEAN','termo',1,'p_termo3','tomlex.py',61),
-  ('termo -> DATE','termo',1,'p_termo4','tomlex.py',62),
-  ('termo -> TIME','termo',1,'p_termo5','tomlex.py',63),
-  ('termo -> lista','termo',1,'p_termo6','tomlex.py',64),
-  ('lista -> APR conteudo FPR','lista',3,'p_lista','tomlex.py',66),
-  ('conteudo -> <empty>','conteudo',0,'p_conteudo1','tomlex.py',67),
-  ('conteudo -> termo','conteudo',1,'p_conteudo2','tomlex.py',68),
-  ('conteudo -> termo VIRGULA conteudo','conteudo',3,'p_conteudo3','tomlex.py',69),
+  ('TOML -> titulos seccoes','TOML',2,'p_TOML','tomlex.py',47),
+  ('titulos -> atribuicao titulos','titulos',2,'p_titulos1','tomlex.py',48),
+  ('titulos -> <empty>','titulos',0,'p_titulos2','tomlex.py',49),
+  ('seccoes -> grupo seccoes','seccoes',2,'p_seccoes1','tomlex.py',50),
+  ('seccoes -> <empty>','seccoes',0,'p_seccoes2','tomlex.py',51),
+  ('grupo -> lheaders body','grupo',2,'p_grupo','tomlex.py',52),
+  ('lheaders -> header lheaders','lheaders',2,'p_lheaders1','tomlex.py',53),
+  ('lheaders -> header','lheaders',1,'p_lheaders2','tomlex.py',54),
+  ('header -> ENTRY','header',1,'p_header','tomlex.py',55),
+  ('body -> atribuicao body','body',2,'p_body1','tomlex.py',56),
+  ('body -> atribuicao','body',1,'p_body2','tomlex.py',57),
+  ('atribuicao -> VAR_NAME IGUAL termo','atribuicao',3,'p_atribuicao','tomlex.py',58),
+  ('termo -> PALAVRA','termo',1,'p_termo1','tomlex.py',60),
+  ('termo -> NUMERO','termo',1,'p_termo2','tomlex.py',61),
+  ('termo -> BOOLEAN','termo',1,'p_termo3','tomlex.py',62),
+  ('termo -> DATE','termo',1,'p_termo4','tomlex.py',63),
+  ('termo -> TIME','termo',1,'p_termo5','tomlex.py',64),
+  ('termo -> lista','termo',1,'p_termo6','tomlex.py',65),
+  ('lista -> APR conteudo FPR','lista',3,'p_lista','tomlex.py',67),
+  ('conteudo -> <empty>','conteudo',0,'p_conteudo1','tomlex.py',68),
+  ('conteudo -> termo auxconteudo','conteudo',2,'p_conteudo2','tomlex.py',69),
+  ('auxconteudo -> VIRGULA conteudo','auxconteudo',2,'p_auxconteudo1','tomlex.py',70),
+  ('auxconteudo -> <empty>','auxconteudo',0,'p_auxconteudo2','tomlex.py',71),
 ]
