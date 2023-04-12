@@ -1,0 +1,29 @@
+TOML : titulos seccoes
+titulos: atribuicao titulos
+titulos:
+
+seccoes: grupo seccoes
+seccoes:
+
+grupo : lheaders body
+
+lheaders: header lheaders
+lheaders: header
+
+header: ENTRY 
+
+body: atribuicao body
+body: atribuicao
+
+atribuicao: VAR_NAME IGUAL termo
+termo: PALAVRA
+termo: NUMERO
+termo: BOOLEAN
+termo: DATE
+termo: TEMPO
+termo: lista
+
+lista: APR conteudo FPR
+conteudo:
+conteudo: termo
+conteudo: termo VIRGULA conteudo

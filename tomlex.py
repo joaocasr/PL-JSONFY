@@ -12,17 +12,23 @@ tokens = [
     'BOOLEAN',
     'IGUAL',
     'DATE',
-    'TEMPO',
+    'TIME',
     'VAR_NAME',
     'ENTRY'
 ]
 
-t_COMENTARIO= r'\#.+'
+def t_ignone_COMENTARIO(t):
+    r'\#.+'
+    pass
+
+t_ignore = ' \t\n'
+
+# análise léxica
 t_PALAVRA=r'\".+\"'
-t_TEMPO=r'\d+:\d+:\d+'
+t_TIME=r'\d+:\d+:\d+'
 t_DATE=r'\d+-\d+-\d+'
 t_NUMERO=r'\d+'
-t_ENTRY=r'\[(:?[a-zA-Z]\w+(:?\.[a-zA-Z]\w+)?)\]' 
+t_ENTRY=r'\[(:?[a-zA-Z]\w+(:?\.[a-zA-Z]\w+)*)\]' 
 t_BOOLEAN = r'(true|false)'
 t_APR=r'\['    
 t_FPR=r'\]'
@@ -30,51 +36,40 @@ t_VIRGULA=r','
 t_IGUAL=r'='
 t_VAR_NAME=r'[a-zA-Z]\w+'
 
-
-t_ignore = ' \t\n'
-
 def t_error(t):
     print(f"Carácter ilegal {t.value[0]}")
     t.lexer.skip(1)
 
 lexer = lex.lex()
 
-####################################
-# Regras de atribuição
-####################################
-def p_atrib(p):
-    '''atrib : VAR_NAME IGUAL element'''
-    p[0] = p[1] + p[2] + p[3]
-    print("Atribuição:"+p[0])
+#análise sintática
+def p_TOML(p): "TOML : titulos seccoes"
+def p_titulos1(p): "titulos : atribuicao titulos"
+def p_titulos2(p): "titulos : "
+def p_seccoes1(p): "seccoes : grupo seccoes"
+def p_seccoes2(p): "seccoes : "
+def p_grupo(p): "grupo : lheaders body"
+def p_lheaders1(p): "lheaders : header lheaders"
+def p_lheaders2(p): "lheaders : header"
+def p_header(p): "header : ENTRY"
+def p_body1(p): "body : atribuicao body"
+def p_body2(p): "body : atribuicao"
+def p_atribuicao(p): "atribuicao : VAR_NAME IGUAL termo"
 
-def p_element_num(p):
-    '''element : NUMERO '''
-    p[0] = str(p[1])
+def p_termo1(p): "termo : PALAVRA"
+def p_termo2(p): "termo : NUMERO"
+def p_termo3(p): "termo : BOOLEAN"
+def p_termo4(p): "termo : DATE"
+def p_termo5(p): "termo : TIME"
+def p_termo6(p): "termo : lista"
 
-def p_element_palavra(p):
-    '''element : PALAVRA '''
-    p[0] = p[1]
-
-def p_element_bool(p):
-    '''element : BOOLEAN'''
-    p[0] = p[1]
-
-def p_element_data(p):
-    '''element : DATE'''
-    p[0] = p[1]
-
-def p_element_tempo(p):
-    '''element : TEMPO'''
-    p[0] = p[1]
-
-####################################
+def p_lista(p): "lista : APR conteudo FPR"
+def p_conteudo1(p):"conteudo :"
+def p_conteudo2(p):"conteudo : termo"
+def p_conteudo3(p):"conteudo : termo VIRGULA conteudo"
 
 
 def p_error(p):
-    if p:
-        print(f"Error in {p}")
-    else:
-        print("Error")
+    print(f"Sintaxe incorreta "+p)
 
 parser = yacc.yacc()
-
