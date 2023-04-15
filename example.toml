@@ -18,7 +18,9 @@ enabled = true
 [servers]
 [servers.alpha]
 ip = "10.0.0.1"
-dc = "eqdc10"
+dc = """
+Roses are red
+Violets are blue"""
 
 [servers.beta]
 ip = "10.0.0.2"
