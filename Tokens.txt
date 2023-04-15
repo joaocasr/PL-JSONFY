@@ -1,0 +1,64 @@
+Tokens:
+	- Whitespace
+	- Comment
+	- Key
+	- Dot-Sep
+	- Keyval-Sep
+	- String / Multi-line String:
+		- Quotation
+		- Char
+		- Escape ('\')
+			- Esc-reverse ('\\')
+			- Esc-backspace ('\b') 
+			- Esc-ff ('\f')
+			- Esc-nl ('\n')
+			- Esc-cReturn ('\r')
+			- Esc-tab ('\t') 
+			- Esc-hex4 ('\uXXXX')
+			- Esc-hex8 ('\UXXXXXXXX')
+	Literal String / Multi-line Literal String:
+		- Apostrophe
+		- Char-Literal
+	- Integer:
+		- Minus
+		- Plus
+		- Underscore (1_000 == 1000, used to "enhance readability") 
+		- Dec: (?:\+?|-?)\d(?:(?:_\d)|\d)*
+			- dig1-9
+		- Hex: 0x[\da-fA-F](?:(?:_[\da-fA-F])|[\da-fA-F])*
+			- Hex-prefix (0x)
+			- dig1-9
+		- Oct: 0o[0-7](?:(?:_[0-7])|[0-7])*
+			- Oct-prefix (0o)
+			- dig0-7
+		- Bin: 0b[01](?:(?:_[01])|[01])*
+			- Bin-prefix (0b)
+			- dig0-1
+	- Float: (?:\+?|-?)\d+(?:\.\d+)?(?:[eE](?:\+?|-?)\d+)? => TODO ADD "enhance readability"
+		- Decimal-point
+		- inf (+/-'inf')
+		- nan (+/-'nan')
+	- Boolean (true|false)
+	- Date-time
+		- date-fullyear  \d{4}
+		- date-month     (1[0-2]|0\d)
+		- date-mday      01-28, 01-29, 01-30, 01-31 based on month/year
+		- time-delim     [Tt ]
+		- time-hour      00-23
+		- time-minute    00-59
+		- time-second    00-58, 00-59, 00-60 based on leap second rules
+		- time-secfrac   .\d+
+	- Array
+		- APR '['
+		- FPR ']'
+		- array-sep ','
+	- Table:
+		- std-table-open  '['
+		- std-table-close ']' 
+	- Inline-table:
+		- inline-table-open  '{'
+		- inline-table-close '}'
+		- inline-table-sep   '-'
+	- Array Table:
+		array-table-open '[['
+		array-table-close ']]'
