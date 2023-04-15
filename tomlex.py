@@ -3,38 +3,71 @@ import ply.yacc as yacc
 import re
 
 tokens = [
-    'COMENTARIO',
+    'COMMENT',
+    'WHITESPACE',
+    'NEWLINE',
+    'DOT_SEP',
+    'QUOTE',
+    'ASPA',
+    'UNDERSC0RE',
+    'MINUS',
+    'APOSTROFE',
+    'ESC_REVERSE',
+	'ESC_BACKSPACE', 
+	'ESC_FF',
+	'ESC_NL',
+    'ESC_CRETURN',
+	'ESC_TAB', 
+	'ESC_HEX4',
+    'ESC_HEX8',
     'APR',
     'FPR',
+    'ACH',
+    'FCH',
+    'MULTILINESTRING',
     'VIRGULA',
-    'PALAVRA',
+    'CHAR',
     'NUMERO',
     'BOOLEAN',
     'IGUAL',
     'DATE',
     'TIME',
-    'VAR_NAME',
-    'ENTRY'
 ]
 
 def t_ignone_COMENTARIO(t):
     r'\#.+'
     pass
 
-t_ignore = ' \t\n'
 
 # análise léxica
-t_PALAVRA=r'\".+\"'
+t_MULTILINESTRING=r'\"\"\"(\n?.+)+\n?\"\"\"'
+t_WHITESPACE=r'[^\S\t\r\n]'
+t_NEWLINE=r'\n'
+t_DOT_SEP=r'\.'
+t_ASPA=r'\"'
+t_UNDERSC0RE=r'_'
+t_MINUS=r'-'
+t_APOSTROFE=r'\''
+t_ESC_REVERSE=r'\\\\'
+t_ESC_BACKSPACE=r'\\b'
+t_ESC_FF=r'\\f'
+t_ESC_NL=r'\\n'
+t_ESC_CRETURN=r'\\r'
+t_ESC_TAB=r'\\t'
+t_ESC_HEX4=r'\\u([0-9]|[A-F]){4}'
+t_ESC_HEX8=r'\\u([0-9]|[A-F]){8}'
+t_QUOTE=r'\\"'
+t_CHAR=r'[a-zA-Z]'
 t_TIME=r'\d+:\d+:\d+'
 t_DATE=r'\d+-\d+-\d+'
 t_NUMERO=r'\d+'
-t_ENTRY=r'\[(:?[a-zA-Z]\w+(:?\.[a-zA-Z]\w+)*)\]' 
 t_BOOLEAN = r'(true|false)'
 t_APR=r'\['    
 t_FPR=r'\]'
+t_ACH=r'\{'    
+t_FCH=r'\}'
 t_VIRGULA=r','
 t_IGUAL=r'='
-t_VAR_NAME=r'[a-zA-Z]\w+'
 
 def t_error(t):
     print(f"Carácter ilegal {t.value[0]}")
@@ -43,6 +76,7 @@ def t_error(t):
 lexer = lex.lex()
 
 #análise sintática
+'''
 def p_TOML(p): "TOML : titulos seccoes"
 def p_titulos1(p): "titulos : atribuicao titulos"
 def p_titulos2(p): "titulos : "
@@ -74,3 +108,4 @@ def p_error(p):
     print(f"Sintaxe incorreta "+p)
 
 parser = yacc.yacc()
+'''
