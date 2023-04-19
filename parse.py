@@ -7,6 +7,7 @@ with open('/home/joao/PL-JSONFY/example.toml','r') as file:
 
 tomlex.lexer.input(toml)
 while tok:=tomlex.lexer.token():
-    print(tok)
-#result = tomlex.parser.parse(toml)  
-#print(result)
+    #print(tok)
+    pass
+result = tomlex.parser.parse(toml)  
+print(result)

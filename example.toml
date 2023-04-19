@@ -1,33 +1,15 @@
 title = "TOML Example"
 title2 = "TOML2 Example2"
-
-
-[owner]
+ola = 1
+colhao=2.3e23
 name = "Tom Preston-Werner"
-date = 2010-04-23
-time = 21:30:00
-
-[database]
-[database.uminho]
-[database.uminho.mail]
 server = "I'm a string. \"You can quote me\". Name\tJos\u00E9\nLocation\tSF."
-ports = [ 8001, 8001, 8002 ]
-connection_max = 5000
-enabled = true
-
-[servers]
-[servers.alpha]
-ip = "10.0.0.1"
-dc = """
-Roses are red
-Violets are blue"""
-
-[servers.beta]
-ip = "10.0.0.2"
-dc = "eqdc10"
-
-# Line breaks are OK when inside arrays
-hosts = [
-"alpha",
-"omega"
-]
+[meu]
+[meu.nome]
+tomates = [ 1, [ "cona", "pila"], 3]
+esfincter= 2.34_23
+nome ="joao"
+[peido]
+teofilo="barraca"
+anus= 'olameu'
+colhaoesquerdo= "\u0061\u0020\u0074\u0075\u0061\u0020\u006D\u00E3\u0065"
