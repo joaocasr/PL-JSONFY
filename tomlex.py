@@ -282,6 +282,14 @@ def p_FULLTIME(p):
     "FULLTIME : PARTIALTIME TIMEOFFSET"
     p[0] = f"""{p[1]} {p[2]}"""
 
+def p_PARTIALTIME1(p):
+    "PARTIALTIME : TIME_HOUR TWODOT_SEP TIME_MIN TWODOT_SEP TIME_SEC"
+    p[0] = f"""{p[1]}:{p[3]}:{p[5]}"""
+
+def p_PARTIALTIME1(p):
+    "PARTIALTIME : TIME_HOUR TWODOT_SEP TIME_MIN TWODOT_SEP TIME_SEC TIME_SECFRAC"
+    p[0] = f"""{p[1]}:{p[3]}:{p[5]}{p[6]}"""
+
 def p_TIMEOFFSET1(p):
     "TIMEOFFSET : CHAR"
     p[0] = f"""{p[1]}"""
@@ -297,6 +305,9 @@ def p_TIMENUMOFFSET1(p):
 def p_TIMENUMOFFSET2(p):
     "TIMENUMOFFSET : MINUS TIME_HOUR TWODOT_SEP TIME_MIN"
     p[0] = f"""-{p[2]}:{p[4]}"""
+
+
+
 
 def p_VALUE7(p):
     "VALUE : FLOAT"
