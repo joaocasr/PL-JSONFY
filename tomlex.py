@@ -89,7 +89,7 @@ def t_TIME_DELIM(t):r'[Tt ]';return t
 def t_TIME_HOUR(t):r'[0-2]\d';return t
 def t_TIME_MIN(t):r'[0-5]\d';return t
 def t_TIME_SEC(t):r'[0-6]\d';return t
-def t_TIME_SECFRAC(t):r'.\d+';return t
+def t_TIME_SECFRAC(t):r'\.\d+';return t
 
 def t_APR(t):r'\[';return t
 def t_FPR(t):r'\]';return t
@@ -499,7 +499,7 @@ def p_MLLITERALBODY(p):
 
 def p_MLLC1(p): 
     "MLLC : MLLCONTENT MLLC"
-    print(p[1])
+    #print(p[1])
     p[0] = f"""{p[1]}{p[2]}"""
 
 def p_MLLC2(p): 

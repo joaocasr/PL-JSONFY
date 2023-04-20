@@ -6,7 +6,7 @@ name = "Tom Preston-Werner"
 server = "I'm a string. \"You can quote me\". Name\tJos\u00E9\nLocation\tSF."
 [meu]
 [meu.nome]
-tomates = [ 1, [ "cona", "pila"], 3]
+tomates = [1, ["cona", "pila"], 3]
 esfincter= 2.34_23
 nome ="joao"
 [peido]

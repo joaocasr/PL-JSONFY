@@ -1,5 +1,7 @@
 import tomlex
 import sys
+import json
+#from converter import converter
 
 
 with open('/home/joao/PL-JSONFY/example.toml','r') as file:
@@ -7,7 +9,7 @@ with open('/home/joao/PL-JSONFY/example.toml','r') as file:
 
 tomlex.lexer.input(toml)
 while tok:=tomlex.lexer.token():
-    #print(tok)
+    print(tok)
     pass
 result = tomlex.parser.parse(toml)  
 print(result)
