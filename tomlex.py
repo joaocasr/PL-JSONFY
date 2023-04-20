@@ -7,6 +7,7 @@ tokens = [
     'WHITESPACE',
     'NEWLINE',
     'DOT_SEP',
+    'TWODOT_SEP',
     'UNDERSCORE',
     'ASPA',
     'UNDERSC0RE',
@@ -55,6 +56,7 @@ def t_COMMENT(t):r'\#.+';return t
 def t_WHITESPACE(t):r'[^\S\t\r\n]';return t
 def t_NEWLINE(t):r'\n';return t
 def t_DOT_SEP(t):r'\.';return t
+def t_TWODOT_SEP(t): r'(?<![a-zA-Z]):(?![a-zA-Z])'; return t
 def t_UNDERSCORE(t):r'_';return t
 def t_IGUAL(t):r'=';return t
 def t_ASPA(t):r'\"';return t
@@ -236,9 +238,65 @@ def p_VALUE4(p):
 #    "VALUE : INLINETABLE"
 #    p[0] = f"""{p[1]}"""
 
-#def p_VALUE6(p):
-#    "VALUE : DATETIME"
-#    p[0] = f"""{p[1]}"""
+def p_VALUE6(p):
+    "VALUE : DATETIME"
+    p[0] = f"""{p[1]}"""
+
+def p_DATETIME1(p):
+    "DATETIME : OFFSETDATETIME"
+    P[0] = f"""{p[1]}"""
+
+def p_DATETIME2(p):
+    "DATETIME : LOCALDATETIME"
+    P[0] = f"""{p[1]}"""
+
+def p_DATETIME3(p):
+    "DATETIME : LOCALDATE"
+    P[0] = f"""{p[1]}"""
+
+def p_DATETIME4(p):
+    "DATETIME : LOCALTIME"
+    P[0] = f"""{p[1]}"""
+
+def p_OFFSETDATETIME(p):
+    "OFFSETDATETIME : FULLDATE TIME_DELIM FULLTIME"
+    p[0] = f"""{p[1]}{p[2]}{p[3]}"""
+
+def p_LOCALDATETIME(p):
+    "LOCALDATETIME : FULLDATE TIME_DELIM PARTIALTIME"
+    p[0] = f"""{p[1]}{p[2]}{p[3]}"""
+
+def p_LOCALDATE(p):
+    "LOCALDATE : FULLDATE"
+    p[0] = f"""{p[1]}"""
+
+def p_LOCALTIME(p):
+    "LOCALTIME : FULLTIME"
+    p[0] = f"""{p[1]}"""
+
+def p_FULLDATE(p):
+    "FULLDATE : DATE_FULLYEAR MINUS DATE_MONTH MINUS DATE_MDAY"
+    p[0] = f"""{p[1]}-{p[3]}-{p[5]}"""
+
+def p_FULLTIME(p):
+    "FULLTIME : PARTIALTIME TIMEOFFSET"
+    p[0] = f"""{p[1]} {p[2]}"""
+
+def p_TIMEOFFSET1(p):
+    "TIMEOFFSET : CHAR"
+    p[0] = f"""{p[1]}"""
+
+def p_TIMEOFFSET2(p):
+    "TIMEOFFSET : TIMENUMOFFSET"
+    p[0] = f"""{p[1]}"""
+
+def p_TIMENUMOFFSET1(p):
+    "TIMENUMOFFSET : PLUS TIME_HOUR TWODOT_SEP TIME_MIN"
+    p[0] = f"""+{p[2]}:{p[4]}"""
+
+def p_TIMENUMOFFSET2(p):
+    "TIMENUMOFFSET : MINUS TIME_HOUR TWODOT_SEP TIME_MIN"
+    p[0] = f"""-{p[2]}:{p[4]}"""
 
 def p_VALUE7(p):
     "VALUE : FLOAT"
