@@ -4,11 +4,24 @@ ola = 1
 colhao=2.3e23
 name = "Tom Preston-Werner"
 server = "I'm a string. \"You can quote me\". Name\tJos\u00E9\nLocation\tSF."
+
+[mecago]
+teofilo="TODO"
+
+[peidinho]
+teofilo="barraca"
+
 [meu]
 [meu.nome]
 tomates = [1, ["cona", "pila"], 3]
 esfincter= 2.34_23
 nome ="joao"
+
+[pi]
+[pi.nu]
+[pi.nu.rego]
+tomaes = [1, ["cona", "pila"], 3]
+
 [peido]
 teofilo="barraca"
 anus= 'olameu'

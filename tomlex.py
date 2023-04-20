@@ -2,6 +2,9 @@ import ply.lex as lex
 import ply.yacc as yacc
 import re
 
+elems=1
+second=False
+
 tokens = [
     'COMMENT',
     'WHITESPACE',
@@ -111,40 +114,61 @@ lexer = lex.lex()
 
 #análise sintática
 def p_TOML(p):
-    "TOML : EXPRESSION TOML2"
-    p[0] = f"""{p[1]}{p[2]}"""
+    "TOML : TITLES GROUPS"
+    if(p[2]!=""):
+        p[0] = f"""{{{p[1]},{p[2]}}}"""
+    else:
+        p[0] = f"""{{{{ {p[1]}{p[2]}}}"""
 
-def p_TOML2(p): 
-    "TOML2 : NEWLINE EXPRESSION TOML2"
+def p_TITLES1(p): 
+    "TITLES : KVALUE EXPRESSION TITLES"
+    if(p[3]==""):
+        p[0] = f"""{p[1]}{p[2]}{p[3]}"""
+    else:
+        p[0] = f"""{p[1]},{p[2]}{p[3]}"""
+
+def p_TITLES2(p):
+    "TITLES :"
+    p[0] = ""
+
+def p_GROUPS1(p):
+    "GROUPS : SECCAO EXPRESSION GROUPS"
     p[0] = f"""{p[1]}{p[2]}{p[3]}"""
 
-def p_TOML3(p):
-    "TOML2 :"
-    p[0] = ""
+def p_GROUPS2(p):
+    "GROUPS : "
+    p[0] = "}"
 
-def p_EXPRESSION2(p):
-    "EXPRESSION : KVALUE EXPRESSION2"
-    p[0] = f"""{p[1]}{p[2]}"""
+def p_SECCAO(p):
+    "SECCAO : TABLE EXPRESSION ATRIBUICOES"
+    p[0] = f"""{p[1]}{p[2]}{p[3]}"""
+
+def p_ATRIBUICOES1(p):
+    "ATRIBUICOES : KVALUE EXPRESSION ATRIBUICOES"
+    if(p[3]!=""):
+        p[0] = f"""{p[1]},{p[2]}{p[3]}"""
+    else: 
+        p[0] = f"""{p[1]}{p[2]}{p[3]}"""
+
+def p_ATRIBUICOES2(p):
+    "ATRIBUICOES :"
+    p[0] = ""
 
 def p_EXPRESSION1(p):
-    "EXPRESSION : EXPRESSION2"
-    p[0] = f"""{p[1]}"""
-
-def p_EXPRESSION3(p):
-    "EXPRESSION : TABLE EXPRESSION2"
+    "EXPRESSION : COMMENT EXPRESSION"
     p[0] = f"""{p[1]}{p[2]}"""
 
-def p_EXPRESSION2_2(p):
-    "EXPRESSION2 :"
-    p[0] = ""
+def p_EXPRESSION2(p):
+    "EXPRESSION : NEWLINE EXPRESSION"
+    p[0] = f"""{p[1]}{p[2]}"""
 
-def p_EXPRESSION2_1(p):
-    "EXPRESSION2 : COMMENT"
-    p[0] = f"""{p[1]}"""
+def p_EXPRESSION3(p):
+    "EXPRESSION :"
+    p[0] = ""
 
 def p_KVALUE(p):
     "KVALUE : KEY kvwhitespace IGUAL kvwhitespace VALUE"
-    p[0] = f"""{p[1]}{p[2]}{p[3]}{p[4]}{p[5]}"""
+    p[0] = f"""{p[1]}: {p[5]}"""
 
 def p_kvwhitespace1(p):
     "kvwhitespace : WHITESPACE"
@@ -168,7 +192,7 @@ def p_SIMPLEKEY1(p):
 
 def p_SIMPLEKEY2(p):
     "SIMPLEKEY : UNQUOTEDKEY"
-    p[0] = f"""{p[1]}"""
+    p[0] = f""" \"{p[1]}\""""
 
 def p_UNQUOTEDKEY1(p):
     "UNQUOTEDKEY : OCCURRENCES UNQUOTEDKEYAUX"
@@ -244,19 +268,19 @@ def p_VALUE6(p):
 
 def p_DATETIME1(p):
     "DATETIME : OFFSETDATETIME"
-    P[0] = f"""{p[1]}"""
+    p[0] = f"""{p[1]}"""
 
 def p_DATETIME2(p):
     "DATETIME : LOCALDATETIME"
-    P[0] = f"""{p[1]}"""
+    p[0] = f"""{p[1]}"""
 
 def p_DATETIME3(p):
     "DATETIME : LOCALDATE"
-    P[0] = f"""{p[1]}"""
+    p[0] = f"""{p[1]}"""
 
 def p_DATETIME4(p):
     "DATETIME : LOCALTIME"
-    P[0] = f"""{p[1]}"""
+    p[0] = f"""{p[1]}"""
 
 def p_OFFSETDATETIME(p):
     "OFFSETDATETIME : FULLDATE TIME_DELIM FULLTIME"
@@ -306,11 +330,10 @@ def p_TIMENUMOFFSET2(p):
     "TIMENUMOFFSET : MINUS TIME_HOUR TWODOT_SEP TIME_MIN"
     p[0] = f"""-{p[2]}:{p[4]}"""
 
-
-
-
 def p_VALUE7(p):
     "VALUE : FLOAT"
+    if("_" in p[1]):
+        p[1]=f"""\"{p[1]}\""""
     p[0] = f"""{p[1]}"""
 
 def p_STRING1(p) : 
@@ -524,7 +547,7 @@ def p_SPACENEWLINE2(p):
 
 def p_LITERALSTRING(p):
     "LITERALSTRING : APOSTROFE LCH APOSTROFE"
-    p[0] = f"""{p[1]}{p[2]}{p[3]}"""
+    p[0] = f"""\"{p[2]}\""""
 
 def p_LCH1(p):
     "LCH : LITERALCHAR LCH"
@@ -677,7 +700,23 @@ def p_COMMENTOUNAO2(p):
 
 def p_TABLE(p):
     "TABLE : APR KEY FPR"
-    p[0] = f"""{p[1]}{p[2]}{p[3]}"""
+    global elems,second
+    nomes=p[2].split(".")
+    nome=nomes[len(nomes)-1]
+    aux=elems
+    elems=len(nomes)
+    if(elems==1 and second==True):
+        i=0
+        chavetas=""
+        while(i<aux):
+            chavetas+="}"
+            i+=1
+        p[0] = f"""{chavetas},{nome} :{{"""
+    elif(elems==1):
+        second=True
+        p[0] = f"""{nome} :{{"""
+    else:
+        p[0] = f"""{nome} :{{"""
 
 
 def p_error(p):

@@ -1,37 +1,47 @@
 {
-    "title ": "TOML Example",
-    "title2 ": "TOML2 Example2",
-    "owner": {
-        "name ": "Tom Preston-Werner",
-        "date ": "2010-04-23",
-        "time ": "21:30:00"
+    "title": "TOML Example",
+    "title2": "TOML2 Example2",
+    "ola": 1,
+    "colhao": 2.3e+23,
+    "name": "Tom Preston-Werner",
+    "server": "I'm a string. \"You can quote me\". Name\tJos\u00e9\nLocation\tSF.",
+    "mecago": {
+        "teofilo": "TODO"
     },
-    "database": {
-        "uminho": {
-            "mail": {
-                "server ": "192.168.1.1",
-                "ports ": [
-                    8001,
-                    8001,
-                    8002
+    "peidinho": {
+        "teofilo": "barraca"
+    },
+    "meu": {
+        "nome": {
+            "tomates": [
+                1,
+                [
+                    "cona",
+                    "pila"
                 ],
-                "connection_max ": 5000,
-                "enabled ": true
+                3
+            ],
+            "esfincter": "2.34_23",
+            "nome": "joao"
+        }
+    },
+    "pi": {
+        "nu": {
+            "rego": {
+                "tomaes": [
+                    1,
+                    [
+                        "cona",
+                        "pila"
+                    ],
+                    3
+                ]
             }
         }
     },
-    "servers": {
-        "alpha": {
-            "ip ": "10.0.0.1",
-            "dc ": "eqdc10"
-        },
-        "beta": {
-            "ip ": "10.0.0.2",
-            "dc ": "eqdc10",
-            "hosts ": [
-                "alpha",
-                "omega"
-            ]
-        }
+    "peido": {
+        "teofilo": "barraca",
+        "anus": "olameu",
+        "colhaoesquerdo": "a tua m\u00e3e"
     }
 }
