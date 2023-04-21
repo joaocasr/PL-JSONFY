@@ -698,6 +698,29 @@ def p_COMMENTOUNAO2(p):
     "COMMENTOUNAO :"
     p[0] = ""
 
+def p_TABLE_ARRAY(p):
+    '''TABLE_ARRAY : APR ID FPR
+                   | TABLE_ARRAY APR ID FPR
+    '''
+    if len(p) == 4:
+        p[0] = [p[2]]
+    else:
+        p[1].append(p[3])
+        p[0] = p[1]
+
+def p_INLINE_TABLE(p):
+    '''INLINE_TABLE : ACH INLINE_VALUES FCH'''
+    p[0] = dict(p[2])
+
+def p_INLINE_VALUES(p):
+    '''INLINE_VALUES : ID IGUAL VALUES
+                     | ID IGUAL VALUES VIRGULA INLINE_VALUES
+    '''
+    if len(p) == 5:
+        p[0] = [(p[1], p[3])]
+    else:
+        p[0] = [(p[1], p[3])] + p[5]
+
 def p_TABLE(p):
     "TABLE : APR KEY FPR"
     global elems,second
