@@ -5,6 +5,7 @@
     "name": "Tom Preston Werner",
     "mecago": {
         "teofilo": "TODO",
+        "lines": "The first newline is\ntrimmed in raw strings.\n   All other whitespace\n   is preserved.\n",
         "str3": "The quick brown fox jumps over the lazy dog"
     },
     "peidinho": {

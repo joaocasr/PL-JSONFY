@@ -359,7 +359,7 @@ def p_STRING2(p) :
 
 def p_STRING3(p) : 
     "STRING : MLLITERALSTRING"
-    
+    p[0]=p[1]    
 
 def p_STRING4(p) : 
     "STRING : LITERALSTRING"
@@ -592,7 +592,7 @@ def p_LCH1(p):
     p[0] = p[1] + p[2] 
 
 def p_LCH2(p):
-    "LCH : "
+    "LCH :"
     p[0]=""
     
 def p_LITERALCHAR1(p):
@@ -608,81 +608,89 @@ def p_LITERALCHAR3(p):
     p[0] = p[1]
 
 def p_MLLITERALSTRING(p):
-    "MLLITERALSTRING : MLLITERALSTRINGDELIM NLR MLLITERALBODY NLR MLLITERALSTRINGDELIM"
-    
+    "MLLITERALSTRING : MLLITERALSTRINGDELIM NLR MLLITERALBODY MLLITERALSTRINGDELIM"
+    p[0] = p[3]    
 
 def p_NLR1(p):
     "NLR : NEWLINE"
-    
+    p[0]=""
 
 def p_NLR2(p):
     "NLR :"
-    
+    p[0]=""
 
 def p_MLLITERALSTRINGDELIM(p):
     "MLLITERALSTRINGDELIM : APOSTROFE APOSTROFE APOSTROFE"
-    pass
-    
+    pass    
 
 #def p_MLLITERALBODY1(p):
 #    "MLLITERALBODY : MLLC"
 #    
 
 def p_MLLITERALBODY(p):
-    "MLLITERALBODY : MLLC MLLQC MLLQ"
-    
+    "MLLITERALBODY : MLLC" #MLLQC MLLQ"
+    p[0] = p[1]
+
 
 def p_MLLC1(p): 
     "MLLC : MLLCONTENT MLLC"
-    #print(p[1])
+    p[0] = p[1] + p[2]
     
 
 def p_MLLC2(p): 
     "MLLC :"
+    p[0]=""
     
 
-def p_MLLQC1(p): 
-    "MLLQC :"
+#def p_MLLQC1(p): 
+#    "MLLQC :"
+#    p[0]=""
+
+#def p_MLLQC2(p): 
+#    "MLLQC : MLLQUOTES MLLCONTENT MLLC2 MLLQC"    
+
+#def p_MLLC2_1(p): 
+#    "MLLC2 : MLLCONTENT MLLC2"
     
 
-def p_MLLQC2(p): 
-    "MLLQC : MLLQUOTES MLLCONTENT MLLC2 MLLQC"
+#def p_MLLC2_2(p): 
+#    "MLLC2 : "
     
 
-def p_MLLC2_1(p): 
-    "MLLC2 : MLLCONTENT MLLC2"
+#def p_MLLQ1(p): 
+#    "MLLQ :"
     
 
-def p_MLLC2_2(p): 
-    "MLLC2 : "
-    
-
-def p_MLLQ1(p): 
-    "MLLQ :"
-    
-
-def p_MLLQ2(p): 
-    "MLLQ : MLLQUOTES"
+#def p_MLLQ2(p): 
+#    "MLLQ : MLLQUOTES"
     
 
 def p_MLLCONTENT1(p): 
     "MLLCONTENT : MLLCHAR"
-    
+    p[0] = p[1]  
 
 def p_MLLCONTENT2(p): 
     "MLLCONTENT : NEWLINE"
-    
+    p[0] = p[1]
 
-def p_MLLCHAR(p): 
+def p_MLLCHAR1(p): 
     "MLLCHAR : CHAR"
+    p[0] = p[1]
+
+def p_MLLCHAR2(p): 
+    "MLLCHAR : DOT_SEP"
+    p[0] = p[1]
+
+def p_MLLCHAR3(p): 
+    "MLLCHAR : WHITESPACE"
+    p[0] = p[1]
+
+#def p_MLLQUOTES1(p): 
+#    "MLLQUOTES : APOSTROFE APOSTROFE"
     
 
-def p_MLLQUOTES1(p): 
-    "MLLQUOTES : APOSTROFE APOSTROFE"
-    
-
-def p_MLLQUOTES2(p): 
-    "MLLQUOTES : APOSTROFE"
+#def p_MLLQUOTES2(p): 
+#    "MLLQUOTES : APOSTROFE"
     
 
 def p_ARRAY(p):
@@ -744,28 +752,28 @@ def p_COMMENTOUNAO2(p):
     "COMMENTOUNAO :"
     
 
-def p_TABLE_ARRAY(p):
-    '''TABLE_ARRAY : APR ID FPR
-                   | TABLE_ARRAY APR ID FPR
-    '''
-    if len(p) == 4:
-        p[0] = [p[2]]
-    else:
-        p[1].append(p[3])
-        p[0] = p[1]
+#def p_TABLE_ARRAY(p):
+#    '''TABLE_ARRAY : APR ID FPR
+#                   | TABLE_ARRAY APR ID FPR
+#    '''
+#    if len(p) == 4:
+#        p[0] = [p[2]]
+#    else:
+#        p[1].append(p[3])
+#        p[0] = p[1]
 
-def p_INLINE_TABLE(p):
-    '''INLINE_TABLE : ACH INLINE_VALUES FCH'''
-    p[0] = dict(p[2])
+#def p_INLINE_TABLE(p):
+#    '''INLINE_TABLE : ACH INLINE_VALUES FCH'''
+#    p[0] = dict(p[2])
 
-def p_INLINE_VALUES(p):
-    '''INLINE_VALUES : ID IGUAL VALUES
-                     | ID IGUAL VALUES VIRGULA INLINE_VALUES
-    '''
-    if len(p) == 5:
-        p[0] = [(p[1], p[3])]
-    else:
-        p[0] = [(p[1], p[3])] + p[5]
+#def p_INLINE_VALUES(p):
+#    '''INLINE_VALUES : ID IGUAL VALUES
+#                     | ID IGUAL VALUES VIRGULA INLINE_VALUES
+#    '''
+#    if len(p) == 5:
+#        p[0] = [(p[1], p[3])]
+#    else:
+#        p[0] = [(p[1], p[3])] + p[5]
 
 def p_TABLE(p):
     "TABLE : APR KEY FPR"
