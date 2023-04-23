@@ -1,28 +1,37 @@
 title = "TOML Example"
 title2 = "TOML2 Example2"
 ola = 1
-colhao=2.3e23
-name = "Tom Preston-Werner"
-server = "I'm a string. \"You can quote me\". Name\tJos\u00E9\nLocation\tSF."
-
+name = "Tom Preston Werner"
 [mecago]
 teofilo="TODO"
+str3 = """\
+       The quick brown \
+       fox jumps over \
+       the lazy dog\
+       """
 
 [peidinho]
 teofilo="barraca"
+flt1 = +1.0
+flt2 = 3.1415
+flt3 = -0.01
+
+# exponent
+flt4 = 5e+22
+flt5 = 1e06
+flt6 = -2E-2
+
+# both
+flt8 = 224_617.445_991_228
 
 [meu]
+server = "I'm a string. \"You can quote me\". Name\tJos\u00E9."
+siu= [ 1, 3,[ "ola", "filho"], 5]
+message="\u0068\u0065\u006c\u006c\u006f \u0077\u006f\u0072\u006c\u0064"
+
 [meu.nome]
-tomates = [1, ["cona", "pila"], 3]
-esfincter= 2.34_23
+ok=true
+madre= "porque"
+[meu.nome.estupido]
+esfincter= 23
 nome ="joao"
-
-[pi]
-[pi.nu]
-[pi.nu.rego]
-tomaes = [1, ["cona", "pila"], 3]
-
-[peido]
-teofilo="barraca"
-anus= 'olameu'
-colhaoesquerdo= "\u0061\u0020\u0074\u0075\u0061\u0020\u006D\u00E3\u0065"
