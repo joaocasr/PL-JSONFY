@@ -40,14 +40,9 @@ tokens = [
     'OCT',
     'BIN',
     'IGUAL',
-    'DATE_FULLYEAR',
-    'DATE_MONTH',
-    'DATE_MDAY',
+    'DATE',
     'TIME_DELIM',
-    'TIME_HOUR',
-    'TIME_MIN',
-    'TIME_SEC',
-    'TIME_SECFRAC',
+    'TIME',
     'ATO',
     'ATC'
 ]
@@ -73,6 +68,10 @@ def t_ESC_HEX8(t):r'\\u([0-9]|[a-fA-F]){8}';return t
 def t_BOOLEAN(t): r'(true|false)';return t
 def t_ESCAPE(t): r'\\';return t
 def t_FLOAT(t):r'((?:\+|-)?\d(?:_\d|\d)*\.(?:\d(?:_\d|\d)*)+(?:[eE](?:\+|-)?\d(?:_\d|\d)*)?|(?:\+|-)?\d+(?:[eE](?:\+|-)?\d(?:_\d|\d)*))';return t 
+
+def t_DATE(t):r'\d{4}-(1[0-2]|0\d)-[0-3]\d'; return t
+def t_TIME(t):r'[Tt ]?[0-2]\d:[0-5]\d:[0-6]\d(\.\d+)?(Z|(\+|\-)[0-2]\d:[0-5]\d)'; return t
+
 def t_CHAR(t):r'[a-zA-Z]';return t
 def t_MINUS(t):r'-';return t
 def t_PLUS(t):r'\+';return t
@@ -85,15 +84,6 @@ def t_OCT(t):r'0o[0-7](?:(?:_[0-7])|[0-7])*';return t
 def t_BIN(t):r'0b[01](?:(?:_[01])|[01])*';return t
 def t_INF(t):r'(?:\+|-)?inf';return t
 def t_NAN(t):r'(?:\+|-)?nan';return t
-
-def t_DATE_FULLYEAR(t):r'\d{4}';return t
-def t_DATE_MONTH(t):r'(1[0-2]|0\d)';return t
-def t_DATE_MDAY(t):r'[0-3]\d';return t
-def t_TIME_DELIM(t):r'[Tt ]';return t
-def t_TIME_HOUR(t):r'[0-2]\d';return t
-def t_TIME_MIN(t):r'[0-5]\d';return t
-def t_TIME_SEC(t):r'[0-6]\d';return t
-def t_TIME_SECFRAC(t):r'\.\d+';return t
 
 def t_APR(t):r'\[';return t
 def t_FPR(t):r'\]';return t
@@ -279,67 +269,37 @@ def p_VALUE6(p):
 
 def p_DATETIME1(p):
     "DATETIME : OFFSETDATETIME"
-    
+    p[0] = p[1]
 
 def p_DATETIME2(p):
     "DATETIME : LOCALDATETIME"
-    
+    p[0] = p[1]
 
 def p_DATETIME3(p):
     "DATETIME : LOCALDATE"
-    
+    p[0] = p[1]
 
 def p_DATETIME4(p):
     "DATETIME : LOCALTIME"
+    p[0] = p[1]
     
 
 def p_OFFSETDATETIME(p):
-    "OFFSETDATETIME : FULLDATE TIME_DELIM FULLTIME"
-    
+    "OFFSETDATETIME : DATE TIME"
+    p[0] = p[1] + p[2]
 
 def p_LOCALDATETIME(p):
-    "LOCALDATETIME : FULLDATE TIME_DELIM PARTIALTIME"
+    "LOCALDATETIME : DATE TIME"
+    p[0] = p[1] + p[2]
     
 
 def p_LOCALDATE(p):
-    "LOCALDATE : FULLDATE"
-    
+    "LOCALDATE : DATE"
+    p[0] = p[1]
 
 def p_LOCALTIME(p):
-    "LOCALTIME : FULLTIME"
-    
-
-def p_FULLDATE(p):
-    "FULLDATE : DATE_FULLYEAR MINUS DATE_MONTH MINUS DATE_MDAY"
-    
-
-def p_FULLTIME(p):
-    "FULLTIME : PARTIALTIME TIMEOFFSET"
-    
-
-def p_PARTIALTIME1(p):
-    "PARTIALTIME : TIME_HOUR TWODOT_SEP TIME_MIN TWODOT_SEP TIME_SEC"
-    
-
-def p_PARTIALTIME1(p):
-    "PARTIALTIME : TIME_HOUR TWODOT_SEP TIME_MIN TWODOT_SEP TIME_SEC TIME_SECFRAC"
-    
-
-def p_TIMEOFFSET1(p):
-    "TIMEOFFSET : CHAR"
-    
-
-def p_TIMEOFFSET2(p):
-    "TIMEOFFSET : TIMENUMOFFSET"
-    
-
-def p_TIMENUMOFFSET1(p):
-    "TIMENUMOFFSET : PLUS TIME_HOUR TWODOT_SEP TIME_MIN"
-    
-
-def p_TIMENUMOFFSET2(p):
-    "TIMENUMOFFSET : MINUS TIME_HOUR TWODOT_SEP TIME_MIN"
-    
+    "LOCALTIME : TIME"
+    p[0] = p[1]
 
 def p_VALUE7(p):
     "VALUE : FLOAT"
