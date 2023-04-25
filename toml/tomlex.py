@@ -10,10 +10,14 @@ tokens = [
     'DOT_SEP',
     'TWODOT_SEP',
     'UNDERSCORE',
+    'TRIPLEASPA',
+    'DOUBLEASPA',
     'ASPA',
     'UNDERSC0RE',
     'MINUS',
     'PLUS',
+    'TRIPLEAPOSTROFE',
+    'DOUBLEAPOSTROFE',
     'APOSTROFE',
     'ESC_REVERSE',
     'ESC_BACKSPACE',
@@ -51,10 +55,14 @@ tokens = [
 def t_COMMENT(t):r'\#.+';return t
 def t_WHITESPACE(t):r'[^\S\t\r\n]';return t
 def t_NEWLINE(t):r'\n';return t
-def t_TWODOT_SEP(t): r'(?<![a-zA-Z]):(?![a-zA-Z])'; return t
+def t_TWODOT_SEP(t): r':'; return t
 def t_UNDERSCORE(t):r'_';return t
 def t_IGUAL(t):r'=';return t
+def t_TRIPLEASPA(t):r'\"""';return t
+def t_DOUBLEASPA(t):r'\""';return t
 def t_ASPA(t):r'\"';return t
+def t_TRIPLEAPOSTROFE(t):r'\'\'\'';return t
+def t_DOUBLEAPOSTROFE(t):r'\'\'';return t
 def t_APOSTROFE(t):r'\'';return t
 def t_ESC_REVERSE(t):r'\\\\';return t
 def t_ESC_BACKSPACE(t):r'\\b';return t
@@ -429,7 +437,7 @@ def p_ESCAPED9(p):
     
 
 def p_MULTILINEBASICSTRING(p):
-    "MULTILINEBASICSTRING : MLBCSTRDELIM MLNL MLBASICBODY MLBCSTRDELIM"
+    "MULTILINEBASICSTRING : TRIPLEASPA MLNL MLBASICBODY TRIPLEASPA"
     p[0]=p[3]
 
 def p_MLNL1(p):
@@ -445,43 +453,23 @@ def p_MLBCSTRDELIM(p):
     p[0]= p[1] + p[2] + p[3]
     
 def p_MLBASICBODY(p):
-    #"MLBASICBODY : MLBC MLBQC MLQ"
     "MLBASICBODY : MLBC"
-    p[0] = p[1] 
-    #p[0] = p[1] + p[2] + p[3]    
+    p[0] = p[1]
 
 def p_MLBC1(p): 
-    "MLBC : MLBCONTENT MLBC"
-    p[0] = p[1] + p[2]    
+    "MLBC : CONTENTQUOTE MLBC"
+    p[0] = p[1] + p[2]
+
+def p_CONTENTQUOTE1(p):
+    "CONTENTQUOTE : MLBCONTENT"
+    p[0] = p[1]
+
+def p_CONTENTQUOTE2(p):
+    "CONTENTQUOTE : MLBQUOTES"
+    p[0] = p[1]
 
 def p_MLBC2(p):
     "MLBC :"
-    p[0]=""
-
-def p_MLBQC1(p): 
-    "MLBQC : MLBQUOTES MLBCONTENT MLBC2 MLBQC"
-    p[0]=p[2] + p[3] + p[4]
-
-def p_MLBQC2(p):
-    "MLBQC :"
-    p[0]=""
-
-def p_MLBC2_1(p): 
-    "MLBC2 : MLBCONTENT MLBC2"
-    p[0] = p[1] + p[2]
-    
-
-def p_MLBC2_2(p):
-    "MLBC2 :"
-    p[0]=""
-    
-
-def p_MLQ1(p): 
-    "MLQ : MLBQUOTES" 
-    p[0]=""
-
-def p_MLQ2(p):
-    "MLQ :"
     p[0]=""
 
 def p_MLBCONTENT1(p): 
@@ -496,6 +484,18 @@ def p_MLBCONTENT3(p):
     "MLBCONTENT : MLBESCAPEDNL"
     p[0] = p[1]
 
+def p_MLBCONTENT4(p): 
+    "MLBCONTENT : TWODOT_SEP"
+    p[0] = p[1]
+
+def p_MLBCONTENT5(p): 
+    "MLBCONTENT : DOT_SEP"
+    p[0] = p[1]
+
+def p_MLBCONTENT6(p): 
+    "MLBCONTENT : VIRGULA"
+    p[0] = p[1]
+
 def p_MLBCHAR1(p): 
     "MLBCHAR : MLBUNESCAPED"
     p[0] = p[1]
@@ -506,11 +506,15 @@ def p_MLBCHAR2(p):
 
 def p_MLBQUOTES1(p):
     "MLBQUOTES : ASPA"
-    pass
+    p[0] = p[1]
 
-def p_MLBQUOTES2(p): 
-    "MLBQUOTES : ASPA ASPA"
-    pass
+def p_MLBQUOTES2(p):
+    "MLBQUOTES : DOUBLEASPA"
+    p[0] = p[1]
+
+def p_MLBQUOTES3(p):
+    "MLBQUOTES :"
+    p[0] =""
 
 def p_MLBUNESCAPED1(p):
     "MLBUNESCAPED : WHITESPACE"
@@ -539,11 +543,10 @@ def p_SPACENEWLINE1(p):
     
 def p_SPACENEWLINE2(p):
     "SPACENEWLINE : NEWLINE"     
-    pass
+    p[0] = p[1] 
 
 def p_LITERALSTRING(p):
     "LITERALSTRING : APOSTROFE LCH APOSTROFE"
-    print(p[2])
     p[0] = p[2]
     
 
@@ -567,8 +570,20 @@ def p_LITERALCHAR3(p):
     "LITERALCHAR : WHITESPACE"
     p[0] = p[1]
 
+def p_LITERALCHAR4(p):
+    "LITERALCHAR : TWODOT_SEP"
+    p[0] = p[1]
+
+def p_LITERALCHAR5(p):
+    "LITERALCHAR : ASPA"
+    p[0] = p[1]
+
+def p_LITERALCHAR6(p):
+    "LITERALCHAR : ESCAPE"
+    p[0] = p[1]
+
 def p_MLLITERALSTRING(p):
-    "MLLITERALSTRING : MLLITERALSTRINGDELIM NLR MLLITERALBODY MLLITERALSTRINGDELIM"
+    "MLLITERALSTRING : TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE"
     p[0] = p[3]    
 
 def p_NLR1(p):
@@ -578,52 +593,26 @@ def p_NLR1(p):
 def p_NLR2(p):
     "NLR :"
     p[0]=""
-
-def p_MLLITERALSTRINGDELIM(p):
-    "MLLITERALSTRINGDELIM : APOSTROFE APOSTROFE APOSTROFE"
-    pass    
-
-#def p_MLLITERALBODY1(p):
-#    "MLLITERALBODY : MLLC"
-#    
-
+  
 def p_MLLITERALBODY(p):
-    "MLLITERALBODY : MLLC" #MLLQC MLLQ"
+    "MLLITERALBODY : MLLC"
     p[0] = p[1]
 
-
 def p_MLLC1(p): 
-    "MLLC : MLLCONTENT MLLC"
+    "MLLC : MLLCONTENTQUOTES MLLC"
     p[0] = p[1] + p[2]
     
+def p_MLLCONTENTQUOTES1(p):
+    "MLLCONTENTQUOTES : MLLCONTENT"
+    p[0] = p[1]
+
+def p_MLLCONTENTQUOTES2(p):
+    "MLLCONTENTQUOTES : MLLQUOTES"
+    p[0] = p[1]
 
 def p_MLLC2(p): 
     "MLLC :"
     p[0]=""
-    
-
-#def p_MLLQC1(p): 
-#    "MLLQC :"
-#    p[0]=""
-
-#def p_MLLQC2(p): 
-#    "MLLQC : MLLQUOTES MLLCONTENT MLLC2 MLLQC"    
-
-#def p_MLLC2_1(p): 
-#    "MLLC2 : MLLCONTENT MLLC2"
-    
-
-#def p_MLLC2_2(p): 
-#    "MLLC2 : "
-    
-
-#def p_MLLQ1(p): 
-#    "MLLQ :"
-    
-
-#def p_MLLQ2(p): 
-#    "MLLQ : MLLQUOTES"
-    
 
 def p_MLLCONTENT1(p): 
     "MLLCONTENT : MLLCHAR"
@@ -645,13 +634,25 @@ def p_MLLCHAR3(p):
     "MLLCHAR : WHITESPACE"
     p[0] = p[1]
 
-#def p_MLLQUOTES1(p): 
-#    "MLLQUOTES : APOSTROFE APOSTROFE"
-    
+def p_MLLCHAR4(p): 
+    "MLLCHAR : VIRGULA"
+    p[0] = p[1]
 
-#def p_MLLQUOTES2(p): 
-#    "MLLQUOTES : APOSTROFE"
+def p_MLLQUOTES1(p): 
+    "MLLQUOTES : DOUBLEAPOSTROFE"
+    p[0] = p[1]
     
+def p_MLLQUOTES2(p): 
+    "MLLQUOTES : APOSTROFE"
+    p[0] = p[1]
+
+def p_MLLQUOTES3(p): 
+    "MLLQUOTES : ASPA"
+    p[0] = p[1]
+
+def p_MLLQUOTES3(p): 
+    "MLLQUOTES :"
+    p[0]=""
 
 def p_ARRAY(p):
     "ARRAY : APR ARRAYVALUES WSCOMMENTNEWLINE FPR"
