@@ -167,7 +167,11 @@ def p_EXPRESSION3(p):
 
 def p_KVALUE(p):
     "KVALUE : KEY kvwhitespace IGUAL kvwhitespace VALUE"
-    p[0] = {p[1]:p[5]}
+    if type(p[1]) is dict:
+        converter.insertLast(p[1],p[5])
+        p[0] = p[1]
+    else:
+        p[0] = {p[1]:p[5]}
 
 def p_kvwhitespace1(p):
     "kvwhitespace : WHITESPACE"
@@ -267,9 +271,10 @@ def p_VALUE4(p):
     "VALUE : ARRAY"
     p[0] = list(p[1])    
 
-#def p_VALUE5(p):
-#    "VALUE : INLINETABLE"
-#    
+def p_VALUE5(p):
+    "VALUE : INLINETABLE"
+    p[0] = p[1]
+    
 
 def p_VALUE6(p):
     "VALUE : DATETIME"
@@ -691,6 +696,7 @@ def p_ARRAYVALUES4(p):
 
 def p_WSCOMMENTNEWLINE1(p):
     "WSCOMMENTNEWLINE :"
+    pass
     
 
 def p_WSCOMMENTNEWLINE2(p):
@@ -713,29 +719,6 @@ def p_COMMENTOUNAO2(p):
     "COMMENTOUNAO :"
     
 
-#def p_TABLE_ARRAY(p):
-#    '''TABLE_ARRAY : APR ID FPR
-#                   | TABLE_ARRAY APR ID FPR
-#    '''
-#    if len(p) == 4:
-#        p[0] = [p[2]]
-#    else:
-#        p[1].append(p[3])
-#        p[0] = p[1]
-
-#def p_INLINE_TABLE(p):
-#    '''INLINE_TABLE : ACH INLINE_VALUES FCH'''
-#    p[0] = dict(p[2])
-
-#def p_INLINE_VALUES(p):
-#    '''INLINE_VALUES : ID IGUAL VALUES
-#                     | ID IGUAL VALUES VIRGULA INLINE_VALUES
-#    '''
-#    if len(p) == 5:
-#        p[0] = [(p[1], p[3])]
-#    else:
-#        p[0] = [(p[1], p[3])] + p[5]
-
 def p_TABLE(p):
     "TABLE : APR KEY FPR"
     if(type(p[2]) is str):
@@ -744,8 +727,40 @@ def p_TABLE(p):
     
 
 
+
+def p_INLINETABLE(p):
+    '''INLINETABLE : ACH FCH'''
+    p[0] = {}
+
+def p_INLINETABLE2(p):
+    '''INLINETABLE : ACH INLINETABLEWS INLINEKVALUE INLINETABLEWS FCH'''
+    p[0] = p[3]
+    
+def p_INLINETABLEWS1(p):
+    '''INLINETABLEWS : '''
+
+def p_INLINETABLEWS2(p):
+    '''INLINETABLEWS : WHITESPACE'''
+
+def p_INLINEKVALUE(p):
+    '''INLINEKVALUE : INLINEKVALUE INLINETABLEWS VIRGULA INLINETABLEWS KVALUE'''
+    converter.fusion(p[1],p[5])
+    p[0] = p[1]
+
+
+def p_INLINEKVALUE2(p):
+    '''INLINEKVALUE : KVALUE'''
+    p[0] = p[1]
+
+def p_TABLEARRAY1(p):
+    '''TABLEARRAY : ATO KEY ATC'''
+    pass
+
+
+
+
+
 def p_error(p):
     print(f"Sintaxe incorreta "+str(p))
-
 
 parser = yacc.yacc()
