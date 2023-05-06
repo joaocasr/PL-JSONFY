@@ -93,6 +93,11 @@ def t_BIN(t):r'0b[01](?:(?:_[01])|[01])*';return t
 def t_INF(t):r'(?:\+|-)?inf';return t
 def t_NAN(t):r'(?:\+|-)?nan';return t
 
+
+
+def t_ATO(t):r'\[\[';return t
+def t_ATC(t):r'\]\]';return t
+
 def t_APR(t):r'\[';return t
 def t_FPR(t):r'\]';return t
 def t_VIRGULA(t):r',';return t
@@ -100,8 +105,6 @@ def t_VIRGULA(t):r',';return t
 def t_ACH(t):r'\{';return t
 def t_FCH(t):r'\}';return t
 
-def t_ATO(t):r'\[\[';return t
-def t_ATC(t):r'\]\]';return t
 
 def t_error(t):
     print(f"Carácter ilegal {t.value[0]}")
@@ -137,6 +140,7 @@ def p_SECCAO1(p):
     "SECCAO : TABLE EXPRESSION ATRIBUICOES"
     converter.insertLast(p[1],p[3])
     p[0]=p[1]
+    a=1
 
 
 def p_SECCAO2(p):
@@ -718,9 +722,16 @@ def p_COMMENTOUNAO1(p):
 def p_COMMENTOUNAO2(p):
     "COMMENTOUNAO :"
     
+def p_TABLE1(p):
+    "TABLE : STDTABLE"
+    p[0] = p[1]
 
-def p_TABLE(p):
-    "TABLE : APR KEY FPR"
+def p_TABLE2(p):
+    "TABLE : TABLEARRAY"
+    p[0] = p[1]
+
+def p_STDTABLE(p):
+    "STDTABLE : APR KEY FPR"
     if(type(p[2]) is str):
         p[0] = {p[2]:{None}}
     else:p[0] = p[2]
@@ -754,7 +765,12 @@ def p_INLINEKVALUE2(p):
 
 def p_TABLEARRAY1(p):
     '''TABLEARRAY : ATO KEY ATC'''
-    pass
+    if(type(p[2]) is str):
+        p[0] = {p[2]:[]}
+    else:
+        converter.insertLast(p[2],[])
+        p[0]=p[2]
+    a=1
 
 
 

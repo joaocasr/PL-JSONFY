@@ -16,5 +16,5 @@ result = tomlex.parser.parse(toml)
 jsonobj=json.dumps(result,indent=4,ensure_ascii=False)
 
 with open("jsonfy.json", "w",encoding='utf-8') as outfile:
-        outfile.write(jsonobj)
+        outfile.write(jsonobj)  
 print(jsonobj)

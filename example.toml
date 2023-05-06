@@ -55,3 +55,9 @@ str = ''''That,' she said, 'is still pointless'.'''
 name = { first = "Tom", last = "Preston-Werner" }
 point = { x = 1, y = 2 }
 animal = { type.name = "pug" }
+
+[[fruits]]
+name = "apple"
+
+[[fruits.varieties]]
+name = "granny smith"
