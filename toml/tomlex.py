@@ -129,6 +129,7 @@ def p_TITLES2(p):
 
 def p_GROUPS1(p):
     "GROUPS : SECCAO EXPRESSION GROUPS"
+    a=1
     converter.fusion(p[1],p[3])
     p[0]=p[1]
 
@@ -734,8 +735,7 @@ def p_STDTABLE(p):
     "STDTABLE : APR KEY FPR"
     if(type(p[2]) is str):
         p[0] = {p[2]:{None}}
-    else:p[0] = p[2]
-    
+    else:p[0] = p[2]    
 
 
 
@@ -771,9 +771,6 @@ def p_TABLEARRAY1(p):
         converter.insertLast(p[2],[])
         p[0]=p[2]
     a=1
-
-
-
 
 
 def p_error(p):
