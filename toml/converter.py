@@ -26,7 +26,14 @@ def fusion(origindict, secdict):
         elif k in origindict and isinstance(origindict[k], list):
             a=1
             #print(secdict[k])
-            origindict[k].append(secdict[k])
+            if(len(origindict[k])>=1):
+                size =len(secdict[k])
+                i=0
+                while(i<size):
+                    origindict[k].append(secdict[k][i])
+                    i+=1    
+            else:
+                origindict[k].append(secdict[k])
         else:
             origindict[k] = secdict[k]
 
