@@ -53,13 +53,13 @@ tokens = [
 
 # análise léxica
 def t_COMMENT(t):r'\#.+';return t
-def t_WHITESPACE(t):r'[^\S\t\r\n]';return t
+def t_WHITESPACE(t):r'[^\S\r\n]';return t
 def t_NEWLINE(t):r'\n';return t
 def t_TWODOT_SEP(t): r':'; return t
 def t_UNDERSCORE(t):r'_';return t
 def t_IGUAL(t):r'=';return t
-def t_TRIPLEASPA(t):r'\"""';return t
-def t_DOUBLEASPA(t):r'\""';return t
+def t_TRIPLEASPA(t):r'\"\"\"';return t
+def t_DOUBLEASPA(t):r'\"\"';return t
 def t_ASPA(t):r'\"';return t
 def t_TRIPLEAPOSTROFE(t):r'\'\'\'';return t
 def t_DOUBLEAPOSTROFE(t):r'\'\'';return t
@@ -450,10 +450,6 @@ def p_MLNL1(p):
 def p_MLNL2(p):
     "MLNL :"
     p[0]=""
-
-def p_MLBCSTRDELIM(p):
-    "MLBCSTRDELIM : ASPA ASPA ASPA"
-    p[0]= p[1] + p[2] + p[3]
     
 def p_MLBASICBODY(p):
     "MLBASICBODY : MLBC"
@@ -463,6 +459,10 @@ def p_MLBC1(p):
     "MLBC : CONTENTQUOTE MLBC"
     p[0] = p[1] + p[2]
 
+def p_MLBC2(p):
+    "MLBC :"
+    p[0]=""
+
 def p_CONTENTQUOTE1(p):
     "CONTENTQUOTE : MLBCONTENT"
     p[0] = p[1]
@@ -470,10 +470,6 @@ def p_CONTENTQUOTE1(p):
 def p_CONTENTQUOTE2(p):
     "CONTENTQUOTE : MLBQUOTES"
     p[0] = p[1]
-
-def p_MLBC2(p):
-    "MLBC :"
-    p[0]=""
 
 def p_MLBCONTENT1(p): 
     "MLBCONTENT : MLBCHAR"
@@ -666,16 +662,15 @@ def p_ARRAYVALUES1(p):
     pass
 
 def p_ARRAYVALUES2(p):
-    "ARRAYVALUES : WSCOMMENTNEWLINE VALUE ARRAYCONTEUDO"
+    "ARRAYVALUES : WSCOMMENTNEWLINE VALUE WSCOMMENTNEWLINE ARRAYCONTEUDO"
     p[0] = [p[2]]
-    if p[3]:
-        p[0].extend(p[3])
+    if p[4]:
+        p[0].extend(p[4])
         
 def p_ARRAYVALUES3(p):
     "ARRAYCONTEUDO :"
     pass
     
-
 def p_ARRAYVALUES4(p):
     "ARRAYCONTEUDO : WSCOMMENTNEWLINE VIRGULA ARRAYVALUES"
     p[0] = p[3]
@@ -699,15 +694,15 @@ def p_WSCOMMENTNEWLINE1(p):
 
 def p_WSCOMMENTNEWLINE2(p):
     "WSCOMMENTNEWLINE : INNERCOMMENT WSCOMMENTNEWLINE"
-    
 
 def p_INNERCOMMENT1(p):
     "INNERCOMMENT : WHITESPACE"
-    
 
 def p_INNERCOMMENT2(p):
     "INNERCOMMENT : COMMENTOUNAO NEWLINE"
     
+def p_INNERCOMMENT3(p):
+    "INNERCOMMENT : NEWLINE"
 
 def p_COMMENTOUNAO1(p):
     "COMMENTOUNAO : COMMENT"

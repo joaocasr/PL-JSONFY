@@ -88,65 +88,65 @@ Rule 71    ESCAPED -> ESC_HEX8
 Rule 72    MULTILINEBASICSTRING -> TRIPLEASPA MLNL MLBASICBODY TRIPLEASPA
 Rule 73    MLNL -> NEWLINE
 Rule 74    MLNL -> <empty>
-Rule 75    MLBCSTRDELIM -> ASPA ASPA ASPA
-Rule 76    MLBASICBODY -> MLBC
-Rule 77    MLBC -> CONTENTQUOTE MLBC
+Rule 75    MLBASICBODY -> MLBC
+Rule 76    MLBC -> CONTENTQUOTE MLBC
+Rule 77    MLBC -> <empty>
 Rule 78    CONTENTQUOTE -> MLBCONTENT
 Rule 79    CONTENTQUOTE -> MLBQUOTES
-Rule 80    MLBC -> <empty>
-Rule 81    MLBCONTENT -> MLBCHAR
-Rule 82    MLBCONTENT -> NEWLINE
-Rule 83    MLBCONTENT -> MLBESCAPEDNL
-Rule 84    MLBCONTENT -> TWODOT_SEP
-Rule 85    MLBCONTENT -> DOT_SEP
-Rule 86    MLBCONTENT -> VIRGULA
-Rule 87    MLBCHAR -> MLBUNESCAPED
-Rule 88    MLBCHAR -> ESCAPED
-Rule 89    MLBQUOTES -> ASPA
-Rule 90    MLBQUOTES -> DOUBLEASPA
-Rule 91    MLBQUOTES -> <empty>
-Rule 92    MLBUNESCAPED -> WHITESPACE
-Rule 93    MLBUNESCAPED -> CHAR
-Rule 94    MLBESCAPEDNL -> ESCAPE NEWLINE WHNL
-Rule 95    WHNL -> SPACENEWLINE WHNL
-Rule 96    WHNL -> <empty>
-Rule 97    SPACENEWLINE -> WHITESPACE
-Rule 98    SPACENEWLINE -> NEWLINE
-Rule 99    LITERALSTRING -> APOSTROFE LCH APOSTROFE
-Rule 100   LCH -> LITERALCHAR LCH
-Rule 101   LCH -> <empty>
-Rule 102   LITERALCHAR -> CHAR
-Rule 103   LITERALCHAR -> ESCAPED
-Rule 104   LITERALCHAR -> WHITESPACE
-Rule 105   LITERALCHAR -> TWODOT_SEP
-Rule 106   LITERALCHAR -> ASPA
-Rule 107   LITERALCHAR -> ESCAPE
-Rule 108   MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE
-Rule 109   NLR -> NEWLINE
-Rule 110   NLR -> <empty>
-Rule 111   MLLITERALBODY -> MLLC
-Rule 112   MLLC -> MLLCONTENTQUOTES MLLC
-Rule 113   MLLCONTENTQUOTES -> MLLCONTENT
-Rule 114   MLLCONTENTQUOTES -> MLLQUOTES
-Rule 115   MLLC -> <empty>
-Rule 116   MLLCONTENT -> MLLCHAR
-Rule 117   MLLCONTENT -> NEWLINE
-Rule 118   MLLCHAR -> CHAR
-Rule 119   MLLCHAR -> DOT_SEP
-Rule 120   MLLCHAR -> WHITESPACE
-Rule 121   MLLCHAR -> VIRGULA
-Rule 122   MLLQUOTES -> DOUBLEAPOSTROFE
-Rule 123   MLLQUOTES -> APOSTROFE
-Rule 124   MLLQUOTES -> <empty>
-Rule 125   ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR
-Rule 126   ARRAYVALUES -> <empty>
-Rule 127   ARRAYVALUES -> WSCOMMENTNEWLINE VALUE ARRAYCONTEUDO
-Rule 128   ARRAYCONTEUDO -> <empty>
-Rule 129   ARRAYCONTEUDO -> WSCOMMENTNEWLINE VIRGULA ARRAYVALUES
-Rule 130   WSCOMMENTNEWLINE -> <empty>
-Rule 131   WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE
-Rule 132   INNERCOMMENT -> WHITESPACE
-Rule 133   INNERCOMMENT -> COMMENTOUNAO NEWLINE
+Rule 80    MLBCONTENT -> MLBCHAR
+Rule 81    MLBCONTENT -> NEWLINE
+Rule 82    MLBCONTENT -> MLBESCAPEDNL
+Rule 83    MLBCONTENT -> TWODOT_SEP
+Rule 84    MLBCONTENT -> DOT_SEP
+Rule 85    MLBCONTENT -> VIRGULA
+Rule 86    MLBCHAR -> MLBUNESCAPED
+Rule 87    MLBCHAR -> ESCAPED
+Rule 88    MLBQUOTES -> ASPA
+Rule 89    MLBQUOTES -> DOUBLEASPA
+Rule 90    MLBQUOTES -> <empty>
+Rule 91    MLBUNESCAPED -> WHITESPACE
+Rule 92    MLBUNESCAPED -> CHAR
+Rule 93    MLBESCAPEDNL -> ESCAPE NEWLINE WHNL
+Rule 94    WHNL -> SPACENEWLINE WHNL
+Rule 95    WHNL -> <empty>
+Rule 96    SPACENEWLINE -> WHITESPACE
+Rule 97    SPACENEWLINE -> NEWLINE
+Rule 98    LITERALSTRING -> APOSTROFE LCH APOSTROFE
+Rule 99    LCH -> LITERALCHAR LCH
+Rule 100   LCH -> <empty>
+Rule 101   LITERALCHAR -> CHAR
+Rule 102   LITERALCHAR -> ESCAPED
+Rule 103   LITERALCHAR -> WHITESPACE
+Rule 104   LITERALCHAR -> TWODOT_SEP
+Rule 105   LITERALCHAR -> ASPA
+Rule 106   LITERALCHAR -> ESCAPE
+Rule 107   MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE
+Rule 108   NLR -> NEWLINE
+Rule 109   NLR -> <empty>
+Rule 110   MLLITERALBODY -> MLLC
+Rule 111   MLLC -> MLLCONTENTQUOTES MLLC
+Rule 112   MLLCONTENTQUOTES -> MLLCONTENT
+Rule 113   MLLCONTENTQUOTES -> MLLQUOTES
+Rule 114   MLLC -> <empty>
+Rule 115   MLLCONTENT -> MLLCHAR
+Rule 116   MLLCONTENT -> NEWLINE
+Rule 117   MLLCHAR -> CHAR
+Rule 118   MLLCHAR -> DOT_SEP
+Rule 119   MLLCHAR -> WHITESPACE
+Rule 120   MLLCHAR -> VIRGULA
+Rule 121   MLLQUOTES -> DOUBLEAPOSTROFE
+Rule 122   MLLQUOTES -> APOSTROFE
+Rule 123   MLLQUOTES -> <empty>
+Rule 124   ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR
+Rule 125   ARRAYVALUES -> <empty>
+Rule 126   ARRAYVALUES -> WSCOMMENTNEWLINE VALUE WSCOMMENTNEWLINE ARRAYCONTEUDO
+Rule 127   ARRAYCONTEUDO -> <empty>
+Rule 128   ARRAYCONTEUDO -> WSCOMMENTNEWLINE VIRGULA ARRAYVALUES
+Rule 129   WSCOMMENTNEWLINE -> <empty>
+Rule 130   WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE
+Rule 131   INNERCOMMENT -> WHITESPACE
+Rule 132   INNERCOMMENT -> COMMENTOUNAO NEWLINE
+Rule 133   INNERCOMMENT -> NEWLINE
 Rule 134   COMMENTOUNAO -> COMMENT
 Rule 135   COMMENTOUNAO -> <empty>
 Rule 136   TABLE -> STDTABLE
@@ -163,20 +163,20 @@ Rule 145   TABLEARRAY -> ATO KEY ATC
 Terminals, with rules where they appear
 
 ACH                  : 139 140
-APOSTROFE            : 59 99 99 123
-APR                  : 125 138
-ASPA                 : 49 49 75 75 75 89 106
+APOSTROFE            : 59 98 98 122
+APR                  : 124 138
+ASPA                 : 49 49 88 105
 ATC                  : 145
 ATO                  : 145
 BIN                  : 
 BOOLEAN              : 33
-CHAR                 : 23 55 93 102 118
+CHAR                 : 23 55 92 101 117
 COMMENT              : 10 134
 DATE                 : 42
-DOT_SEP              : 29 30 61 85 119
-DOUBLEAPOSTROFE      : 122
-DOUBLEASPA           : 90
-ESCAPE               : 94 107
+DOT_SEP              : 29 30 61 84 118
+DOUBLEAPOSTROFE      : 121
+DOUBLEASPA           : 89
+ESCAPE               : 93 106
 ESC_BACKSPACE        : 65
 ESC_CRETURN          : 68
 ESC_FF               : 66
@@ -188,80 +188,79 @@ ESC_REVERSE          : 64
 ESC_TAB              : 69
 FCH                  : 139 140
 FLOAT                : 44 57
-FPR                  : 125 138
+FPR                  : 124 138
 HEX                  : 
 IGUAL                : 13
 INF                  : 
 INTEGER              : 24 34 56
 MINUS                : 25 58
 NAN                  : 
-NEWLINE              : 11 73 82 94 98 109 117 133
+NEWLINE              : 11 73 81 93 97 108 116 132 133
 OCT                  : 
 PLUS                 : 
 TIME                 : 43
 TIME_DELIM           : 
-TRIPLEAPOSTROFE      : 108 108
+TRIPLEAPOSTROFE      : 107 107
 TRIPLEASPA           : 72 72
-TWODOT_SEP           : 62 84 105
+TWODOT_SEP           : 62 83 104
 UNDERSC0RE           : 
 UNDERSCORE           : 26
-VIRGULA              : 86 121 129 143
-WHITESPACE           : 14 54 92 97 104 120 132 142
+VIRGULA              : 85 120 128 143
+WHITESPACE           : 14 54 91 96 103 119 131 142
 error                : 
 
 Nonterminals, with rules where they appear
 
 ARRAY                : 35
-ARRAYCONTEUDO        : 127
-ARRAYVALUES          : 125 129
+ARRAYCONTEUDO        : 126
+ARRAYVALUES          : 124 128
 ATRIBUICOES          : 6 8
 BASICCHAR            : 50
 BASICSTRING          : 27 46
 BASICUNESCAPED       : 52
 BC                   : 49 50
-COMMENTOUNAO         : 133
-CONTENTQUOTE         : 77
+COMMENTOUNAO         : 132
+CONTENTQUOTE         : 76
 DATETIME             : 37
 DOTKEY               : 17
 DOTSIMPKEY           : 29 30
-ESCAPED              : 53 60 88 103
+ESCAPED              : 53 60 87 102
 EXPRESSION           : 2 4 6 8 10 11
 GROUPS               : 1 4
 INLINEKVALUE         : 140 143
 INLINETABLE          : 36
 INLINETABLEWS        : 140 140 143 143
-INNERCOMMENT         : 131
+INNERCOMMENT         : 130
 KEY                  : 13 138 145
 KVALUE               : 2 8 143 144
-LCH                  : 99 100
-LITERALCHAR          : 100
+LCH                  : 98 99
+LITERALCHAR          : 99
 LITERALSTRING        : 28 48
 LOCALDATE            : 39 41
 LOCALDATETIME        : 38
 LOCALTIME            : 40 41
 MLBASICBODY          : 72
-MLBC                 : 76 77
-MLBCHAR              : 81
+MLBC                 : 75 76
+MLBCHAR              : 80
 MLBCONTENT           : 78
-MLBCSTRDELIM         : 
-MLBESCAPEDNL         : 83
+MLBESCAPEDNL         : 82
 MLBQUOTES            : 79
-MLBUNESCAPED         : 87
-MLLC                 : 111 112
-MLLCHAR              : 116
-MLLCONTENT           : 113
-MLLCONTENTQUOTES     : 112
-MLLITERALBODY        : 108
+MLBUNESCAPED         : 86
+MLLC                 : 110 111
+MLLCHAR              : 115
+MLLCONTENT           : 112
+MLLCONTENTQUOTES     : 111
+MLLITERALBODY        : 107
 MLLITERALSTRING      : 47
-MLLQUOTES            : 114
+MLLQUOTES            : 113
 MLNL                 : 72
 MULTILINEBASICSTRING : 45
-NLR                  : 108
+NLR                  : 107
 OCCURRENCES          : 20 21
 QUOTEDKEY            : 18
 SECCAO               : 4
 SIMPLEKEY            : 16 29 29 30
-SPACENEWLINE         : 95
+SPACENEWLINE         : 94
 STDTABLE             : 136
 STRING               : 32
 TABLE                : 6
@@ -270,9 +269,9 @@ TITLES               : 1 2
 TOML                 : 0
 UNQUOTEDKEY          : 19
 UNQUOTEDKEYAUX       : 20 21
-VALUE                : 13 127
-WHNL                 : 94 95
-WSCOMMENTNEWLINE     : 125 127 129 131
+VALUE                : 13 126
+WHNL                 : 93 94
+WSCOMMENTNEWLINE     : 124 126 126 128 130
 kvwhitespace         : 13 13
 
 Parsing method: LALR
@@ -293,7 +292,7 @@ state 0
     (28) QUOTEDKEY -> . LITERALSTRING
     (20) UNQUOTEDKEY -> . OCCURRENCES UNQUOTEDKEYAUX
     (49) BASICSTRING -> . ASPA BC ASPA
-    (99) LITERALSTRING -> . APOSTROFE LCH APOSTROFE
+    (98) LITERALSTRING -> . APOSTROFE LCH APOSTROFE
     (23) OCCURRENCES -> . CHAR
     (24) OCCURRENCES -> . INTEGER
     (25) OCCURRENCES -> . MINUS
@@ -538,15 +537,15 @@ state 12
 
 state 13
 
-    (99) LITERALSTRING -> APOSTROFE . LCH APOSTROFE
-    (100) LCH -> . LITERALCHAR LCH
-    (101) LCH -> .
-    (102) LITERALCHAR -> . CHAR
-    (103) LITERALCHAR -> . ESCAPED
-    (104) LITERALCHAR -> . WHITESPACE
-    (105) LITERALCHAR -> . TWODOT_SEP
-    (106) LITERALCHAR -> . ASPA
-    (107) LITERALCHAR -> . ESCAPE
+    (98) LITERALSTRING -> APOSTROFE . LCH APOSTROFE
+    (99) LCH -> . LITERALCHAR LCH
+    (100) LCH -> .
+    (101) LITERALCHAR -> . CHAR
+    (102) LITERALCHAR -> . ESCAPED
+    (103) LITERALCHAR -> . WHITESPACE
+    (104) LITERALCHAR -> . TWODOT_SEP
+    (105) LITERALCHAR -> . ASPA
+    (106) LITERALCHAR -> . ESCAPE
     (63) ESCAPED -> . ESC_QUOTE
     (64) ESCAPED -> . ESC_REVERSE
     (65) ESCAPED -> . ESC_BACKSPACE
@@ -557,7 +556,7 @@ state 13
     (70) ESCAPED -> . ESC_HEX4
     (71) ESCAPED -> . ESC_HEX8
 
-    APOSTROFE       reduce using rule 101 (LCH -> .)
+    APOSTROFE       reduce using rule 100 (LCH -> .)
     CHAR            shift and go to state 56
     WHITESPACE      shift and go to state 58
     TWODOT_SEP      shift and go to state 59
@@ -736,7 +735,7 @@ state 23
     (28) QUOTEDKEY -> . LITERALSTRING
     (20) UNQUOTEDKEY -> . OCCURRENCES UNQUOTEDKEYAUX
     (49) BASICSTRING -> . ASPA BC ASPA
-    (99) LITERALSTRING -> . APOSTROFE LCH APOSTROFE
+    (98) LITERALSTRING -> . APOSTROFE LCH APOSTROFE
     (23) OCCURRENCES -> . CHAR
     (24) OCCURRENCES -> . INTEGER
     (25) OCCURRENCES -> . MINUS
@@ -770,7 +769,7 @@ state 24
     (28) QUOTEDKEY -> . LITERALSTRING
     (20) UNQUOTEDKEY -> . OCCURRENCES UNQUOTEDKEYAUX
     (49) BASICSTRING -> . ASPA BC ASPA
-    (99) LITERALSTRING -> . APOSTROFE LCH APOSTROFE
+    (98) LITERALSTRING -> . APOSTROFE LCH APOSTROFE
     (23) OCCURRENCES -> . CHAR
     (24) OCCURRENCES -> . INTEGER
     (25) OCCURRENCES -> . MINUS
@@ -807,7 +806,7 @@ state 25
     (28) QUOTEDKEY -> . LITERALSTRING
     (20) UNQUOTEDKEY -> . OCCURRENCES UNQUOTEDKEYAUX
     (49) BASICSTRING -> . ASPA BC ASPA
-    (99) LITERALSTRING -> . APOSTROFE LCH APOSTROFE
+    (98) LITERALSTRING -> . APOSTROFE LCH APOSTROFE
     (23) OCCURRENCES -> . CHAR
     (24) OCCURRENCES -> . INTEGER
     (25) OCCURRENCES -> . MINUS
@@ -922,7 +921,7 @@ state 30
     (28) QUOTEDKEY -> . LITERALSTRING
     (20) UNQUOTEDKEY -> . OCCURRENCES UNQUOTEDKEYAUX
     (49) BASICSTRING -> . ASPA BC ASPA
-    (99) LITERALSTRING -> . APOSTROFE LCH APOSTROFE
+    (98) LITERALSTRING -> . APOSTROFE LCH APOSTROFE
     (23) OCCURRENCES -> . CHAR
     (24) OCCURRENCES -> . INTEGER
     (25) OCCURRENCES -> . MINUS
@@ -1574,22 +1573,22 @@ state 53
 
 state 54
 
-    (99) LITERALSTRING -> APOSTROFE LCH . APOSTROFE
+    (98) LITERALSTRING -> APOSTROFE LCH . APOSTROFE
 
     APOSTROFE       shift and go to state 74
 
 
 state 55
 
-    (100) LCH -> LITERALCHAR . LCH
-    (100) LCH -> . LITERALCHAR LCH
-    (101) LCH -> .
-    (102) LITERALCHAR -> . CHAR
-    (103) LITERALCHAR -> . ESCAPED
-    (104) LITERALCHAR -> . WHITESPACE
-    (105) LITERALCHAR -> . TWODOT_SEP
-    (106) LITERALCHAR -> . ASPA
-    (107) LITERALCHAR -> . ESCAPE
+    (99) LCH -> LITERALCHAR . LCH
+    (99) LCH -> . LITERALCHAR LCH
+    (100) LCH -> .
+    (101) LITERALCHAR -> . CHAR
+    (102) LITERALCHAR -> . ESCAPED
+    (103) LITERALCHAR -> . WHITESPACE
+    (104) LITERALCHAR -> . TWODOT_SEP
+    (105) LITERALCHAR -> . ASPA
+    (106) LITERALCHAR -> . ESCAPE
     (63) ESCAPED -> . ESC_QUOTE
     (64) ESCAPED -> . ESC_REVERSE
     (65) ESCAPED -> . ESC_BACKSPACE
@@ -1600,7 +1599,7 @@ state 55
     (70) ESCAPED -> . ESC_HEX4
     (71) ESCAPED -> . ESC_HEX8
 
-    APOSTROFE       reduce using rule 101 (LCH -> .)
+    APOSTROFE       reduce using rule 100 (LCH -> .)
     CHAR            shift and go to state 56
     WHITESPACE      shift and go to state 58
     TWODOT_SEP      shift and go to state 59
@@ -1622,128 +1621,128 @@ state 55
 
 state 56
 
-    (102) LITERALCHAR -> CHAR .
+    (101) LITERALCHAR -> CHAR .
 
-    CHAR            reduce using rule 102 (LITERALCHAR -> CHAR .)
-    WHITESPACE      reduce using rule 102 (LITERALCHAR -> CHAR .)
-    TWODOT_SEP      reduce using rule 102 (LITERALCHAR -> CHAR .)
-    ASPA            reduce using rule 102 (LITERALCHAR -> CHAR .)
-    ESCAPE          reduce using rule 102 (LITERALCHAR -> CHAR .)
-    ESC_QUOTE       reduce using rule 102 (LITERALCHAR -> CHAR .)
-    ESC_REVERSE     reduce using rule 102 (LITERALCHAR -> CHAR .)
-    ESC_BACKSPACE   reduce using rule 102 (LITERALCHAR -> CHAR .)
-    ESC_FF          reduce using rule 102 (LITERALCHAR -> CHAR .)
-    ESC_NL          reduce using rule 102 (LITERALCHAR -> CHAR .)
-    ESC_CRETURN     reduce using rule 102 (LITERALCHAR -> CHAR .)
-    ESC_TAB         reduce using rule 102 (LITERALCHAR -> CHAR .)
-    ESC_HEX4        reduce using rule 102 (LITERALCHAR -> CHAR .)
-    ESC_HEX8        reduce using rule 102 (LITERALCHAR -> CHAR .)
-    APOSTROFE       reduce using rule 102 (LITERALCHAR -> CHAR .)
+    CHAR            reduce using rule 101 (LITERALCHAR -> CHAR .)
+    WHITESPACE      reduce using rule 101 (LITERALCHAR -> CHAR .)
+    TWODOT_SEP      reduce using rule 101 (LITERALCHAR -> CHAR .)
+    ASPA            reduce using rule 101 (LITERALCHAR -> CHAR .)
+    ESCAPE          reduce using rule 101 (LITERALCHAR -> CHAR .)
+    ESC_QUOTE       reduce using rule 101 (LITERALCHAR -> CHAR .)
+    ESC_REVERSE     reduce using rule 101 (LITERALCHAR -> CHAR .)
+    ESC_BACKSPACE   reduce using rule 101 (LITERALCHAR -> CHAR .)
+    ESC_FF          reduce using rule 101 (LITERALCHAR -> CHAR .)
+    ESC_NL          reduce using rule 101 (LITERALCHAR -> CHAR .)
+    ESC_CRETURN     reduce using rule 101 (LITERALCHAR -> CHAR .)
+    ESC_TAB         reduce using rule 101 (LITERALCHAR -> CHAR .)
+    ESC_HEX4        reduce using rule 101 (LITERALCHAR -> CHAR .)
+    ESC_HEX8        reduce using rule 101 (LITERALCHAR -> CHAR .)
+    APOSTROFE       reduce using rule 101 (LITERALCHAR -> CHAR .)
 
 
 state 57
 
-    (103) LITERALCHAR -> ESCAPED .
+    (102) LITERALCHAR -> ESCAPED .
 
-    CHAR            reduce using rule 103 (LITERALCHAR -> ESCAPED .)
-    WHITESPACE      reduce using rule 103 (LITERALCHAR -> ESCAPED .)
-    TWODOT_SEP      reduce using rule 103 (LITERALCHAR -> ESCAPED .)
-    ASPA            reduce using rule 103 (LITERALCHAR -> ESCAPED .)
-    ESCAPE          reduce using rule 103 (LITERALCHAR -> ESCAPED .)
-    ESC_QUOTE       reduce using rule 103 (LITERALCHAR -> ESCAPED .)
-    ESC_REVERSE     reduce using rule 103 (LITERALCHAR -> ESCAPED .)
-    ESC_BACKSPACE   reduce using rule 103 (LITERALCHAR -> ESCAPED .)
-    ESC_FF          reduce using rule 103 (LITERALCHAR -> ESCAPED .)
-    ESC_NL          reduce using rule 103 (LITERALCHAR -> ESCAPED .)
-    ESC_CRETURN     reduce using rule 103 (LITERALCHAR -> ESCAPED .)
-    ESC_TAB         reduce using rule 103 (LITERALCHAR -> ESCAPED .)
-    ESC_HEX4        reduce using rule 103 (LITERALCHAR -> ESCAPED .)
-    ESC_HEX8        reduce using rule 103 (LITERALCHAR -> ESCAPED .)
-    APOSTROFE       reduce using rule 103 (LITERALCHAR -> ESCAPED .)
+    CHAR            reduce using rule 102 (LITERALCHAR -> ESCAPED .)
+    WHITESPACE      reduce using rule 102 (LITERALCHAR -> ESCAPED .)
+    TWODOT_SEP      reduce using rule 102 (LITERALCHAR -> ESCAPED .)
+    ASPA            reduce using rule 102 (LITERALCHAR -> ESCAPED .)
+    ESCAPE          reduce using rule 102 (LITERALCHAR -> ESCAPED .)
+    ESC_QUOTE       reduce using rule 102 (LITERALCHAR -> ESCAPED .)
+    ESC_REVERSE     reduce using rule 102 (LITERALCHAR -> ESCAPED .)
+    ESC_BACKSPACE   reduce using rule 102 (LITERALCHAR -> ESCAPED .)
+    ESC_FF          reduce using rule 102 (LITERALCHAR -> ESCAPED .)
+    ESC_NL          reduce using rule 102 (LITERALCHAR -> ESCAPED .)
+    ESC_CRETURN     reduce using rule 102 (LITERALCHAR -> ESCAPED .)
+    ESC_TAB         reduce using rule 102 (LITERALCHAR -> ESCAPED .)
+    ESC_HEX4        reduce using rule 102 (LITERALCHAR -> ESCAPED .)
+    ESC_HEX8        reduce using rule 102 (LITERALCHAR -> ESCAPED .)
+    APOSTROFE       reduce using rule 102 (LITERALCHAR -> ESCAPED .)
 
 
 state 58
 
-    (104) LITERALCHAR -> WHITESPACE .
+    (103) LITERALCHAR -> WHITESPACE .
 
-    CHAR            reduce using rule 104 (LITERALCHAR -> WHITESPACE .)
-    WHITESPACE      reduce using rule 104 (LITERALCHAR -> WHITESPACE .)
-    TWODOT_SEP      reduce using rule 104 (LITERALCHAR -> WHITESPACE .)
-    ASPA            reduce using rule 104 (LITERALCHAR -> WHITESPACE .)
-    ESCAPE          reduce using rule 104 (LITERALCHAR -> WHITESPACE .)
-    ESC_QUOTE       reduce using rule 104 (LITERALCHAR -> WHITESPACE .)
-    ESC_REVERSE     reduce using rule 104 (LITERALCHAR -> WHITESPACE .)
-    ESC_BACKSPACE   reduce using rule 104 (LITERALCHAR -> WHITESPACE .)
-    ESC_FF          reduce using rule 104 (LITERALCHAR -> WHITESPACE .)
-    ESC_NL          reduce using rule 104 (LITERALCHAR -> WHITESPACE .)
-    ESC_CRETURN     reduce using rule 104 (LITERALCHAR -> WHITESPACE .)
-    ESC_TAB         reduce using rule 104 (LITERALCHAR -> WHITESPACE .)
-    ESC_HEX4        reduce using rule 104 (LITERALCHAR -> WHITESPACE .)
-    ESC_HEX8        reduce using rule 104 (LITERALCHAR -> WHITESPACE .)
-    APOSTROFE       reduce using rule 104 (LITERALCHAR -> WHITESPACE .)
+    CHAR            reduce using rule 103 (LITERALCHAR -> WHITESPACE .)
+    WHITESPACE      reduce using rule 103 (LITERALCHAR -> WHITESPACE .)
+    TWODOT_SEP      reduce using rule 103 (LITERALCHAR -> WHITESPACE .)
+    ASPA            reduce using rule 103 (LITERALCHAR -> WHITESPACE .)
+    ESCAPE          reduce using rule 103 (LITERALCHAR -> WHITESPACE .)
+    ESC_QUOTE       reduce using rule 103 (LITERALCHAR -> WHITESPACE .)
+    ESC_REVERSE     reduce using rule 103 (LITERALCHAR -> WHITESPACE .)
+    ESC_BACKSPACE   reduce using rule 103 (LITERALCHAR -> WHITESPACE .)
+    ESC_FF          reduce using rule 103 (LITERALCHAR -> WHITESPACE .)
+    ESC_NL          reduce using rule 103 (LITERALCHAR -> WHITESPACE .)
+    ESC_CRETURN     reduce using rule 103 (LITERALCHAR -> WHITESPACE .)
+    ESC_TAB         reduce using rule 103 (LITERALCHAR -> WHITESPACE .)
+    ESC_HEX4        reduce using rule 103 (LITERALCHAR -> WHITESPACE .)
+    ESC_HEX8        reduce using rule 103 (LITERALCHAR -> WHITESPACE .)
+    APOSTROFE       reduce using rule 103 (LITERALCHAR -> WHITESPACE .)
 
 
 state 59
 
-    (105) LITERALCHAR -> TWODOT_SEP .
+    (104) LITERALCHAR -> TWODOT_SEP .
 
-    CHAR            reduce using rule 105 (LITERALCHAR -> TWODOT_SEP .)
-    WHITESPACE      reduce using rule 105 (LITERALCHAR -> TWODOT_SEP .)
-    TWODOT_SEP      reduce using rule 105 (LITERALCHAR -> TWODOT_SEP .)
-    ASPA            reduce using rule 105 (LITERALCHAR -> TWODOT_SEP .)
-    ESCAPE          reduce using rule 105 (LITERALCHAR -> TWODOT_SEP .)
-    ESC_QUOTE       reduce using rule 105 (LITERALCHAR -> TWODOT_SEP .)
-    ESC_REVERSE     reduce using rule 105 (LITERALCHAR -> TWODOT_SEP .)
-    ESC_BACKSPACE   reduce using rule 105 (LITERALCHAR -> TWODOT_SEP .)
-    ESC_FF          reduce using rule 105 (LITERALCHAR -> TWODOT_SEP .)
-    ESC_NL          reduce using rule 105 (LITERALCHAR -> TWODOT_SEP .)
-    ESC_CRETURN     reduce using rule 105 (LITERALCHAR -> TWODOT_SEP .)
-    ESC_TAB         reduce using rule 105 (LITERALCHAR -> TWODOT_SEP .)
-    ESC_HEX4        reduce using rule 105 (LITERALCHAR -> TWODOT_SEP .)
-    ESC_HEX8        reduce using rule 105 (LITERALCHAR -> TWODOT_SEP .)
-    APOSTROFE       reduce using rule 105 (LITERALCHAR -> TWODOT_SEP .)
+    CHAR            reduce using rule 104 (LITERALCHAR -> TWODOT_SEP .)
+    WHITESPACE      reduce using rule 104 (LITERALCHAR -> TWODOT_SEP .)
+    TWODOT_SEP      reduce using rule 104 (LITERALCHAR -> TWODOT_SEP .)
+    ASPA            reduce using rule 104 (LITERALCHAR -> TWODOT_SEP .)
+    ESCAPE          reduce using rule 104 (LITERALCHAR -> TWODOT_SEP .)
+    ESC_QUOTE       reduce using rule 104 (LITERALCHAR -> TWODOT_SEP .)
+    ESC_REVERSE     reduce using rule 104 (LITERALCHAR -> TWODOT_SEP .)
+    ESC_BACKSPACE   reduce using rule 104 (LITERALCHAR -> TWODOT_SEP .)
+    ESC_FF          reduce using rule 104 (LITERALCHAR -> TWODOT_SEP .)
+    ESC_NL          reduce using rule 104 (LITERALCHAR -> TWODOT_SEP .)
+    ESC_CRETURN     reduce using rule 104 (LITERALCHAR -> TWODOT_SEP .)
+    ESC_TAB         reduce using rule 104 (LITERALCHAR -> TWODOT_SEP .)
+    ESC_HEX4        reduce using rule 104 (LITERALCHAR -> TWODOT_SEP .)
+    ESC_HEX8        reduce using rule 104 (LITERALCHAR -> TWODOT_SEP .)
+    APOSTROFE       reduce using rule 104 (LITERALCHAR -> TWODOT_SEP .)
 
 
 state 60
 
-    (106) LITERALCHAR -> ASPA .
+    (105) LITERALCHAR -> ASPA .
 
-    CHAR            reduce using rule 106 (LITERALCHAR -> ASPA .)
-    WHITESPACE      reduce using rule 106 (LITERALCHAR -> ASPA .)
-    TWODOT_SEP      reduce using rule 106 (LITERALCHAR -> ASPA .)
-    ASPA            reduce using rule 106 (LITERALCHAR -> ASPA .)
-    ESCAPE          reduce using rule 106 (LITERALCHAR -> ASPA .)
-    ESC_QUOTE       reduce using rule 106 (LITERALCHAR -> ASPA .)
-    ESC_REVERSE     reduce using rule 106 (LITERALCHAR -> ASPA .)
-    ESC_BACKSPACE   reduce using rule 106 (LITERALCHAR -> ASPA .)
-    ESC_FF          reduce using rule 106 (LITERALCHAR -> ASPA .)
-    ESC_NL          reduce using rule 106 (LITERALCHAR -> ASPA .)
-    ESC_CRETURN     reduce using rule 106 (LITERALCHAR -> ASPA .)
-    ESC_TAB         reduce using rule 106 (LITERALCHAR -> ASPA .)
-    ESC_HEX4        reduce using rule 106 (LITERALCHAR -> ASPA .)
-    ESC_HEX8        reduce using rule 106 (LITERALCHAR -> ASPA .)
-    APOSTROFE       reduce using rule 106 (LITERALCHAR -> ASPA .)
+    CHAR            reduce using rule 105 (LITERALCHAR -> ASPA .)
+    WHITESPACE      reduce using rule 105 (LITERALCHAR -> ASPA .)
+    TWODOT_SEP      reduce using rule 105 (LITERALCHAR -> ASPA .)
+    ASPA            reduce using rule 105 (LITERALCHAR -> ASPA .)
+    ESCAPE          reduce using rule 105 (LITERALCHAR -> ASPA .)
+    ESC_QUOTE       reduce using rule 105 (LITERALCHAR -> ASPA .)
+    ESC_REVERSE     reduce using rule 105 (LITERALCHAR -> ASPA .)
+    ESC_BACKSPACE   reduce using rule 105 (LITERALCHAR -> ASPA .)
+    ESC_FF          reduce using rule 105 (LITERALCHAR -> ASPA .)
+    ESC_NL          reduce using rule 105 (LITERALCHAR -> ASPA .)
+    ESC_CRETURN     reduce using rule 105 (LITERALCHAR -> ASPA .)
+    ESC_TAB         reduce using rule 105 (LITERALCHAR -> ASPA .)
+    ESC_HEX4        reduce using rule 105 (LITERALCHAR -> ASPA .)
+    ESC_HEX8        reduce using rule 105 (LITERALCHAR -> ASPA .)
+    APOSTROFE       reduce using rule 105 (LITERALCHAR -> ASPA .)
 
 
 state 61
 
-    (107) LITERALCHAR -> ESCAPE .
+    (106) LITERALCHAR -> ESCAPE .
 
-    CHAR            reduce using rule 107 (LITERALCHAR -> ESCAPE .)
-    WHITESPACE      reduce using rule 107 (LITERALCHAR -> ESCAPE .)
-    TWODOT_SEP      reduce using rule 107 (LITERALCHAR -> ESCAPE .)
-    ASPA            reduce using rule 107 (LITERALCHAR -> ESCAPE .)
-    ESCAPE          reduce using rule 107 (LITERALCHAR -> ESCAPE .)
-    ESC_QUOTE       reduce using rule 107 (LITERALCHAR -> ESCAPE .)
-    ESC_REVERSE     reduce using rule 107 (LITERALCHAR -> ESCAPE .)
-    ESC_BACKSPACE   reduce using rule 107 (LITERALCHAR -> ESCAPE .)
-    ESC_FF          reduce using rule 107 (LITERALCHAR -> ESCAPE .)
-    ESC_NL          reduce using rule 107 (LITERALCHAR -> ESCAPE .)
-    ESC_CRETURN     reduce using rule 107 (LITERALCHAR -> ESCAPE .)
-    ESC_TAB         reduce using rule 107 (LITERALCHAR -> ESCAPE .)
-    ESC_HEX4        reduce using rule 107 (LITERALCHAR -> ESCAPE .)
-    ESC_HEX8        reduce using rule 107 (LITERALCHAR -> ESCAPE .)
-    APOSTROFE       reduce using rule 107 (LITERALCHAR -> ESCAPE .)
+    CHAR            reduce using rule 106 (LITERALCHAR -> ESCAPE .)
+    WHITESPACE      reduce using rule 106 (LITERALCHAR -> ESCAPE .)
+    TWODOT_SEP      reduce using rule 106 (LITERALCHAR -> ESCAPE .)
+    ASPA            reduce using rule 106 (LITERALCHAR -> ESCAPE .)
+    ESCAPE          reduce using rule 106 (LITERALCHAR -> ESCAPE .)
+    ESC_QUOTE       reduce using rule 106 (LITERALCHAR -> ESCAPE .)
+    ESC_REVERSE     reduce using rule 106 (LITERALCHAR -> ESCAPE .)
+    ESC_BACKSPACE   reduce using rule 106 (LITERALCHAR -> ESCAPE .)
+    ESC_FF          reduce using rule 106 (LITERALCHAR -> ESCAPE .)
+    ESC_NL          reduce using rule 106 (LITERALCHAR -> ESCAPE .)
+    ESC_CRETURN     reduce using rule 106 (LITERALCHAR -> ESCAPE .)
+    ESC_TAB         reduce using rule 106 (LITERALCHAR -> ESCAPE .)
+    ESC_HEX4        reduce using rule 106 (LITERALCHAR -> ESCAPE .)
+    ESC_HEX8        reduce using rule 106 (LITERALCHAR -> ESCAPE .)
+    APOSTROFE       reduce using rule 106 (LITERALCHAR -> ESCAPE .)
 
 
 state 62
@@ -1792,7 +1791,7 @@ state 63
     (28) QUOTEDKEY -> . LITERALSTRING
     (20) UNQUOTEDKEY -> . OCCURRENCES UNQUOTEDKEYAUX
     (49) BASICSTRING -> . ASPA BC ASPA
-    (99) LITERALSTRING -> . APOSTROFE LCH APOSTROFE
+    (98) LITERALSTRING -> . APOSTROFE LCH APOSTROFE
     (23) OCCURRENCES -> . CHAR
     (24) OCCURRENCES -> . INTEGER
     (25) OCCURRENCES -> . MINUS
@@ -1959,33 +1958,33 @@ state 73
 
 state 74
 
-    (99) LITERALSTRING -> APOSTROFE LCH APOSTROFE .
+    (98) LITERALSTRING -> APOSTROFE LCH APOSTROFE .
 
-    DOT_SEP         reduce using rule 99 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
-    WHITESPACE      reduce using rule 99 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
-    IGUAL           reduce using rule 99 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
-    FPR             reduce using rule 99 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
-    ATC             reduce using rule 99 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
-    COMMENT         reduce using rule 99 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
-    NEWLINE         reduce using rule 99 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
-    ASPA            reduce using rule 99 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
-    APOSTROFE       reduce using rule 99 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
-    CHAR            reduce using rule 99 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
-    INTEGER         reduce using rule 99 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
-    MINUS           reduce using rule 99 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
-    UNDERSCORE      reduce using rule 99 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
-    APR             reduce using rule 99 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
-    ATO             reduce using rule 99 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
-    $end            reduce using rule 99 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
-    FCH             reduce using rule 99 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
-    VIRGULA         reduce using rule 99 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
+    DOT_SEP         reduce using rule 98 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
+    WHITESPACE      reduce using rule 98 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
+    IGUAL           reduce using rule 98 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
+    FPR             reduce using rule 98 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
+    ATC             reduce using rule 98 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
+    COMMENT         reduce using rule 98 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
+    NEWLINE         reduce using rule 98 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
+    ASPA            reduce using rule 98 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
+    APOSTROFE       reduce using rule 98 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
+    CHAR            reduce using rule 98 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
+    INTEGER         reduce using rule 98 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
+    MINUS           reduce using rule 98 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
+    UNDERSCORE      reduce using rule 98 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
+    APR             reduce using rule 98 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
+    ATO             reduce using rule 98 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
+    $end            reduce using rule 98 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
+    FCH             reduce using rule 98 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
+    VIRGULA         reduce using rule 98 (LITERALSTRING -> APOSTROFE LCH APOSTROFE .)
 
 
 state 75
 
-    (100) LCH -> LITERALCHAR LCH .
+    (99) LCH -> LITERALCHAR LCH .
 
-    APOSTROFE       reduce using rule 100 (LCH -> LITERALCHAR LCH .)
+    APOSTROFE       reduce using rule 99 (LCH -> LITERALCHAR LCH .)
 
 
 state 76
@@ -2080,7 +2079,7 @@ state 81
     (46) STRING -> . BASICSTRING
     (47) STRING -> . MLLITERALSTRING
     (48) STRING -> . LITERALSTRING
-    (125) ARRAY -> . APR ARRAYVALUES WSCOMMENTNEWLINE FPR
+    (124) ARRAY -> . APR ARRAYVALUES WSCOMMENTNEWLINE FPR
     (139) INLINETABLE -> . ACH FCH
     (140) INLINETABLE -> . ACH INLINETABLEWS INLINEKVALUE INLINETABLEWS FCH
     (38) DATETIME -> . LOCALDATETIME
@@ -2088,8 +2087,8 @@ state 81
     (40) DATETIME -> . LOCALTIME
     (72) MULTILINEBASICSTRING -> . TRIPLEASPA MLNL MLBASICBODY TRIPLEASPA
     (49) BASICSTRING -> . ASPA BC ASPA
-    (108) MLLITERALSTRING -> . TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE
-    (99) LITERALSTRING -> . APOSTROFE LCH APOSTROFE
+    (107) MLLITERALSTRING -> . TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE
+    (98) LITERALSTRING -> . APOSTROFE LCH APOSTROFE
     (41) LOCALDATETIME -> . LOCALDATE LOCALTIME
     (42) LOCALDATE -> . DATE
     (43) LOCALTIME -> . TIME
@@ -2128,7 +2127,7 @@ state 82
     (28) QUOTEDKEY -> . LITERALSTRING
     (20) UNQUOTEDKEY -> . OCCURRENCES UNQUOTEDKEYAUX
     (49) BASICSTRING -> . ASPA BC ASPA
-    (99) LITERALSTRING -> . APOSTROFE LCH APOSTROFE
+    (98) LITERALSTRING -> . APOSTROFE LCH APOSTROFE
     (23) OCCURRENCES -> . CHAR
     (24) OCCURRENCES -> . INTEGER
     (25) OCCURRENCES -> . MINUS
@@ -2173,7 +2172,7 @@ state 84
     (28) QUOTEDKEY -> . LITERALSTRING
     (20) UNQUOTEDKEY -> . OCCURRENCES UNQUOTEDKEYAUX
     (49) BASICSTRING -> . ASPA BC ASPA
-    (99) LITERALSTRING -> . APOSTROFE LCH APOSTROFE
+    (98) LITERALSTRING -> . APOSTROFE LCH APOSTROFE
     (23) OCCURRENCES -> . CHAR
     (24) OCCURRENCES -> . INTEGER
     (25) OCCURRENCES -> . MINUS
@@ -2455,37 +2454,40 @@ state 96
 
 state 97
 
-    (125) ARRAY -> APR . ARRAYVALUES WSCOMMENTNEWLINE FPR
-    (126) ARRAYVALUES -> .
-    (127) ARRAYVALUES -> . WSCOMMENTNEWLINE VALUE ARRAYCONTEUDO
-    (130) WSCOMMENTNEWLINE -> .
-    (131) WSCOMMENTNEWLINE -> . INNERCOMMENT WSCOMMENTNEWLINE
-    (132) INNERCOMMENT -> . WHITESPACE
-    (133) INNERCOMMENT -> . COMMENTOUNAO NEWLINE
+    (124) ARRAY -> APR . ARRAYVALUES WSCOMMENTNEWLINE FPR
+    (125) ARRAYVALUES -> .
+    (126) ARRAYVALUES -> . WSCOMMENTNEWLINE VALUE WSCOMMENTNEWLINE ARRAYCONTEUDO
+    (129) WSCOMMENTNEWLINE -> .
+    (130) WSCOMMENTNEWLINE -> . INNERCOMMENT WSCOMMENTNEWLINE
+    (131) INNERCOMMENT -> . WHITESPACE
+    (132) INNERCOMMENT -> . COMMENTOUNAO NEWLINE
+    (133) INNERCOMMENT -> . NEWLINE
     (134) COMMENTOUNAO -> . COMMENT
     (135) COMMENTOUNAO -> .
 
   ! shift/reduce conflict for WHITESPACE resolved as shift
+  ! shift/reduce conflict for NEWLINE resolved as shift
   ! shift/reduce conflict for COMMENT resolved as shift
-  ! reduce/reduce conflict for NEWLINE resolved using rule 126 (ARRAYVALUES -> .)
-    FPR             reduce using rule 126 (ARRAYVALUES -> .)
-    NEWLINE         reduce using rule 126 (ARRAYVALUES -> .)
-    BOOLEAN         reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    INTEGER         reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    FLOAT           reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    APR             reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    ACH             reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    TRIPLEASPA      reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    ASPA            reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    TRIPLEAPOSTROFE reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    APOSTROFE       reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    DATE            reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    TIME            reduce using rule 130 (WSCOMMENTNEWLINE -> .)
+  ! shift/reduce conflict for NEWLINE resolved as shift
+    FPR             reduce using rule 125 (ARRAYVALUES -> .)
+    BOOLEAN         reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    INTEGER         reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    FLOAT           reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    APR             reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    ACH             reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    TRIPLEASPA      reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    ASPA            reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    TRIPLEAPOSTROFE reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    APOSTROFE       reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    DATE            reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    TIME            reduce using rule 129 (WSCOMMENTNEWLINE -> .)
     WHITESPACE      shift and go to state 111
-    COMMENT         shift and go to state 113
+    NEWLINE         shift and go to state 113
+    COMMENT         shift and go to state 114
 
-  ! WHITESPACE      [ reduce using rule 126 (ARRAYVALUES -> .) ]
-  ! COMMENT         [ reduce using rule 126 (ARRAYVALUES -> .) ]
+  ! WHITESPACE      [ reduce using rule 125 (ARRAYVALUES -> .) ]
+  ! NEWLINE         [ reduce using rule 125 (ARRAYVALUES -> .) ]
+  ! COMMENT         [ reduce using rule 125 (ARRAYVALUES -> .) ]
   ! NEWLINE         [ reduce using rule 135 (COMMENTOUNAO -> .) ]
 
     ARRAYVALUES                    shift and go to state 108
@@ -2500,16 +2502,16 @@ state 98
     (141) INLINETABLEWS -> .
     (142) INLINETABLEWS -> . WHITESPACE
 
-    FCH             shift and go to state 114
+    FCH             shift and go to state 115
     ASPA            reduce using rule 141 (INLINETABLEWS -> .)
     APOSTROFE       reduce using rule 141 (INLINETABLEWS -> .)
     CHAR            reduce using rule 141 (INLINETABLEWS -> .)
     INTEGER         reduce using rule 141 (INLINETABLEWS -> .)
     MINUS           reduce using rule 141 (INLINETABLEWS -> .)
     UNDERSCORE      reduce using rule 141 (INLINETABLEWS -> .)
-    WHITESPACE      shift and go to state 116
+    WHITESPACE      shift and go to state 117
 
-    INLINETABLEWS                  shift and go to state 115
+    INLINETABLEWS                  shift and go to state 116
 
 state 99
 
@@ -2555,7 +2557,7 @@ state 100
     FPR             reduce using rule 39 (DATETIME -> LOCALDATE .)
     TIME            shift and go to state 105
 
-    LOCALTIME                      shift and go to state 117
+    LOCALTIME                      shift and go to state 118
 
 state 101
 
@@ -2585,7 +2587,7 @@ state 102
     (74) MLNL -> .
 
   ! shift/reduce conflict for NEWLINE resolved as shift
-    NEWLINE         shift and go to state 119
+    NEWLINE         shift and go to state 120
     TWODOT_SEP      reduce using rule 74 (MLNL -> .)
     DOT_SEP         reduce using rule 74 (MLNL -> .)
     VIRGULA         reduce using rule 74 (MLNL -> .)
@@ -2607,27 +2609,27 @@ state 102
 
   ! NEWLINE         [ reduce using rule 74 (MLNL -> .) ]
 
-    MLNL                           shift and go to state 118
+    MLNL                           shift and go to state 119
 
 state 103
 
-    (108) MLLITERALSTRING -> TRIPLEAPOSTROFE . NLR MLLITERALBODY TRIPLEAPOSTROFE
-    (109) NLR -> . NEWLINE
-    (110) NLR -> .
+    (107) MLLITERALSTRING -> TRIPLEAPOSTROFE . NLR MLLITERALBODY TRIPLEAPOSTROFE
+    (108) NLR -> . NEWLINE
+    (109) NLR -> .
 
   ! shift/reduce conflict for NEWLINE resolved as shift
-    NEWLINE         shift and go to state 121
-    DOUBLEAPOSTROFE reduce using rule 110 (NLR -> .)
-    APOSTROFE       reduce using rule 110 (NLR -> .)
-    CHAR            reduce using rule 110 (NLR -> .)
-    DOT_SEP         reduce using rule 110 (NLR -> .)
-    WHITESPACE      reduce using rule 110 (NLR -> .)
-    VIRGULA         reduce using rule 110 (NLR -> .)
-    TRIPLEAPOSTROFE reduce using rule 110 (NLR -> .)
+    NEWLINE         shift and go to state 122
+    DOUBLEAPOSTROFE reduce using rule 109 (NLR -> .)
+    APOSTROFE       reduce using rule 109 (NLR -> .)
+    CHAR            reduce using rule 109 (NLR -> .)
+    DOT_SEP         reduce using rule 109 (NLR -> .)
+    WHITESPACE      reduce using rule 109 (NLR -> .)
+    VIRGULA         reduce using rule 109 (NLR -> .)
+    TRIPLEAPOSTROFE reduce using rule 109 (NLR -> .)
 
-  ! NEWLINE         [ reduce using rule 110 (NLR -> .) ]
+  ! NEWLINE         [ reduce using rule 109 (NLR -> .) ]
 
-    NLR                            shift and go to state 120
+    NLR                            shift and go to state 121
 
 state 104
 
@@ -2684,7 +2686,7 @@ state 106
     FPR             reduce using rule 31 (DOTSIMPKEY -> .)
     ATC             reduce using rule 31 (DOTSIMPKEY -> .)
 
-    DOTSIMPKEY                     shift and go to state 122
+    DOTSIMPKEY                     shift and go to state 123
 
 state 107
 
@@ -2699,26 +2701,30 @@ state 107
 
 state 108
 
-    (125) ARRAY -> APR ARRAYVALUES . WSCOMMENTNEWLINE FPR
-    (130) WSCOMMENTNEWLINE -> .
-    (131) WSCOMMENTNEWLINE -> . INNERCOMMENT WSCOMMENTNEWLINE
-    (132) INNERCOMMENT -> . WHITESPACE
-    (133) INNERCOMMENT -> . COMMENTOUNAO NEWLINE
+    (124) ARRAY -> APR ARRAYVALUES . WSCOMMENTNEWLINE FPR
+    (129) WSCOMMENTNEWLINE -> .
+    (130) WSCOMMENTNEWLINE -> . INNERCOMMENT WSCOMMENTNEWLINE
+    (131) INNERCOMMENT -> . WHITESPACE
+    (132) INNERCOMMENT -> . COMMENTOUNAO NEWLINE
+    (133) INNERCOMMENT -> . NEWLINE
     (134) COMMENTOUNAO -> . COMMENT
     (135) COMMENTOUNAO -> .
 
-    FPR             reduce using rule 130 (WSCOMMENTNEWLINE -> .)
+  ! shift/reduce conflict for NEWLINE resolved as shift
+    FPR             reduce using rule 129 (WSCOMMENTNEWLINE -> .)
     WHITESPACE      shift and go to state 111
-    COMMENT         shift and go to state 113
-    NEWLINE         reduce using rule 135 (COMMENTOUNAO -> .)
+    NEWLINE         shift and go to state 113
+    COMMENT         shift and go to state 114
 
-    WSCOMMENTNEWLINE               shift and go to state 123
+  ! NEWLINE         [ reduce using rule 135 (COMMENTOUNAO -> .) ]
+
+    WSCOMMENTNEWLINE               shift and go to state 124
     INNERCOMMENT                   shift and go to state 110
     COMMENTOUNAO                   shift and go to state 112
 
 state 109
 
-    (127) ARRAYVALUES -> WSCOMMENTNEWLINE . VALUE ARRAYCONTEUDO
+    (126) ARRAYVALUES -> WSCOMMENTNEWLINE . VALUE WSCOMMENTNEWLINE ARRAYCONTEUDO
     (32) VALUE -> . STRING
     (33) VALUE -> . BOOLEAN
     (34) VALUE -> . INTEGER
@@ -2730,7 +2736,7 @@ state 109
     (46) STRING -> . BASICSTRING
     (47) STRING -> . MLLITERALSTRING
     (48) STRING -> . LITERALSTRING
-    (125) ARRAY -> . APR ARRAYVALUES WSCOMMENTNEWLINE FPR
+    (124) ARRAY -> . APR ARRAYVALUES WSCOMMENTNEWLINE FPR
     (139) INLINETABLE -> . ACH FCH
     (140) INLINETABLE -> . ACH INLINETABLEWS INLINEKVALUE INLINETABLEWS FCH
     (38) DATETIME -> . LOCALDATETIME
@@ -2738,8 +2744,8 @@ state 109
     (40) DATETIME -> . LOCALTIME
     (72) MULTILINEBASICSTRING -> . TRIPLEASPA MLNL MLBASICBODY TRIPLEASPA
     (49) BASICSTRING -> . ASPA BC ASPA
-    (108) MLLITERALSTRING -> . TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE
-    (99) LITERALSTRING -> . APOSTROFE LCH APOSTROFE
+    (107) MLLITERALSTRING -> . TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE
+    (98) LITERALSTRING -> . APOSTROFE LCH APOSTROFE
     (41) LOCALDATETIME -> . LOCALDATE LOCALTIME
     (42) LOCALDATE -> . DATE
     (43) LOCALTIME -> . TIME
@@ -2756,7 +2762,7 @@ state 109
     DATE            shift and go to state 104
     TIME            shift and go to state 105
 
-    VALUE                          shift and go to state 124
+    VALUE                          shift and go to state 125
     STRING                         shift and go to state 86
     ARRAY                          shift and go to state 89
     INLINETABLE                    shift and go to state 90
@@ -2771,72 +2777,104 @@ state 109
 
 state 110
 
-    (131) WSCOMMENTNEWLINE -> INNERCOMMENT . WSCOMMENTNEWLINE
-    (130) WSCOMMENTNEWLINE -> .
-    (131) WSCOMMENTNEWLINE -> . INNERCOMMENT WSCOMMENTNEWLINE
-    (132) INNERCOMMENT -> . WHITESPACE
-    (133) INNERCOMMENT -> . COMMENTOUNAO NEWLINE
+    (130) WSCOMMENTNEWLINE -> INNERCOMMENT . WSCOMMENTNEWLINE
+    (129) WSCOMMENTNEWLINE -> .
+    (130) WSCOMMENTNEWLINE -> . INNERCOMMENT WSCOMMENTNEWLINE
+    (131) INNERCOMMENT -> . WHITESPACE
+    (132) INNERCOMMENT -> . COMMENTOUNAO NEWLINE
+    (133) INNERCOMMENT -> . NEWLINE
     (134) COMMENTOUNAO -> . COMMENT
     (135) COMMENTOUNAO -> .
 
-    BOOLEAN         reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    INTEGER         reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    FLOAT           reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    APR             reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    ACH             reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    TRIPLEASPA      reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    ASPA            reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    TRIPLEAPOSTROFE reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    APOSTROFE       reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    DATE            reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    TIME            reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    FPR             reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    VIRGULA         reduce using rule 130 (WSCOMMENTNEWLINE -> .)
+  ! shift/reduce conflict for WHITESPACE resolved as shift
+  ! shift/reduce conflict for NEWLINE resolved as shift
+  ! shift/reduce conflict for COMMENT resolved as shift
+  ! shift/reduce conflict for NEWLINE resolved as shift
+    BOOLEAN         reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    INTEGER         reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    FLOAT           reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    APR             reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    ACH             reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    TRIPLEASPA      reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    ASPA            reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    TRIPLEAPOSTROFE reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    APOSTROFE       reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    DATE            reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    TIME            reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    FPR             reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    VIRGULA         reduce using rule 129 (WSCOMMENTNEWLINE -> .)
     WHITESPACE      shift and go to state 111
-    COMMENT         shift and go to state 113
-    NEWLINE         reduce using rule 135 (COMMENTOUNAO -> .)
+    NEWLINE         shift and go to state 113
+    COMMENT         shift and go to state 114
+
+  ! WHITESPACE      [ reduce using rule 129 (WSCOMMENTNEWLINE -> .) ]
+  ! NEWLINE         [ reduce using rule 129 (WSCOMMENTNEWLINE -> .) ]
+  ! COMMENT         [ reduce using rule 129 (WSCOMMENTNEWLINE -> .) ]
+  ! NEWLINE         [ reduce using rule 135 (COMMENTOUNAO -> .) ]
 
     INNERCOMMENT                   shift and go to state 110
-    WSCOMMENTNEWLINE               shift and go to state 125
+    WSCOMMENTNEWLINE               shift and go to state 126
     COMMENTOUNAO                   shift and go to state 112
 
 state 111
 
-    (132) INNERCOMMENT -> WHITESPACE .
+    (131) INNERCOMMENT -> WHITESPACE .
 
-    WHITESPACE      reduce using rule 132 (INNERCOMMENT -> WHITESPACE .)
-    COMMENT         reduce using rule 132 (INNERCOMMENT -> WHITESPACE .)
-    NEWLINE         reduce using rule 132 (INNERCOMMENT -> WHITESPACE .)
-    BOOLEAN         reduce using rule 132 (INNERCOMMENT -> WHITESPACE .)
-    INTEGER         reduce using rule 132 (INNERCOMMENT -> WHITESPACE .)
-    FLOAT           reduce using rule 132 (INNERCOMMENT -> WHITESPACE .)
-    APR             reduce using rule 132 (INNERCOMMENT -> WHITESPACE .)
-    ACH             reduce using rule 132 (INNERCOMMENT -> WHITESPACE .)
-    TRIPLEASPA      reduce using rule 132 (INNERCOMMENT -> WHITESPACE .)
-    ASPA            reduce using rule 132 (INNERCOMMENT -> WHITESPACE .)
-    TRIPLEAPOSTROFE reduce using rule 132 (INNERCOMMENT -> WHITESPACE .)
-    APOSTROFE       reduce using rule 132 (INNERCOMMENT -> WHITESPACE .)
-    DATE            reduce using rule 132 (INNERCOMMENT -> WHITESPACE .)
-    TIME            reduce using rule 132 (INNERCOMMENT -> WHITESPACE .)
-    FPR             reduce using rule 132 (INNERCOMMENT -> WHITESPACE .)
-    VIRGULA         reduce using rule 132 (INNERCOMMENT -> WHITESPACE .)
+    WHITESPACE      reduce using rule 131 (INNERCOMMENT -> WHITESPACE .)
+    NEWLINE         reduce using rule 131 (INNERCOMMENT -> WHITESPACE .)
+    COMMENT         reduce using rule 131 (INNERCOMMENT -> WHITESPACE .)
+    BOOLEAN         reduce using rule 131 (INNERCOMMENT -> WHITESPACE .)
+    INTEGER         reduce using rule 131 (INNERCOMMENT -> WHITESPACE .)
+    FLOAT           reduce using rule 131 (INNERCOMMENT -> WHITESPACE .)
+    APR             reduce using rule 131 (INNERCOMMENT -> WHITESPACE .)
+    ACH             reduce using rule 131 (INNERCOMMENT -> WHITESPACE .)
+    TRIPLEASPA      reduce using rule 131 (INNERCOMMENT -> WHITESPACE .)
+    ASPA            reduce using rule 131 (INNERCOMMENT -> WHITESPACE .)
+    TRIPLEAPOSTROFE reduce using rule 131 (INNERCOMMENT -> WHITESPACE .)
+    APOSTROFE       reduce using rule 131 (INNERCOMMENT -> WHITESPACE .)
+    DATE            reduce using rule 131 (INNERCOMMENT -> WHITESPACE .)
+    TIME            reduce using rule 131 (INNERCOMMENT -> WHITESPACE .)
+    FPR             reduce using rule 131 (INNERCOMMENT -> WHITESPACE .)
+    VIRGULA         reduce using rule 131 (INNERCOMMENT -> WHITESPACE .)
 
 
 state 112
 
-    (133) INNERCOMMENT -> COMMENTOUNAO . NEWLINE
+    (132) INNERCOMMENT -> COMMENTOUNAO . NEWLINE
 
-    NEWLINE         shift and go to state 126
+    NEWLINE         shift and go to state 127
 
 
 state 113
+
+    (133) INNERCOMMENT -> NEWLINE .
+
+    WHITESPACE      reduce using rule 133 (INNERCOMMENT -> NEWLINE .)
+    NEWLINE         reduce using rule 133 (INNERCOMMENT -> NEWLINE .)
+    COMMENT         reduce using rule 133 (INNERCOMMENT -> NEWLINE .)
+    BOOLEAN         reduce using rule 133 (INNERCOMMENT -> NEWLINE .)
+    INTEGER         reduce using rule 133 (INNERCOMMENT -> NEWLINE .)
+    FLOAT           reduce using rule 133 (INNERCOMMENT -> NEWLINE .)
+    APR             reduce using rule 133 (INNERCOMMENT -> NEWLINE .)
+    ACH             reduce using rule 133 (INNERCOMMENT -> NEWLINE .)
+    TRIPLEASPA      reduce using rule 133 (INNERCOMMENT -> NEWLINE .)
+    ASPA            reduce using rule 133 (INNERCOMMENT -> NEWLINE .)
+    TRIPLEAPOSTROFE reduce using rule 133 (INNERCOMMENT -> NEWLINE .)
+    APOSTROFE       reduce using rule 133 (INNERCOMMENT -> NEWLINE .)
+    DATE            reduce using rule 133 (INNERCOMMENT -> NEWLINE .)
+    TIME            reduce using rule 133 (INNERCOMMENT -> NEWLINE .)
+    FPR             reduce using rule 133 (INNERCOMMENT -> NEWLINE .)
+    VIRGULA         reduce using rule 133 (INNERCOMMENT -> NEWLINE .)
+
+
+state 114
 
     (134) COMMENTOUNAO -> COMMENT .
 
     NEWLINE         reduce using rule 134 (COMMENTOUNAO -> COMMENT .)
 
 
-state 114
+state 115
 
     (139) INLINETABLE -> ACH FCH .
 
@@ -2857,7 +2895,7 @@ state 114
     FPR             reduce using rule 139 (INLINETABLE -> ACH FCH .)
 
 
-state 115
+state 116
 
     (140) INLINETABLE -> ACH INLINETABLEWS . INLINEKVALUE INLINETABLEWS FCH
     (143) INLINEKVALUE -> . INLINEKVALUE INLINETABLEWS VIRGULA INLINETABLEWS KVALUE
@@ -2872,7 +2910,7 @@ state 115
     (28) QUOTEDKEY -> . LITERALSTRING
     (20) UNQUOTEDKEY -> . OCCURRENCES UNQUOTEDKEYAUX
     (49) BASICSTRING -> . ASPA BC ASPA
-    (99) LITERALSTRING -> . APOSTROFE LCH APOSTROFE
+    (98) LITERALSTRING -> . APOSTROFE LCH APOSTROFE
     (23) OCCURRENCES -> . CHAR
     (24) OCCURRENCES -> . INTEGER
     (25) OCCURRENCES -> . MINUS
@@ -2885,8 +2923,8 @@ state 115
     MINUS           shift and go to state 16
     UNDERSCORE      shift and go to state 17
 
-    INLINEKVALUE                   shift and go to state 127
-    KVALUE                         shift and go to state 128
+    INLINEKVALUE                   shift and go to state 128
+    KVALUE                         shift and go to state 129
     KEY                            shift and go to state 4
     SIMPLEKEY                      shift and go to state 5
     DOTKEY                         shift and go to state 6
@@ -2896,7 +2934,7 @@ state 115
     LITERALSTRING                  shift and go to state 10
     OCCURRENCES                    shift and go to state 11
 
-state 116
+state 117
 
     (142) INLINETABLEWS -> WHITESPACE .
 
@@ -2910,7 +2948,7 @@ state 116
     VIRGULA         reduce using rule 142 (INLINETABLEWS -> WHITESPACE .)
 
 
-state 117
+state 118
 
     (41) LOCALDATETIME -> LOCALDATE LOCALTIME .
 
@@ -2931,28 +2969,28 @@ state 117
     FPR             reduce using rule 41 (LOCALDATETIME -> LOCALDATE LOCALTIME .)
 
 
-state 118
+state 119
 
     (72) MULTILINEBASICSTRING -> TRIPLEASPA MLNL . MLBASICBODY TRIPLEASPA
-    (76) MLBASICBODY -> . MLBC
-    (77) MLBC -> . CONTENTQUOTE MLBC
-    (80) MLBC -> .
+    (75) MLBASICBODY -> . MLBC
+    (76) MLBC -> . CONTENTQUOTE MLBC
+    (77) MLBC -> .
     (78) CONTENTQUOTE -> . MLBCONTENT
     (79) CONTENTQUOTE -> . MLBQUOTES
-    (81) MLBCONTENT -> . MLBCHAR
-    (82) MLBCONTENT -> . NEWLINE
-    (83) MLBCONTENT -> . MLBESCAPEDNL
-    (84) MLBCONTENT -> . TWODOT_SEP
-    (85) MLBCONTENT -> . DOT_SEP
-    (86) MLBCONTENT -> . VIRGULA
-    (89) MLBQUOTES -> . ASPA
-    (90) MLBQUOTES -> . DOUBLEASPA
-    (91) MLBQUOTES -> .
-    (87) MLBCHAR -> . MLBUNESCAPED
-    (88) MLBCHAR -> . ESCAPED
-    (94) MLBESCAPEDNL -> . ESCAPE NEWLINE WHNL
-    (92) MLBUNESCAPED -> . WHITESPACE
-    (93) MLBUNESCAPED -> . CHAR
+    (80) MLBCONTENT -> . MLBCHAR
+    (81) MLBCONTENT -> . NEWLINE
+    (82) MLBCONTENT -> . MLBESCAPEDNL
+    (83) MLBCONTENT -> . TWODOT_SEP
+    (84) MLBCONTENT -> . DOT_SEP
+    (85) MLBCONTENT -> . VIRGULA
+    (88) MLBQUOTES -> . ASPA
+    (89) MLBQUOTES -> . DOUBLEASPA
+    (90) MLBQUOTES -> .
+    (86) MLBCHAR -> . MLBUNESCAPED
+    (87) MLBCHAR -> . ESCAPED
+    (93) MLBESCAPEDNL -> . ESCAPE NEWLINE WHNL
+    (91) MLBUNESCAPED -> . WHITESPACE
+    (92) MLBUNESCAPED -> . CHAR
     (63) ESCAPED -> . ESC_QUOTE
     (64) ESCAPED -> . ESC_REVERSE
     (65) ESCAPED -> . ESC_BACKSPACE
@@ -2969,7 +3007,7 @@ state 118
   ! shift/reduce conflict for VIRGULA resolved as shift
   ! shift/reduce conflict for ASPA resolved as shift
   ! shift/reduce conflict for DOUBLEASPA resolved as shift
-  ! reduce/reduce conflict for TRIPLEASPA resolved using rule 80 (MLBC -> .)
+  ! reduce/reduce conflict for TRIPLEASPA resolved using rule 77 (MLBC -> .)
   ! shift/reduce conflict for ESCAPE resolved as shift
   ! shift/reduce conflict for WHITESPACE resolved as shift
   ! shift/reduce conflict for CHAR resolved as shift
@@ -2982,16 +3020,16 @@ state 118
   ! shift/reduce conflict for ESC_TAB resolved as shift
   ! shift/reduce conflict for ESC_HEX4 resolved as shift
   ! shift/reduce conflict for ESC_HEX8 resolved as shift
-    TRIPLEASPA      reduce using rule 80 (MLBC -> .)
-    NEWLINE         shift and go to state 135
-    TWODOT_SEP      shift and go to state 137
-    DOT_SEP         shift and go to state 138
-    VIRGULA         shift and go to state 139
-    ASPA            shift and go to state 140
-    DOUBLEASPA      shift and go to state 141
-    ESCAPE          shift and go to state 144
-    WHITESPACE      shift and go to state 145
-    CHAR            shift and go to state 146
+    TRIPLEASPA      reduce using rule 77 (MLBC -> .)
+    NEWLINE         shift and go to state 136
+    TWODOT_SEP      shift and go to state 138
+    DOT_SEP         shift and go to state 139
+    VIRGULA         shift and go to state 140
+    ASPA            shift and go to state 141
+    DOUBLEASPA      shift and go to state 142
+    ESCAPE          shift and go to state 145
+    WHITESPACE      shift and go to state 146
+    CHAR            shift and go to state 147
     ESC_QUOTE       shift and go to state 45
     ESC_REVERSE     shift and go to state 46
     ESC_BACKSPACE   shift and go to state 47
@@ -3002,37 +3040,37 @@ state 118
     ESC_HEX4        shift and go to state 52
     ESC_HEX8        shift and go to state 53
 
-  ! NEWLINE         [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! TWODOT_SEP      [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! DOT_SEP         [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! VIRGULA         [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! ASPA            [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! DOUBLEASPA      [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! ESCAPE          [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! WHITESPACE      [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! CHAR            [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! ESC_QUOTE       [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! ESC_REVERSE     [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! ESC_BACKSPACE   [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! ESC_FF          [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! ESC_NL          [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! ESC_CRETURN     [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! ESC_TAB         [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! ESC_HEX4        [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! ESC_HEX8        [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! TRIPLEASPA      [ reduce using rule 91 (MLBQUOTES -> .) ]
+  ! NEWLINE         [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! TWODOT_SEP      [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! DOT_SEP         [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! VIRGULA         [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! ASPA            [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! DOUBLEASPA      [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! ESCAPE          [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! WHITESPACE      [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! CHAR            [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! ESC_QUOTE       [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! ESC_REVERSE     [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! ESC_BACKSPACE   [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! ESC_FF          [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! ESC_NL          [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! ESC_CRETURN     [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! ESC_TAB         [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! ESC_HEX4        [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! ESC_HEX8        [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! TRIPLEASPA      [ reduce using rule 90 (MLBQUOTES -> .) ]
 
-    MLBASICBODY                    shift and go to state 129
-    MLBC                           shift and go to state 130
-    CONTENTQUOTE                   shift and go to state 131
-    MLBCONTENT                     shift and go to state 132
-    MLBQUOTES                      shift and go to state 133
-    MLBCHAR                        shift and go to state 134
-    MLBESCAPEDNL                   shift and go to state 136
-    MLBUNESCAPED                   shift and go to state 142
-    ESCAPED                        shift and go to state 143
+    MLBASICBODY                    shift and go to state 130
+    MLBC                           shift and go to state 131
+    CONTENTQUOTE                   shift and go to state 132
+    MLBCONTENT                     shift and go to state 133
+    MLBQUOTES                      shift and go to state 134
+    MLBCHAR                        shift and go to state 135
+    MLBESCAPEDNL                   shift and go to state 137
+    MLBUNESCAPED                   shift and go to state 143
+    ESCAPED                        shift and go to state 144
 
-state 119
+state 120
 
     (73) MLNL -> NEWLINE .
 
@@ -3057,72 +3095,72 @@ state 119
     TRIPLEASPA      reduce using rule 73 (MLNL -> NEWLINE .)
 
 
-state 120
+state 121
 
-    (108) MLLITERALSTRING -> TRIPLEAPOSTROFE NLR . MLLITERALBODY TRIPLEAPOSTROFE
-    (111) MLLITERALBODY -> . MLLC
-    (112) MLLC -> . MLLCONTENTQUOTES MLLC
-    (115) MLLC -> .
-    (113) MLLCONTENTQUOTES -> . MLLCONTENT
-    (114) MLLCONTENTQUOTES -> . MLLQUOTES
-    (116) MLLCONTENT -> . MLLCHAR
-    (117) MLLCONTENT -> . NEWLINE
-    (122) MLLQUOTES -> . DOUBLEAPOSTROFE
-    (123) MLLQUOTES -> . APOSTROFE
-    (124) MLLQUOTES -> .
-    (118) MLLCHAR -> . CHAR
-    (119) MLLCHAR -> . DOT_SEP
-    (120) MLLCHAR -> . WHITESPACE
-    (121) MLLCHAR -> . VIRGULA
+    (107) MLLITERALSTRING -> TRIPLEAPOSTROFE NLR . MLLITERALBODY TRIPLEAPOSTROFE
+    (110) MLLITERALBODY -> . MLLC
+    (111) MLLC -> . MLLCONTENTQUOTES MLLC
+    (114) MLLC -> .
+    (112) MLLCONTENTQUOTES -> . MLLCONTENT
+    (113) MLLCONTENTQUOTES -> . MLLQUOTES
+    (115) MLLCONTENT -> . MLLCHAR
+    (116) MLLCONTENT -> . NEWLINE
+    (121) MLLQUOTES -> . DOUBLEAPOSTROFE
+    (122) MLLQUOTES -> . APOSTROFE
+    (123) MLLQUOTES -> .
+    (117) MLLCHAR -> . CHAR
+    (118) MLLCHAR -> . DOT_SEP
+    (119) MLLCHAR -> . WHITESPACE
+    (120) MLLCHAR -> . VIRGULA
 
   ! shift/reduce conflict for NEWLINE resolved as shift
   ! shift/reduce conflict for DOUBLEAPOSTROFE resolved as shift
   ! shift/reduce conflict for APOSTROFE resolved as shift
-  ! reduce/reduce conflict for TRIPLEAPOSTROFE resolved using rule 115 (MLLC -> .)
+  ! reduce/reduce conflict for TRIPLEAPOSTROFE resolved using rule 114 (MLLC -> .)
   ! shift/reduce conflict for CHAR resolved as shift
   ! shift/reduce conflict for DOT_SEP resolved as shift
   ! shift/reduce conflict for WHITESPACE resolved as shift
   ! shift/reduce conflict for VIRGULA resolved as shift
-    TRIPLEAPOSTROFE reduce using rule 115 (MLLC -> .)
-    NEWLINE         shift and go to state 153
-    DOUBLEAPOSTROFE shift and go to state 154
-    APOSTROFE       shift and go to state 155
-    CHAR            shift and go to state 156
-    DOT_SEP         shift and go to state 157
-    WHITESPACE      shift and go to state 158
-    VIRGULA         shift and go to state 159
+    TRIPLEAPOSTROFE reduce using rule 114 (MLLC -> .)
+    NEWLINE         shift and go to state 154
+    DOUBLEAPOSTROFE shift and go to state 155
+    APOSTROFE       shift and go to state 156
+    CHAR            shift and go to state 157
+    DOT_SEP         shift and go to state 158
+    WHITESPACE      shift and go to state 159
+    VIRGULA         shift and go to state 160
 
-  ! NEWLINE         [ reduce using rule 124 (MLLQUOTES -> .) ]
-  ! DOUBLEAPOSTROFE [ reduce using rule 124 (MLLQUOTES -> .) ]
-  ! APOSTROFE       [ reduce using rule 124 (MLLQUOTES -> .) ]
-  ! CHAR            [ reduce using rule 124 (MLLQUOTES -> .) ]
-  ! DOT_SEP         [ reduce using rule 124 (MLLQUOTES -> .) ]
-  ! WHITESPACE      [ reduce using rule 124 (MLLQUOTES -> .) ]
-  ! VIRGULA         [ reduce using rule 124 (MLLQUOTES -> .) ]
-  ! TRIPLEAPOSTROFE [ reduce using rule 124 (MLLQUOTES -> .) ]
+  ! NEWLINE         [ reduce using rule 123 (MLLQUOTES -> .) ]
+  ! DOUBLEAPOSTROFE [ reduce using rule 123 (MLLQUOTES -> .) ]
+  ! APOSTROFE       [ reduce using rule 123 (MLLQUOTES -> .) ]
+  ! CHAR            [ reduce using rule 123 (MLLQUOTES -> .) ]
+  ! DOT_SEP         [ reduce using rule 123 (MLLQUOTES -> .) ]
+  ! WHITESPACE      [ reduce using rule 123 (MLLQUOTES -> .) ]
+  ! VIRGULA         [ reduce using rule 123 (MLLQUOTES -> .) ]
+  ! TRIPLEAPOSTROFE [ reduce using rule 123 (MLLQUOTES -> .) ]
 
-    MLLITERALBODY                  shift and go to state 147
-    MLLC                           shift and go to state 148
-    MLLCONTENTQUOTES               shift and go to state 149
-    MLLCONTENT                     shift and go to state 150
-    MLLQUOTES                      shift and go to state 151
-    MLLCHAR                        shift and go to state 152
-
-state 121
-
-    (109) NLR -> NEWLINE .
-
-    NEWLINE         reduce using rule 109 (NLR -> NEWLINE .)
-    DOUBLEAPOSTROFE reduce using rule 109 (NLR -> NEWLINE .)
-    APOSTROFE       reduce using rule 109 (NLR -> NEWLINE .)
-    CHAR            reduce using rule 109 (NLR -> NEWLINE .)
-    DOT_SEP         reduce using rule 109 (NLR -> NEWLINE .)
-    WHITESPACE      reduce using rule 109 (NLR -> NEWLINE .)
-    VIRGULA         reduce using rule 109 (NLR -> NEWLINE .)
-    TRIPLEAPOSTROFE reduce using rule 109 (NLR -> NEWLINE .)
-
+    MLLITERALBODY                  shift and go to state 148
+    MLLC                           shift and go to state 149
+    MLLCONTENTQUOTES               shift and go to state 150
+    MLLCONTENT                     shift and go to state 151
+    MLLQUOTES                      shift and go to state 152
+    MLLCHAR                        shift and go to state 153
 
 state 122
+
+    (108) NLR -> NEWLINE .
+
+    NEWLINE         reduce using rule 108 (NLR -> NEWLINE .)
+    DOUBLEAPOSTROFE reduce using rule 108 (NLR -> NEWLINE .)
+    APOSTROFE       reduce using rule 108 (NLR -> NEWLINE .)
+    CHAR            reduce using rule 108 (NLR -> NEWLINE .)
+    DOT_SEP         reduce using rule 108 (NLR -> NEWLINE .)
+    WHITESPACE      reduce using rule 108 (NLR -> NEWLINE .)
+    VIRGULA         reduce using rule 108 (NLR -> NEWLINE .)
+    TRIPLEAPOSTROFE reduce using rule 108 (NLR -> NEWLINE .)
+
+
+state 123
 
     (30) DOTSIMPKEY -> DOT_SEP SIMPLEKEY DOTSIMPKEY .
 
@@ -3132,85 +3170,88 @@ state 122
     ATC             reduce using rule 30 (DOTSIMPKEY -> DOT_SEP SIMPLEKEY DOTSIMPKEY .)
 
 
-state 123
-
-    (125) ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE . FPR
-
-    FPR             shift and go to state 160
-
-
 state 124
 
-    (127) ARRAYVALUES -> WSCOMMENTNEWLINE VALUE . ARRAYCONTEUDO
-    (128) ARRAYCONTEUDO -> .
-    (129) ARRAYCONTEUDO -> . WSCOMMENTNEWLINE VIRGULA ARRAYVALUES
-    (130) WSCOMMENTNEWLINE -> .
-    (131) WSCOMMENTNEWLINE -> . INNERCOMMENT WSCOMMENTNEWLINE
-    (132) INNERCOMMENT -> . WHITESPACE
-    (133) INNERCOMMENT -> . COMMENTOUNAO NEWLINE
+    (124) ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE . FPR
+
+    FPR             shift and go to state 161
+
+
+state 125
+
+    (126) ARRAYVALUES -> WSCOMMENTNEWLINE VALUE . WSCOMMENTNEWLINE ARRAYCONTEUDO
+    (129) WSCOMMENTNEWLINE -> .
+    (130) WSCOMMENTNEWLINE -> . INNERCOMMENT WSCOMMENTNEWLINE
+    (131) INNERCOMMENT -> . WHITESPACE
+    (132) INNERCOMMENT -> . COMMENTOUNAO NEWLINE
+    (133) INNERCOMMENT -> . NEWLINE
     (134) COMMENTOUNAO -> . COMMENT
     (135) COMMENTOUNAO -> .
 
   ! shift/reduce conflict for WHITESPACE resolved as shift
+  ! shift/reduce conflict for NEWLINE resolved as shift
   ! shift/reduce conflict for COMMENT resolved as shift
-  ! reduce/reduce conflict for NEWLINE resolved using rule 128 (ARRAYCONTEUDO -> .)
-    FPR             reduce using rule 128 (ARRAYCONTEUDO -> .)
-    NEWLINE         reduce using rule 128 (ARRAYCONTEUDO -> .)
-    VIRGULA         reduce using rule 130 (WSCOMMENTNEWLINE -> .)
+  ! shift/reduce conflict for NEWLINE resolved as shift
+    VIRGULA         reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    FPR             reduce using rule 129 (WSCOMMENTNEWLINE -> .)
     WHITESPACE      shift and go to state 111
-    COMMENT         shift and go to state 113
+    NEWLINE         shift and go to state 113
+    COMMENT         shift and go to state 114
 
-  ! WHITESPACE      [ reduce using rule 128 (ARRAYCONTEUDO -> .) ]
-  ! COMMENT         [ reduce using rule 128 (ARRAYCONTEUDO -> .) ]
+  ! WHITESPACE      [ reduce using rule 129 (WSCOMMENTNEWLINE -> .) ]
+  ! NEWLINE         [ reduce using rule 129 (WSCOMMENTNEWLINE -> .) ]
+  ! COMMENT         [ reduce using rule 129 (WSCOMMENTNEWLINE -> .) ]
   ! NEWLINE         [ reduce using rule 135 (COMMENTOUNAO -> .) ]
 
-    WSCOMMENTNEWLINE               shift and go to state 161
-    ARRAYCONTEUDO                  shift and go to state 162
+    WSCOMMENTNEWLINE               shift and go to state 162
     INNERCOMMENT                   shift and go to state 110
     COMMENTOUNAO                   shift and go to state 112
 
-state 125
-
-    (131) WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE .
-
-    BOOLEAN         reduce using rule 131 (WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE .)
-    INTEGER         reduce using rule 131 (WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE .)
-    FLOAT           reduce using rule 131 (WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE .)
-    APR             reduce using rule 131 (WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE .)
-    ACH             reduce using rule 131 (WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE .)
-    TRIPLEASPA      reduce using rule 131 (WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE .)
-    ASPA            reduce using rule 131 (WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE .)
-    TRIPLEAPOSTROFE reduce using rule 131 (WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE .)
-    APOSTROFE       reduce using rule 131 (WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE .)
-    DATE            reduce using rule 131 (WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE .)
-    TIME            reduce using rule 131 (WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE .)
-    FPR             reduce using rule 131 (WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE .)
-    VIRGULA         reduce using rule 131 (WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE .)
-
-
 state 126
 
-    (133) INNERCOMMENT -> COMMENTOUNAO NEWLINE .
+    (130) WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE .
 
-    WHITESPACE      reduce using rule 133 (INNERCOMMENT -> COMMENTOUNAO NEWLINE .)
-    COMMENT         reduce using rule 133 (INNERCOMMENT -> COMMENTOUNAO NEWLINE .)
-    NEWLINE         reduce using rule 133 (INNERCOMMENT -> COMMENTOUNAO NEWLINE .)
-    BOOLEAN         reduce using rule 133 (INNERCOMMENT -> COMMENTOUNAO NEWLINE .)
-    INTEGER         reduce using rule 133 (INNERCOMMENT -> COMMENTOUNAO NEWLINE .)
-    FLOAT           reduce using rule 133 (INNERCOMMENT -> COMMENTOUNAO NEWLINE .)
-    APR             reduce using rule 133 (INNERCOMMENT -> COMMENTOUNAO NEWLINE .)
-    ACH             reduce using rule 133 (INNERCOMMENT -> COMMENTOUNAO NEWLINE .)
-    TRIPLEASPA      reduce using rule 133 (INNERCOMMENT -> COMMENTOUNAO NEWLINE .)
-    ASPA            reduce using rule 133 (INNERCOMMENT -> COMMENTOUNAO NEWLINE .)
-    TRIPLEAPOSTROFE reduce using rule 133 (INNERCOMMENT -> COMMENTOUNAO NEWLINE .)
-    APOSTROFE       reduce using rule 133 (INNERCOMMENT -> COMMENTOUNAO NEWLINE .)
-    DATE            reduce using rule 133 (INNERCOMMENT -> COMMENTOUNAO NEWLINE .)
-    TIME            reduce using rule 133 (INNERCOMMENT -> COMMENTOUNAO NEWLINE .)
-    FPR             reduce using rule 133 (INNERCOMMENT -> COMMENTOUNAO NEWLINE .)
-    VIRGULA         reduce using rule 133 (INNERCOMMENT -> COMMENTOUNAO NEWLINE .)
+    BOOLEAN         reduce using rule 130 (WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE .)
+    INTEGER         reduce using rule 130 (WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE .)
+    FLOAT           reduce using rule 130 (WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE .)
+    APR             reduce using rule 130 (WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE .)
+    ACH             reduce using rule 130 (WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE .)
+    TRIPLEASPA      reduce using rule 130 (WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE .)
+    ASPA            reduce using rule 130 (WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE .)
+    TRIPLEAPOSTROFE reduce using rule 130 (WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE .)
+    APOSTROFE       reduce using rule 130 (WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE .)
+    DATE            reduce using rule 130 (WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE .)
+    TIME            reduce using rule 130 (WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE .)
+    FPR             reduce using rule 130 (WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE .)
+    WHITESPACE      reduce using rule 130 (WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE .)
+    NEWLINE         reduce using rule 130 (WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE .)
+    COMMENT         reduce using rule 130 (WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE .)
+    VIRGULA         reduce using rule 130 (WSCOMMENTNEWLINE -> INNERCOMMENT WSCOMMENTNEWLINE .)
 
 
 state 127
+
+    (132) INNERCOMMENT -> COMMENTOUNAO NEWLINE .
+
+    WHITESPACE      reduce using rule 132 (INNERCOMMENT -> COMMENTOUNAO NEWLINE .)
+    NEWLINE         reduce using rule 132 (INNERCOMMENT -> COMMENTOUNAO NEWLINE .)
+    COMMENT         reduce using rule 132 (INNERCOMMENT -> COMMENTOUNAO NEWLINE .)
+    BOOLEAN         reduce using rule 132 (INNERCOMMENT -> COMMENTOUNAO NEWLINE .)
+    INTEGER         reduce using rule 132 (INNERCOMMENT -> COMMENTOUNAO NEWLINE .)
+    FLOAT           reduce using rule 132 (INNERCOMMENT -> COMMENTOUNAO NEWLINE .)
+    APR             reduce using rule 132 (INNERCOMMENT -> COMMENTOUNAO NEWLINE .)
+    ACH             reduce using rule 132 (INNERCOMMENT -> COMMENTOUNAO NEWLINE .)
+    TRIPLEASPA      reduce using rule 132 (INNERCOMMENT -> COMMENTOUNAO NEWLINE .)
+    ASPA            reduce using rule 132 (INNERCOMMENT -> COMMENTOUNAO NEWLINE .)
+    TRIPLEAPOSTROFE reduce using rule 132 (INNERCOMMENT -> COMMENTOUNAO NEWLINE .)
+    APOSTROFE       reduce using rule 132 (INNERCOMMENT -> COMMENTOUNAO NEWLINE .)
+    DATE            reduce using rule 132 (INNERCOMMENT -> COMMENTOUNAO NEWLINE .)
+    TIME            reduce using rule 132 (INNERCOMMENT -> COMMENTOUNAO NEWLINE .)
+    FPR             reduce using rule 132 (INNERCOMMENT -> COMMENTOUNAO NEWLINE .)
+    VIRGULA         reduce using rule 132 (INNERCOMMENT -> COMMENTOUNAO NEWLINE .)
+
+
+state 128
 
     (140) INLINETABLE -> ACH INLINETABLEWS INLINEKVALUE . INLINETABLEWS FCH
     (143) INLINEKVALUE -> INLINEKVALUE . INLINETABLEWS VIRGULA INLINETABLEWS KVALUE
@@ -3219,11 +3260,11 @@ state 127
 
     FCH             reduce using rule 141 (INLINETABLEWS -> .)
     VIRGULA         reduce using rule 141 (INLINETABLEWS -> .)
-    WHITESPACE      shift and go to state 116
+    WHITESPACE      shift and go to state 117
 
     INLINETABLEWS                  shift and go to state 163
 
-state 128
+state 129
 
     (144) INLINEKVALUE -> KVALUE .
 
@@ -3232,41 +3273,41 @@ state 128
     VIRGULA         reduce using rule 144 (INLINEKVALUE -> KVALUE .)
 
 
-state 129
+state 130
 
     (72) MULTILINEBASICSTRING -> TRIPLEASPA MLNL MLBASICBODY . TRIPLEASPA
 
     TRIPLEASPA      shift and go to state 164
 
 
-state 130
-
-    (76) MLBASICBODY -> MLBC .
-
-    TRIPLEASPA      reduce using rule 76 (MLBASICBODY -> MLBC .)
-
-
 state 131
 
-    (77) MLBC -> CONTENTQUOTE . MLBC
-    (77) MLBC -> . CONTENTQUOTE MLBC
-    (80) MLBC -> .
+    (75) MLBASICBODY -> MLBC .
+
+    TRIPLEASPA      reduce using rule 75 (MLBASICBODY -> MLBC .)
+
+
+state 132
+
+    (76) MLBC -> CONTENTQUOTE . MLBC
+    (76) MLBC -> . CONTENTQUOTE MLBC
+    (77) MLBC -> .
     (78) CONTENTQUOTE -> . MLBCONTENT
     (79) CONTENTQUOTE -> . MLBQUOTES
-    (81) MLBCONTENT -> . MLBCHAR
-    (82) MLBCONTENT -> . NEWLINE
-    (83) MLBCONTENT -> . MLBESCAPEDNL
-    (84) MLBCONTENT -> . TWODOT_SEP
-    (85) MLBCONTENT -> . DOT_SEP
-    (86) MLBCONTENT -> . VIRGULA
-    (89) MLBQUOTES -> . ASPA
-    (90) MLBQUOTES -> . DOUBLEASPA
-    (91) MLBQUOTES -> .
-    (87) MLBCHAR -> . MLBUNESCAPED
-    (88) MLBCHAR -> . ESCAPED
-    (94) MLBESCAPEDNL -> . ESCAPE NEWLINE WHNL
-    (92) MLBUNESCAPED -> . WHITESPACE
-    (93) MLBUNESCAPED -> . CHAR
+    (80) MLBCONTENT -> . MLBCHAR
+    (81) MLBCONTENT -> . NEWLINE
+    (82) MLBCONTENT -> . MLBESCAPEDNL
+    (83) MLBCONTENT -> . TWODOT_SEP
+    (84) MLBCONTENT -> . DOT_SEP
+    (85) MLBCONTENT -> . VIRGULA
+    (88) MLBQUOTES -> . ASPA
+    (89) MLBQUOTES -> . DOUBLEASPA
+    (90) MLBQUOTES -> .
+    (86) MLBCHAR -> . MLBUNESCAPED
+    (87) MLBCHAR -> . ESCAPED
+    (93) MLBESCAPEDNL -> . ESCAPE NEWLINE WHNL
+    (91) MLBUNESCAPED -> . WHITESPACE
+    (92) MLBUNESCAPED -> . CHAR
     (63) ESCAPED -> . ESC_QUOTE
     (64) ESCAPED -> . ESC_REVERSE
     (65) ESCAPED -> . ESC_BACKSPACE
@@ -3283,7 +3324,7 @@ state 131
   ! shift/reduce conflict for VIRGULA resolved as shift
   ! shift/reduce conflict for ASPA resolved as shift
   ! shift/reduce conflict for DOUBLEASPA resolved as shift
-  ! reduce/reduce conflict for TRIPLEASPA resolved using rule 80 (MLBC -> .)
+  ! reduce/reduce conflict for TRIPLEASPA resolved using rule 77 (MLBC -> .)
   ! shift/reduce conflict for ESCAPE resolved as shift
   ! shift/reduce conflict for WHITESPACE resolved as shift
   ! shift/reduce conflict for CHAR resolved as shift
@@ -3296,16 +3337,16 @@ state 131
   ! shift/reduce conflict for ESC_TAB resolved as shift
   ! shift/reduce conflict for ESC_HEX4 resolved as shift
   ! shift/reduce conflict for ESC_HEX8 resolved as shift
-    TRIPLEASPA      reduce using rule 80 (MLBC -> .)
-    NEWLINE         shift and go to state 135
-    TWODOT_SEP      shift and go to state 137
-    DOT_SEP         shift and go to state 138
-    VIRGULA         shift and go to state 139
-    ASPA            shift and go to state 140
-    DOUBLEASPA      shift and go to state 141
-    ESCAPE          shift and go to state 144
-    WHITESPACE      shift and go to state 145
-    CHAR            shift and go to state 146
+    TRIPLEASPA      reduce using rule 77 (MLBC -> .)
+    NEWLINE         shift and go to state 136
+    TWODOT_SEP      shift and go to state 138
+    DOT_SEP         shift and go to state 139
+    VIRGULA         shift and go to state 140
+    ASPA            shift and go to state 141
+    DOUBLEASPA      shift and go to state 142
+    ESCAPE          shift and go to state 145
+    WHITESPACE      shift and go to state 146
+    CHAR            shift and go to state 147
     ESC_QUOTE       shift and go to state 45
     ESC_REVERSE     shift and go to state 46
     ESC_BACKSPACE   shift and go to state 47
@@ -3316,36 +3357,36 @@ state 131
     ESC_HEX4        shift and go to state 52
     ESC_HEX8        shift and go to state 53
 
-  ! NEWLINE         [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! TWODOT_SEP      [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! DOT_SEP         [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! VIRGULA         [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! ASPA            [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! DOUBLEASPA      [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! ESCAPE          [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! WHITESPACE      [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! CHAR            [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! ESC_QUOTE       [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! ESC_REVERSE     [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! ESC_BACKSPACE   [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! ESC_FF          [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! ESC_NL          [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! ESC_CRETURN     [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! ESC_TAB         [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! ESC_HEX4        [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! ESC_HEX8        [ reduce using rule 91 (MLBQUOTES -> .) ]
-  ! TRIPLEASPA      [ reduce using rule 91 (MLBQUOTES -> .) ]
+  ! NEWLINE         [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! TWODOT_SEP      [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! DOT_SEP         [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! VIRGULA         [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! ASPA            [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! DOUBLEASPA      [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! ESCAPE          [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! WHITESPACE      [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! CHAR            [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! ESC_QUOTE       [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! ESC_REVERSE     [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! ESC_BACKSPACE   [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! ESC_FF          [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! ESC_NL          [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! ESC_CRETURN     [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! ESC_TAB         [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! ESC_HEX4        [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! ESC_HEX8        [ reduce using rule 90 (MLBQUOTES -> .) ]
+  ! TRIPLEASPA      [ reduce using rule 90 (MLBQUOTES -> .) ]
 
-    CONTENTQUOTE                   shift and go to state 131
+    CONTENTQUOTE                   shift and go to state 132
     MLBC                           shift and go to state 165
-    MLBCONTENT                     shift and go to state 132
-    MLBQUOTES                      shift and go to state 133
-    MLBCHAR                        shift and go to state 134
-    MLBESCAPEDNL                   shift and go to state 136
-    MLBUNESCAPED                   shift and go to state 142
-    ESCAPED                        shift and go to state 143
+    MLBCONTENT                     shift and go to state 133
+    MLBQUOTES                      shift and go to state 134
+    MLBCHAR                        shift and go to state 135
+    MLBESCAPEDNL                   shift and go to state 137
+    MLBUNESCAPED                   shift and go to state 143
+    ESCAPED                        shift and go to state 144
 
-state 132
+state 133
 
     (78) CONTENTQUOTE -> MLBCONTENT .
 
@@ -3370,7 +3411,7 @@ state 132
     TRIPLEASPA      reduce using rule 78 (CONTENTQUOTE -> MLBCONTENT .)
 
 
-state 133
+state 134
 
     (79) CONTENTQUOTE -> MLBQUOTES .
 
@@ -3395,561 +3436,577 @@ state 133
     TRIPLEASPA      reduce using rule 79 (CONTENTQUOTE -> MLBQUOTES .)
 
 
-state 134
-
-    (81) MLBCONTENT -> MLBCHAR .
-
-    NEWLINE         reduce using rule 81 (MLBCONTENT -> MLBCHAR .)
-    TWODOT_SEP      reduce using rule 81 (MLBCONTENT -> MLBCHAR .)
-    DOT_SEP         reduce using rule 81 (MLBCONTENT -> MLBCHAR .)
-    VIRGULA         reduce using rule 81 (MLBCONTENT -> MLBCHAR .)
-    ASPA            reduce using rule 81 (MLBCONTENT -> MLBCHAR .)
-    DOUBLEASPA      reduce using rule 81 (MLBCONTENT -> MLBCHAR .)
-    ESCAPE          reduce using rule 81 (MLBCONTENT -> MLBCHAR .)
-    WHITESPACE      reduce using rule 81 (MLBCONTENT -> MLBCHAR .)
-    CHAR            reduce using rule 81 (MLBCONTENT -> MLBCHAR .)
-    ESC_QUOTE       reduce using rule 81 (MLBCONTENT -> MLBCHAR .)
-    ESC_REVERSE     reduce using rule 81 (MLBCONTENT -> MLBCHAR .)
-    ESC_BACKSPACE   reduce using rule 81 (MLBCONTENT -> MLBCHAR .)
-    ESC_FF          reduce using rule 81 (MLBCONTENT -> MLBCHAR .)
-    ESC_NL          reduce using rule 81 (MLBCONTENT -> MLBCHAR .)
-    ESC_CRETURN     reduce using rule 81 (MLBCONTENT -> MLBCHAR .)
-    ESC_TAB         reduce using rule 81 (MLBCONTENT -> MLBCHAR .)
-    ESC_HEX4        reduce using rule 81 (MLBCONTENT -> MLBCHAR .)
-    ESC_HEX8        reduce using rule 81 (MLBCONTENT -> MLBCHAR .)
-    TRIPLEASPA      reduce using rule 81 (MLBCONTENT -> MLBCHAR .)
-
-
 state 135
 
-    (82) MLBCONTENT -> NEWLINE .
+    (80) MLBCONTENT -> MLBCHAR .
 
-    NEWLINE         reduce using rule 82 (MLBCONTENT -> NEWLINE .)
-    TWODOT_SEP      reduce using rule 82 (MLBCONTENT -> NEWLINE .)
-    DOT_SEP         reduce using rule 82 (MLBCONTENT -> NEWLINE .)
-    VIRGULA         reduce using rule 82 (MLBCONTENT -> NEWLINE .)
-    ASPA            reduce using rule 82 (MLBCONTENT -> NEWLINE .)
-    DOUBLEASPA      reduce using rule 82 (MLBCONTENT -> NEWLINE .)
-    ESCAPE          reduce using rule 82 (MLBCONTENT -> NEWLINE .)
-    WHITESPACE      reduce using rule 82 (MLBCONTENT -> NEWLINE .)
-    CHAR            reduce using rule 82 (MLBCONTENT -> NEWLINE .)
-    ESC_QUOTE       reduce using rule 82 (MLBCONTENT -> NEWLINE .)
-    ESC_REVERSE     reduce using rule 82 (MLBCONTENT -> NEWLINE .)
-    ESC_BACKSPACE   reduce using rule 82 (MLBCONTENT -> NEWLINE .)
-    ESC_FF          reduce using rule 82 (MLBCONTENT -> NEWLINE .)
-    ESC_NL          reduce using rule 82 (MLBCONTENT -> NEWLINE .)
-    ESC_CRETURN     reduce using rule 82 (MLBCONTENT -> NEWLINE .)
-    ESC_TAB         reduce using rule 82 (MLBCONTENT -> NEWLINE .)
-    ESC_HEX4        reduce using rule 82 (MLBCONTENT -> NEWLINE .)
-    ESC_HEX8        reduce using rule 82 (MLBCONTENT -> NEWLINE .)
-    TRIPLEASPA      reduce using rule 82 (MLBCONTENT -> NEWLINE .)
+    NEWLINE         reduce using rule 80 (MLBCONTENT -> MLBCHAR .)
+    TWODOT_SEP      reduce using rule 80 (MLBCONTENT -> MLBCHAR .)
+    DOT_SEP         reduce using rule 80 (MLBCONTENT -> MLBCHAR .)
+    VIRGULA         reduce using rule 80 (MLBCONTENT -> MLBCHAR .)
+    ASPA            reduce using rule 80 (MLBCONTENT -> MLBCHAR .)
+    DOUBLEASPA      reduce using rule 80 (MLBCONTENT -> MLBCHAR .)
+    ESCAPE          reduce using rule 80 (MLBCONTENT -> MLBCHAR .)
+    WHITESPACE      reduce using rule 80 (MLBCONTENT -> MLBCHAR .)
+    CHAR            reduce using rule 80 (MLBCONTENT -> MLBCHAR .)
+    ESC_QUOTE       reduce using rule 80 (MLBCONTENT -> MLBCHAR .)
+    ESC_REVERSE     reduce using rule 80 (MLBCONTENT -> MLBCHAR .)
+    ESC_BACKSPACE   reduce using rule 80 (MLBCONTENT -> MLBCHAR .)
+    ESC_FF          reduce using rule 80 (MLBCONTENT -> MLBCHAR .)
+    ESC_NL          reduce using rule 80 (MLBCONTENT -> MLBCHAR .)
+    ESC_CRETURN     reduce using rule 80 (MLBCONTENT -> MLBCHAR .)
+    ESC_TAB         reduce using rule 80 (MLBCONTENT -> MLBCHAR .)
+    ESC_HEX4        reduce using rule 80 (MLBCONTENT -> MLBCHAR .)
+    ESC_HEX8        reduce using rule 80 (MLBCONTENT -> MLBCHAR .)
+    TRIPLEASPA      reduce using rule 80 (MLBCONTENT -> MLBCHAR .)
 
 
 state 136
 
-    (83) MLBCONTENT -> MLBESCAPEDNL .
+    (81) MLBCONTENT -> NEWLINE .
 
-    NEWLINE         reduce using rule 83 (MLBCONTENT -> MLBESCAPEDNL .)
-    TWODOT_SEP      reduce using rule 83 (MLBCONTENT -> MLBESCAPEDNL .)
-    DOT_SEP         reduce using rule 83 (MLBCONTENT -> MLBESCAPEDNL .)
-    VIRGULA         reduce using rule 83 (MLBCONTENT -> MLBESCAPEDNL .)
-    ASPA            reduce using rule 83 (MLBCONTENT -> MLBESCAPEDNL .)
-    DOUBLEASPA      reduce using rule 83 (MLBCONTENT -> MLBESCAPEDNL .)
-    ESCAPE          reduce using rule 83 (MLBCONTENT -> MLBESCAPEDNL .)
-    WHITESPACE      reduce using rule 83 (MLBCONTENT -> MLBESCAPEDNL .)
-    CHAR            reduce using rule 83 (MLBCONTENT -> MLBESCAPEDNL .)
-    ESC_QUOTE       reduce using rule 83 (MLBCONTENT -> MLBESCAPEDNL .)
-    ESC_REVERSE     reduce using rule 83 (MLBCONTENT -> MLBESCAPEDNL .)
-    ESC_BACKSPACE   reduce using rule 83 (MLBCONTENT -> MLBESCAPEDNL .)
-    ESC_FF          reduce using rule 83 (MLBCONTENT -> MLBESCAPEDNL .)
-    ESC_NL          reduce using rule 83 (MLBCONTENT -> MLBESCAPEDNL .)
-    ESC_CRETURN     reduce using rule 83 (MLBCONTENT -> MLBESCAPEDNL .)
-    ESC_TAB         reduce using rule 83 (MLBCONTENT -> MLBESCAPEDNL .)
-    ESC_HEX4        reduce using rule 83 (MLBCONTENT -> MLBESCAPEDNL .)
-    ESC_HEX8        reduce using rule 83 (MLBCONTENT -> MLBESCAPEDNL .)
-    TRIPLEASPA      reduce using rule 83 (MLBCONTENT -> MLBESCAPEDNL .)
+    NEWLINE         reduce using rule 81 (MLBCONTENT -> NEWLINE .)
+    TWODOT_SEP      reduce using rule 81 (MLBCONTENT -> NEWLINE .)
+    DOT_SEP         reduce using rule 81 (MLBCONTENT -> NEWLINE .)
+    VIRGULA         reduce using rule 81 (MLBCONTENT -> NEWLINE .)
+    ASPA            reduce using rule 81 (MLBCONTENT -> NEWLINE .)
+    DOUBLEASPA      reduce using rule 81 (MLBCONTENT -> NEWLINE .)
+    ESCAPE          reduce using rule 81 (MLBCONTENT -> NEWLINE .)
+    WHITESPACE      reduce using rule 81 (MLBCONTENT -> NEWLINE .)
+    CHAR            reduce using rule 81 (MLBCONTENT -> NEWLINE .)
+    ESC_QUOTE       reduce using rule 81 (MLBCONTENT -> NEWLINE .)
+    ESC_REVERSE     reduce using rule 81 (MLBCONTENT -> NEWLINE .)
+    ESC_BACKSPACE   reduce using rule 81 (MLBCONTENT -> NEWLINE .)
+    ESC_FF          reduce using rule 81 (MLBCONTENT -> NEWLINE .)
+    ESC_NL          reduce using rule 81 (MLBCONTENT -> NEWLINE .)
+    ESC_CRETURN     reduce using rule 81 (MLBCONTENT -> NEWLINE .)
+    ESC_TAB         reduce using rule 81 (MLBCONTENT -> NEWLINE .)
+    ESC_HEX4        reduce using rule 81 (MLBCONTENT -> NEWLINE .)
+    ESC_HEX8        reduce using rule 81 (MLBCONTENT -> NEWLINE .)
+    TRIPLEASPA      reduce using rule 81 (MLBCONTENT -> NEWLINE .)
 
 
 state 137
 
-    (84) MLBCONTENT -> TWODOT_SEP .
+    (82) MLBCONTENT -> MLBESCAPEDNL .
 
-    NEWLINE         reduce using rule 84 (MLBCONTENT -> TWODOT_SEP .)
-    TWODOT_SEP      reduce using rule 84 (MLBCONTENT -> TWODOT_SEP .)
-    DOT_SEP         reduce using rule 84 (MLBCONTENT -> TWODOT_SEP .)
-    VIRGULA         reduce using rule 84 (MLBCONTENT -> TWODOT_SEP .)
-    ASPA            reduce using rule 84 (MLBCONTENT -> TWODOT_SEP .)
-    DOUBLEASPA      reduce using rule 84 (MLBCONTENT -> TWODOT_SEP .)
-    ESCAPE          reduce using rule 84 (MLBCONTENT -> TWODOT_SEP .)
-    WHITESPACE      reduce using rule 84 (MLBCONTENT -> TWODOT_SEP .)
-    CHAR            reduce using rule 84 (MLBCONTENT -> TWODOT_SEP .)
-    ESC_QUOTE       reduce using rule 84 (MLBCONTENT -> TWODOT_SEP .)
-    ESC_REVERSE     reduce using rule 84 (MLBCONTENT -> TWODOT_SEP .)
-    ESC_BACKSPACE   reduce using rule 84 (MLBCONTENT -> TWODOT_SEP .)
-    ESC_FF          reduce using rule 84 (MLBCONTENT -> TWODOT_SEP .)
-    ESC_NL          reduce using rule 84 (MLBCONTENT -> TWODOT_SEP .)
-    ESC_CRETURN     reduce using rule 84 (MLBCONTENT -> TWODOT_SEP .)
-    ESC_TAB         reduce using rule 84 (MLBCONTENT -> TWODOT_SEP .)
-    ESC_HEX4        reduce using rule 84 (MLBCONTENT -> TWODOT_SEP .)
-    ESC_HEX8        reduce using rule 84 (MLBCONTENT -> TWODOT_SEP .)
-    TRIPLEASPA      reduce using rule 84 (MLBCONTENT -> TWODOT_SEP .)
+    NEWLINE         reduce using rule 82 (MLBCONTENT -> MLBESCAPEDNL .)
+    TWODOT_SEP      reduce using rule 82 (MLBCONTENT -> MLBESCAPEDNL .)
+    DOT_SEP         reduce using rule 82 (MLBCONTENT -> MLBESCAPEDNL .)
+    VIRGULA         reduce using rule 82 (MLBCONTENT -> MLBESCAPEDNL .)
+    ASPA            reduce using rule 82 (MLBCONTENT -> MLBESCAPEDNL .)
+    DOUBLEASPA      reduce using rule 82 (MLBCONTENT -> MLBESCAPEDNL .)
+    ESCAPE          reduce using rule 82 (MLBCONTENT -> MLBESCAPEDNL .)
+    WHITESPACE      reduce using rule 82 (MLBCONTENT -> MLBESCAPEDNL .)
+    CHAR            reduce using rule 82 (MLBCONTENT -> MLBESCAPEDNL .)
+    ESC_QUOTE       reduce using rule 82 (MLBCONTENT -> MLBESCAPEDNL .)
+    ESC_REVERSE     reduce using rule 82 (MLBCONTENT -> MLBESCAPEDNL .)
+    ESC_BACKSPACE   reduce using rule 82 (MLBCONTENT -> MLBESCAPEDNL .)
+    ESC_FF          reduce using rule 82 (MLBCONTENT -> MLBESCAPEDNL .)
+    ESC_NL          reduce using rule 82 (MLBCONTENT -> MLBESCAPEDNL .)
+    ESC_CRETURN     reduce using rule 82 (MLBCONTENT -> MLBESCAPEDNL .)
+    ESC_TAB         reduce using rule 82 (MLBCONTENT -> MLBESCAPEDNL .)
+    ESC_HEX4        reduce using rule 82 (MLBCONTENT -> MLBESCAPEDNL .)
+    ESC_HEX8        reduce using rule 82 (MLBCONTENT -> MLBESCAPEDNL .)
+    TRIPLEASPA      reduce using rule 82 (MLBCONTENT -> MLBESCAPEDNL .)
 
 
 state 138
 
-    (85) MLBCONTENT -> DOT_SEP .
+    (83) MLBCONTENT -> TWODOT_SEP .
 
-    NEWLINE         reduce using rule 85 (MLBCONTENT -> DOT_SEP .)
-    TWODOT_SEP      reduce using rule 85 (MLBCONTENT -> DOT_SEP .)
-    DOT_SEP         reduce using rule 85 (MLBCONTENT -> DOT_SEP .)
-    VIRGULA         reduce using rule 85 (MLBCONTENT -> DOT_SEP .)
-    ASPA            reduce using rule 85 (MLBCONTENT -> DOT_SEP .)
-    DOUBLEASPA      reduce using rule 85 (MLBCONTENT -> DOT_SEP .)
-    ESCAPE          reduce using rule 85 (MLBCONTENT -> DOT_SEP .)
-    WHITESPACE      reduce using rule 85 (MLBCONTENT -> DOT_SEP .)
-    CHAR            reduce using rule 85 (MLBCONTENT -> DOT_SEP .)
-    ESC_QUOTE       reduce using rule 85 (MLBCONTENT -> DOT_SEP .)
-    ESC_REVERSE     reduce using rule 85 (MLBCONTENT -> DOT_SEP .)
-    ESC_BACKSPACE   reduce using rule 85 (MLBCONTENT -> DOT_SEP .)
-    ESC_FF          reduce using rule 85 (MLBCONTENT -> DOT_SEP .)
-    ESC_NL          reduce using rule 85 (MLBCONTENT -> DOT_SEP .)
-    ESC_CRETURN     reduce using rule 85 (MLBCONTENT -> DOT_SEP .)
-    ESC_TAB         reduce using rule 85 (MLBCONTENT -> DOT_SEP .)
-    ESC_HEX4        reduce using rule 85 (MLBCONTENT -> DOT_SEP .)
-    ESC_HEX8        reduce using rule 85 (MLBCONTENT -> DOT_SEP .)
-    TRIPLEASPA      reduce using rule 85 (MLBCONTENT -> DOT_SEP .)
+    NEWLINE         reduce using rule 83 (MLBCONTENT -> TWODOT_SEP .)
+    TWODOT_SEP      reduce using rule 83 (MLBCONTENT -> TWODOT_SEP .)
+    DOT_SEP         reduce using rule 83 (MLBCONTENT -> TWODOT_SEP .)
+    VIRGULA         reduce using rule 83 (MLBCONTENT -> TWODOT_SEP .)
+    ASPA            reduce using rule 83 (MLBCONTENT -> TWODOT_SEP .)
+    DOUBLEASPA      reduce using rule 83 (MLBCONTENT -> TWODOT_SEP .)
+    ESCAPE          reduce using rule 83 (MLBCONTENT -> TWODOT_SEP .)
+    WHITESPACE      reduce using rule 83 (MLBCONTENT -> TWODOT_SEP .)
+    CHAR            reduce using rule 83 (MLBCONTENT -> TWODOT_SEP .)
+    ESC_QUOTE       reduce using rule 83 (MLBCONTENT -> TWODOT_SEP .)
+    ESC_REVERSE     reduce using rule 83 (MLBCONTENT -> TWODOT_SEP .)
+    ESC_BACKSPACE   reduce using rule 83 (MLBCONTENT -> TWODOT_SEP .)
+    ESC_FF          reduce using rule 83 (MLBCONTENT -> TWODOT_SEP .)
+    ESC_NL          reduce using rule 83 (MLBCONTENT -> TWODOT_SEP .)
+    ESC_CRETURN     reduce using rule 83 (MLBCONTENT -> TWODOT_SEP .)
+    ESC_TAB         reduce using rule 83 (MLBCONTENT -> TWODOT_SEP .)
+    ESC_HEX4        reduce using rule 83 (MLBCONTENT -> TWODOT_SEP .)
+    ESC_HEX8        reduce using rule 83 (MLBCONTENT -> TWODOT_SEP .)
+    TRIPLEASPA      reduce using rule 83 (MLBCONTENT -> TWODOT_SEP .)
 
 
 state 139
 
-    (86) MLBCONTENT -> VIRGULA .
+    (84) MLBCONTENT -> DOT_SEP .
 
-    NEWLINE         reduce using rule 86 (MLBCONTENT -> VIRGULA .)
-    TWODOT_SEP      reduce using rule 86 (MLBCONTENT -> VIRGULA .)
-    DOT_SEP         reduce using rule 86 (MLBCONTENT -> VIRGULA .)
-    VIRGULA         reduce using rule 86 (MLBCONTENT -> VIRGULA .)
-    ASPA            reduce using rule 86 (MLBCONTENT -> VIRGULA .)
-    DOUBLEASPA      reduce using rule 86 (MLBCONTENT -> VIRGULA .)
-    ESCAPE          reduce using rule 86 (MLBCONTENT -> VIRGULA .)
-    WHITESPACE      reduce using rule 86 (MLBCONTENT -> VIRGULA .)
-    CHAR            reduce using rule 86 (MLBCONTENT -> VIRGULA .)
-    ESC_QUOTE       reduce using rule 86 (MLBCONTENT -> VIRGULA .)
-    ESC_REVERSE     reduce using rule 86 (MLBCONTENT -> VIRGULA .)
-    ESC_BACKSPACE   reduce using rule 86 (MLBCONTENT -> VIRGULA .)
-    ESC_FF          reduce using rule 86 (MLBCONTENT -> VIRGULA .)
-    ESC_NL          reduce using rule 86 (MLBCONTENT -> VIRGULA .)
-    ESC_CRETURN     reduce using rule 86 (MLBCONTENT -> VIRGULA .)
-    ESC_TAB         reduce using rule 86 (MLBCONTENT -> VIRGULA .)
-    ESC_HEX4        reduce using rule 86 (MLBCONTENT -> VIRGULA .)
-    ESC_HEX8        reduce using rule 86 (MLBCONTENT -> VIRGULA .)
-    TRIPLEASPA      reduce using rule 86 (MLBCONTENT -> VIRGULA .)
+    NEWLINE         reduce using rule 84 (MLBCONTENT -> DOT_SEP .)
+    TWODOT_SEP      reduce using rule 84 (MLBCONTENT -> DOT_SEP .)
+    DOT_SEP         reduce using rule 84 (MLBCONTENT -> DOT_SEP .)
+    VIRGULA         reduce using rule 84 (MLBCONTENT -> DOT_SEP .)
+    ASPA            reduce using rule 84 (MLBCONTENT -> DOT_SEP .)
+    DOUBLEASPA      reduce using rule 84 (MLBCONTENT -> DOT_SEP .)
+    ESCAPE          reduce using rule 84 (MLBCONTENT -> DOT_SEP .)
+    WHITESPACE      reduce using rule 84 (MLBCONTENT -> DOT_SEP .)
+    CHAR            reduce using rule 84 (MLBCONTENT -> DOT_SEP .)
+    ESC_QUOTE       reduce using rule 84 (MLBCONTENT -> DOT_SEP .)
+    ESC_REVERSE     reduce using rule 84 (MLBCONTENT -> DOT_SEP .)
+    ESC_BACKSPACE   reduce using rule 84 (MLBCONTENT -> DOT_SEP .)
+    ESC_FF          reduce using rule 84 (MLBCONTENT -> DOT_SEP .)
+    ESC_NL          reduce using rule 84 (MLBCONTENT -> DOT_SEP .)
+    ESC_CRETURN     reduce using rule 84 (MLBCONTENT -> DOT_SEP .)
+    ESC_TAB         reduce using rule 84 (MLBCONTENT -> DOT_SEP .)
+    ESC_HEX4        reduce using rule 84 (MLBCONTENT -> DOT_SEP .)
+    ESC_HEX8        reduce using rule 84 (MLBCONTENT -> DOT_SEP .)
+    TRIPLEASPA      reduce using rule 84 (MLBCONTENT -> DOT_SEP .)
 
 
 state 140
 
-    (89) MLBQUOTES -> ASPA .
+    (85) MLBCONTENT -> VIRGULA .
 
-    NEWLINE         reduce using rule 89 (MLBQUOTES -> ASPA .)
-    TWODOT_SEP      reduce using rule 89 (MLBQUOTES -> ASPA .)
-    DOT_SEP         reduce using rule 89 (MLBQUOTES -> ASPA .)
-    VIRGULA         reduce using rule 89 (MLBQUOTES -> ASPA .)
-    ASPA            reduce using rule 89 (MLBQUOTES -> ASPA .)
-    DOUBLEASPA      reduce using rule 89 (MLBQUOTES -> ASPA .)
-    ESCAPE          reduce using rule 89 (MLBQUOTES -> ASPA .)
-    WHITESPACE      reduce using rule 89 (MLBQUOTES -> ASPA .)
-    CHAR            reduce using rule 89 (MLBQUOTES -> ASPA .)
-    ESC_QUOTE       reduce using rule 89 (MLBQUOTES -> ASPA .)
-    ESC_REVERSE     reduce using rule 89 (MLBQUOTES -> ASPA .)
-    ESC_BACKSPACE   reduce using rule 89 (MLBQUOTES -> ASPA .)
-    ESC_FF          reduce using rule 89 (MLBQUOTES -> ASPA .)
-    ESC_NL          reduce using rule 89 (MLBQUOTES -> ASPA .)
-    ESC_CRETURN     reduce using rule 89 (MLBQUOTES -> ASPA .)
-    ESC_TAB         reduce using rule 89 (MLBQUOTES -> ASPA .)
-    ESC_HEX4        reduce using rule 89 (MLBQUOTES -> ASPA .)
-    ESC_HEX8        reduce using rule 89 (MLBQUOTES -> ASPA .)
-    TRIPLEASPA      reduce using rule 89 (MLBQUOTES -> ASPA .)
+    NEWLINE         reduce using rule 85 (MLBCONTENT -> VIRGULA .)
+    TWODOT_SEP      reduce using rule 85 (MLBCONTENT -> VIRGULA .)
+    DOT_SEP         reduce using rule 85 (MLBCONTENT -> VIRGULA .)
+    VIRGULA         reduce using rule 85 (MLBCONTENT -> VIRGULA .)
+    ASPA            reduce using rule 85 (MLBCONTENT -> VIRGULA .)
+    DOUBLEASPA      reduce using rule 85 (MLBCONTENT -> VIRGULA .)
+    ESCAPE          reduce using rule 85 (MLBCONTENT -> VIRGULA .)
+    WHITESPACE      reduce using rule 85 (MLBCONTENT -> VIRGULA .)
+    CHAR            reduce using rule 85 (MLBCONTENT -> VIRGULA .)
+    ESC_QUOTE       reduce using rule 85 (MLBCONTENT -> VIRGULA .)
+    ESC_REVERSE     reduce using rule 85 (MLBCONTENT -> VIRGULA .)
+    ESC_BACKSPACE   reduce using rule 85 (MLBCONTENT -> VIRGULA .)
+    ESC_FF          reduce using rule 85 (MLBCONTENT -> VIRGULA .)
+    ESC_NL          reduce using rule 85 (MLBCONTENT -> VIRGULA .)
+    ESC_CRETURN     reduce using rule 85 (MLBCONTENT -> VIRGULA .)
+    ESC_TAB         reduce using rule 85 (MLBCONTENT -> VIRGULA .)
+    ESC_HEX4        reduce using rule 85 (MLBCONTENT -> VIRGULA .)
+    ESC_HEX8        reduce using rule 85 (MLBCONTENT -> VIRGULA .)
+    TRIPLEASPA      reduce using rule 85 (MLBCONTENT -> VIRGULA .)
 
 
 state 141
 
-    (90) MLBQUOTES -> DOUBLEASPA .
+    (88) MLBQUOTES -> ASPA .
 
-    NEWLINE         reduce using rule 90 (MLBQUOTES -> DOUBLEASPA .)
-    TWODOT_SEP      reduce using rule 90 (MLBQUOTES -> DOUBLEASPA .)
-    DOT_SEP         reduce using rule 90 (MLBQUOTES -> DOUBLEASPA .)
-    VIRGULA         reduce using rule 90 (MLBQUOTES -> DOUBLEASPA .)
-    ASPA            reduce using rule 90 (MLBQUOTES -> DOUBLEASPA .)
-    DOUBLEASPA      reduce using rule 90 (MLBQUOTES -> DOUBLEASPA .)
-    ESCAPE          reduce using rule 90 (MLBQUOTES -> DOUBLEASPA .)
-    WHITESPACE      reduce using rule 90 (MLBQUOTES -> DOUBLEASPA .)
-    CHAR            reduce using rule 90 (MLBQUOTES -> DOUBLEASPA .)
-    ESC_QUOTE       reduce using rule 90 (MLBQUOTES -> DOUBLEASPA .)
-    ESC_REVERSE     reduce using rule 90 (MLBQUOTES -> DOUBLEASPA .)
-    ESC_BACKSPACE   reduce using rule 90 (MLBQUOTES -> DOUBLEASPA .)
-    ESC_FF          reduce using rule 90 (MLBQUOTES -> DOUBLEASPA .)
-    ESC_NL          reduce using rule 90 (MLBQUOTES -> DOUBLEASPA .)
-    ESC_CRETURN     reduce using rule 90 (MLBQUOTES -> DOUBLEASPA .)
-    ESC_TAB         reduce using rule 90 (MLBQUOTES -> DOUBLEASPA .)
-    ESC_HEX4        reduce using rule 90 (MLBQUOTES -> DOUBLEASPA .)
-    ESC_HEX8        reduce using rule 90 (MLBQUOTES -> DOUBLEASPA .)
-    TRIPLEASPA      reduce using rule 90 (MLBQUOTES -> DOUBLEASPA .)
+    NEWLINE         reduce using rule 88 (MLBQUOTES -> ASPA .)
+    TWODOT_SEP      reduce using rule 88 (MLBQUOTES -> ASPA .)
+    DOT_SEP         reduce using rule 88 (MLBQUOTES -> ASPA .)
+    VIRGULA         reduce using rule 88 (MLBQUOTES -> ASPA .)
+    ASPA            reduce using rule 88 (MLBQUOTES -> ASPA .)
+    DOUBLEASPA      reduce using rule 88 (MLBQUOTES -> ASPA .)
+    ESCAPE          reduce using rule 88 (MLBQUOTES -> ASPA .)
+    WHITESPACE      reduce using rule 88 (MLBQUOTES -> ASPA .)
+    CHAR            reduce using rule 88 (MLBQUOTES -> ASPA .)
+    ESC_QUOTE       reduce using rule 88 (MLBQUOTES -> ASPA .)
+    ESC_REVERSE     reduce using rule 88 (MLBQUOTES -> ASPA .)
+    ESC_BACKSPACE   reduce using rule 88 (MLBQUOTES -> ASPA .)
+    ESC_FF          reduce using rule 88 (MLBQUOTES -> ASPA .)
+    ESC_NL          reduce using rule 88 (MLBQUOTES -> ASPA .)
+    ESC_CRETURN     reduce using rule 88 (MLBQUOTES -> ASPA .)
+    ESC_TAB         reduce using rule 88 (MLBQUOTES -> ASPA .)
+    ESC_HEX4        reduce using rule 88 (MLBQUOTES -> ASPA .)
+    ESC_HEX8        reduce using rule 88 (MLBQUOTES -> ASPA .)
+    TRIPLEASPA      reduce using rule 88 (MLBQUOTES -> ASPA .)
 
 
 state 142
 
-    (87) MLBCHAR -> MLBUNESCAPED .
+    (89) MLBQUOTES -> DOUBLEASPA .
 
-    NEWLINE         reduce using rule 87 (MLBCHAR -> MLBUNESCAPED .)
-    TWODOT_SEP      reduce using rule 87 (MLBCHAR -> MLBUNESCAPED .)
-    DOT_SEP         reduce using rule 87 (MLBCHAR -> MLBUNESCAPED .)
-    VIRGULA         reduce using rule 87 (MLBCHAR -> MLBUNESCAPED .)
-    ASPA            reduce using rule 87 (MLBCHAR -> MLBUNESCAPED .)
-    DOUBLEASPA      reduce using rule 87 (MLBCHAR -> MLBUNESCAPED .)
-    ESCAPE          reduce using rule 87 (MLBCHAR -> MLBUNESCAPED .)
-    WHITESPACE      reduce using rule 87 (MLBCHAR -> MLBUNESCAPED .)
-    CHAR            reduce using rule 87 (MLBCHAR -> MLBUNESCAPED .)
-    ESC_QUOTE       reduce using rule 87 (MLBCHAR -> MLBUNESCAPED .)
-    ESC_REVERSE     reduce using rule 87 (MLBCHAR -> MLBUNESCAPED .)
-    ESC_BACKSPACE   reduce using rule 87 (MLBCHAR -> MLBUNESCAPED .)
-    ESC_FF          reduce using rule 87 (MLBCHAR -> MLBUNESCAPED .)
-    ESC_NL          reduce using rule 87 (MLBCHAR -> MLBUNESCAPED .)
-    ESC_CRETURN     reduce using rule 87 (MLBCHAR -> MLBUNESCAPED .)
-    ESC_TAB         reduce using rule 87 (MLBCHAR -> MLBUNESCAPED .)
-    ESC_HEX4        reduce using rule 87 (MLBCHAR -> MLBUNESCAPED .)
-    ESC_HEX8        reduce using rule 87 (MLBCHAR -> MLBUNESCAPED .)
-    TRIPLEASPA      reduce using rule 87 (MLBCHAR -> MLBUNESCAPED .)
+    NEWLINE         reduce using rule 89 (MLBQUOTES -> DOUBLEASPA .)
+    TWODOT_SEP      reduce using rule 89 (MLBQUOTES -> DOUBLEASPA .)
+    DOT_SEP         reduce using rule 89 (MLBQUOTES -> DOUBLEASPA .)
+    VIRGULA         reduce using rule 89 (MLBQUOTES -> DOUBLEASPA .)
+    ASPA            reduce using rule 89 (MLBQUOTES -> DOUBLEASPA .)
+    DOUBLEASPA      reduce using rule 89 (MLBQUOTES -> DOUBLEASPA .)
+    ESCAPE          reduce using rule 89 (MLBQUOTES -> DOUBLEASPA .)
+    WHITESPACE      reduce using rule 89 (MLBQUOTES -> DOUBLEASPA .)
+    CHAR            reduce using rule 89 (MLBQUOTES -> DOUBLEASPA .)
+    ESC_QUOTE       reduce using rule 89 (MLBQUOTES -> DOUBLEASPA .)
+    ESC_REVERSE     reduce using rule 89 (MLBQUOTES -> DOUBLEASPA .)
+    ESC_BACKSPACE   reduce using rule 89 (MLBQUOTES -> DOUBLEASPA .)
+    ESC_FF          reduce using rule 89 (MLBQUOTES -> DOUBLEASPA .)
+    ESC_NL          reduce using rule 89 (MLBQUOTES -> DOUBLEASPA .)
+    ESC_CRETURN     reduce using rule 89 (MLBQUOTES -> DOUBLEASPA .)
+    ESC_TAB         reduce using rule 89 (MLBQUOTES -> DOUBLEASPA .)
+    ESC_HEX4        reduce using rule 89 (MLBQUOTES -> DOUBLEASPA .)
+    ESC_HEX8        reduce using rule 89 (MLBQUOTES -> DOUBLEASPA .)
+    TRIPLEASPA      reduce using rule 89 (MLBQUOTES -> DOUBLEASPA .)
 
 
 state 143
 
-    (88) MLBCHAR -> ESCAPED .
+    (86) MLBCHAR -> MLBUNESCAPED .
 
-    NEWLINE         reduce using rule 88 (MLBCHAR -> ESCAPED .)
-    TWODOT_SEP      reduce using rule 88 (MLBCHAR -> ESCAPED .)
-    DOT_SEP         reduce using rule 88 (MLBCHAR -> ESCAPED .)
-    VIRGULA         reduce using rule 88 (MLBCHAR -> ESCAPED .)
-    ASPA            reduce using rule 88 (MLBCHAR -> ESCAPED .)
-    DOUBLEASPA      reduce using rule 88 (MLBCHAR -> ESCAPED .)
-    ESCAPE          reduce using rule 88 (MLBCHAR -> ESCAPED .)
-    WHITESPACE      reduce using rule 88 (MLBCHAR -> ESCAPED .)
-    CHAR            reduce using rule 88 (MLBCHAR -> ESCAPED .)
-    ESC_QUOTE       reduce using rule 88 (MLBCHAR -> ESCAPED .)
-    ESC_REVERSE     reduce using rule 88 (MLBCHAR -> ESCAPED .)
-    ESC_BACKSPACE   reduce using rule 88 (MLBCHAR -> ESCAPED .)
-    ESC_FF          reduce using rule 88 (MLBCHAR -> ESCAPED .)
-    ESC_NL          reduce using rule 88 (MLBCHAR -> ESCAPED .)
-    ESC_CRETURN     reduce using rule 88 (MLBCHAR -> ESCAPED .)
-    ESC_TAB         reduce using rule 88 (MLBCHAR -> ESCAPED .)
-    ESC_HEX4        reduce using rule 88 (MLBCHAR -> ESCAPED .)
-    ESC_HEX8        reduce using rule 88 (MLBCHAR -> ESCAPED .)
-    TRIPLEASPA      reduce using rule 88 (MLBCHAR -> ESCAPED .)
+    NEWLINE         reduce using rule 86 (MLBCHAR -> MLBUNESCAPED .)
+    TWODOT_SEP      reduce using rule 86 (MLBCHAR -> MLBUNESCAPED .)
+    DOT_SEP         reduce using rule 86 (MLBCHAR -> MLBUNESCAPED .)
+    VIRGULA         reduce using rule 86 (MLBCHAR -> MLBUNESCAPED .)
+    ASPA            reduce using rule 86 (MLBCHAR -> MLBUNESCAPED .)
+    DOUBLEASPA      reduce using rule 86 (MLBCHAR -> MLBUNESCAPED .)
+    ESCAPE          reduce using rule 86 (MLBCHAR -> MLBUNESCAPED .)
+    WHITESPACE      reduce using rule 86 (MLBCHAR -> MLBUNESCAPED .)
+    CHAR            reduce using rule 86 (MLBCHAR -> MLBUNESCAPED .)
+    ESC_QUOTE       reduce using rule 86 (MLBCHAR -> MLBUNESCAPED .)
+    ESC_REVERSE     reduce using rule 86 (MLBCHAR -> MLBUNESCAPED .)
+    ESC_BACKSPACE   reduce using rule 86 (MLBCHAR -> MLBUNESCAPED .)
+    ESC_FF          reduce using rule 86 (MLBCHAR -> MLBUNESCAPED .)
+    ESC_NL          reduce using rule 86 (MLBCHAR -> MLBUNESCAPED .)
+    ESC_CRETURN     reduce using rule 86 (MLBCHAR -> MLBUNESCAPED .)
+    ESC_TAB         reduce using rule 86 (MLBCHAR -> MLBUNESCAPED .)
+    ESC_HEX4        reduce using rule 86 (MLBCHAR -> MLBUNESCAPED .)
+    ESC_HEX8        reduce using rule 86 (MLBCHAR -> MLBUNESCAPED .)
+    TRIPLEASPA      reduce using rule 86 (MLBCHAR -> MLBUNESCAPED .)
 
 
 state 144
 
-    (94) MLBESCAPEDNL -> ESCAPE . NEWLINE WHNL
+    (87) MLBCHAR -> ESCAPED .
 
-    NEWLINE         shift and go to state 166
+    NEWLINE         reduce using rule 87 (MLBCHAR -> ESCAPED .)
+    TWODOT_SEP      reduce using rule 87 (MLBCHAR -> ESCAPED .)
+    DOT_SEP         reduce using rule 87 (MLBCHAR -> ESCAPED .)
+    VIRGULA         reduce using rule 87 (MLBCHAR -> ESCAPED .)
+    ASPA            reduce using rule 87 (MLBCHAR -> ESCAPED .)
+    DOUBLEASPA      reduce using rule 87 (MLBCHAR -> ESCAPED .)
+    ESCAPE          reduce using rule 87 (MLBCHAR -> ESCAPED .)
+    WHITESPACE      reduce using rule 87 (MLBCHAR -> ESCAPED .)
+    CHAR            reduce using rule 87 (MLBCHAR -> ESCAPED .)
+    ESC_QUOTE       reduce using rule 87 (MLBCHAR -> ESCAPED .)
+    ESC_REVERSE     reduce using rule 87 (MLBCHAR -> ESCAPED .)
+    ESC_BACKSPACE   reduce using rule 87 (MLBCHAR -> ESCAPED .)
+    ESC_FF          reduce using rule 87 (MLBCHAR -> ESCAPED .)
+    ESC_NL          reduce using rule 87 (MLBCHAR -> ESCAPED .)
+    ESC_CRETURN     reduce using rule 87 (MLBCHAR -> ESCAPED .)
+    ESC_TAB         reduce using rule 87 (MLBCHAR -> ESCAPED .)
+    ESC_HEX4        reduce using rule 87 (MLBCHAR -> ESCAPED .)
+    ESC_HEX8        reduce using rule 87 (MLBCHAR -> ESCAPED .)
+    TRIPLEASPA      reduce using rule 87 (MLBCHAR -> ESCAPED .)
 
 
 state 145
 
-    (92) MLBUNESCAPED -> WHITESPACE .
+    (93) MLBESCAPEDNL -> ESCAPE . NEWLINE WHNL
 
-    NEWLINE         reduce using rule 92 (MLBUNESCAPED -> WHITESPACE .)
-    TWODOT_SEP      reduce using rule 92 (MLBUNESCAPED -> WHITESPACE .)
-    DOT_SEP         reduce using rule 92 (MLBUNESCAPED -> WHITESPACE .)
-    VIRGULA         reduce using rule 92 (MLBUNESCAPED -> WHITESPACE .)
-    ASPA            reduce using rule 92 (MLBUNESCAPED -> WHITESPACE .)
-    DOUBLEASPA      reduce using rule 92 (MLBUNESCAPED -> WHITESPACE .)
-    ESCAPE          reduce using rule 92 (MLBUNESCAPED -> WHITESPACE .)
-    WHITESPACE      reduce using rule 92 (MLBUNESCAPED -> WHITESPACE .)
-    CHAR            reduce using rule 92 (MLBUNESCAPED -> WHITESPACE .)
-    ESC_QUOTE       reduce using rule 92 (MLBUNESCAPED -> WHITESPACE .)
-    ESC_REVERSE     reduce using rule 92 (MLBUNESCAPED -> WHITESPACE .)
-    ESC_BACKSPACE   reduce using rule 92 (MLBUNESCAPED -> WHITESPACE .)
-    ESC_FF          reduce using rule 92 (MLBUNESCAPED -> WHITESPACE .)
-    ESC_NL          reduce using rule 92 (MLBUNESCAPED -> WHITESPACE .)
-    ESC_CRETURN     reduce using rule 92 (MLBUNESCAPED -> WHITESPACE .)
-    ESC_TAB         reduce using rule 92 (MLBUNESCAPED -> WHITESPACE .)
-    ESC_HEX4        reduce using rule 92 (MLBUNESCAPED -> WHITESPACE .)
-    ESC_HEX8        reduce using rule 92 (MLBUNESCAPED -> WHITESPACE .)
-    TRIPLEASPA      reduce using rule 92 (MLBUNESCAPED -> WHITESPACE .)
+    NEWLINE         shift and go to state 166
 
 
 state 146
 
-    (93) MLBUNESCAPED -> CHAR .
+    (91) MLBUNESCAPED -> WHITESPACE .
 
-    NEWLINE         reduce using rule 93 (MLBUNESCAPED -> CHAR .)
-    TWODOT_SEP      reduce using rule 93 (MLBUNESCAPED -> CHAR .)
-    DOT_SEP         reduce using rule 93 (MLBUNESCAPED -> CHAR .)
-    VIRGULA         reduce using rule 93 (MLBUNESCAPED -> CHAR .)
-    ASPA            reduce using rule 93 (MLBUNESCAPED -> CHAR .)
-    DOUBLEASPA      reduce using rule 93 (MLBUNESCAPED -> CHAR .)
-    ESCAPE          reduce using rule 93 (MLBUNESCAPED -> CHAR .)
-    WHITESPACE      reduce using rule 93 (MLBUNESCAPED -> CHAR .)
-    CHAR            reduce using rule 93 (MLBUNESCAPED -> CHAR .)
-    ESC_QUOTE       reduce using rule 93 (MLBUNESCAPED -> CHAR .)
-    ESC_REVERSE     reduce using rule 93 (MLBUNESCAPED -> CHAR .)
-    ESC_BACKSPACE   reduce using rule 93 (MLBUNESCAPED -> CHAR .)
-    ESC_FF          reduce using rule 93 (MLBUNESCAPED -> CHAR .)
-    ESC_NL          reduce using rule 93 (MLBUNESCAPED -> CHAR .)
-    ESC_CRETURN     reduce using rule 93 (MLBUNESCAPED -> CHAR .)
-    ESC_TAB         reduce using rule 93 (MLBUNESCAPED -> CHAR .)
-    ESC_HEX4        reduce using rule 93 (MLBUNESCAPED -> CHAR .)
-    ESC_HEX8        reduce using rule 93 (MLBUNESCAPED -> CHAR .)
-    TRIPLEASPA      reduce using rule 93 (MLBUNESCAPED -> CHAR .)
+    NEWLINE         reduce using rule 91 (MLBUNESCAPED -> WHITESPACE .)
+    TWODOT_SEP      reduce using rule 91 (MLBUNESCAPED -> WHITESPACE .)
+    DOT_SEP         reduce using rule 91 (MLBUNESCAPED -> WHITESPACE .)
+    VIRGULA         reduce using rule 91 (MLBUNESCAPED -> WHITESPACE .)
+    ASPA            reduce using rule 91 (MLBUNESCAPED -> WHITESPACE .)
+    DOUBLEASPA      reduce using rule 91 (MLBUNESCAPED -> WHITESPACE .)
+    ESCAPE          reduce using rule 91 (MLBUNESCAPED -> WHITESPACE .)
+    WHITESPACE      reduce using rule 91 (MLBUNESCAPED -> WHITESPACE .)
+    CHAR            reduce using rule 91 (MLBUNESCAPED -> WHITESPACE .)
+    ESC_QUOTE       reduce using rule 91 (MLBUNESCAPED -> WHITESPACE .)
+    ESC_REVERSE     reduce using rule 91 (MLBUNESCAPED -> WHITESPACE .)
+    ESC_BACKSPACE   reduce using rule 91 (MLBUNESCAPED -> WHITESPACE .)
+    ESC_FF          reduce using rule 91 (MLBUNESCAPED -> WHITESPACE .)
+    ESC_NL          reduce using rule 91 (MLBUNESCAPED -> WHITESPACE .)
+    ESC_CRETURN     reduce using rule 91 (MLBUNESCAPED -> WHITESPACE .)
+    ESC_TAB         reduce using rule 91 (MLBUNESCAPED -> WHITESPACE .)
+    ESC_HEX4        reduce using rule 91 (MLBUNESCAPED -> WHITESPACE .)
+    ESC_HEX8        reduce using rule 91 (MLBUNESCAPED -> WHITESPACE .)
+    TRIPLEASPA      reduce using rule 91 (MLBUNESCAPED -> WHITESPACE .)
 
 
 state 147
 
-    (108) MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY . TRIPLEAPOSTROFE
+    (92) MLBUNESCAPED -> CHAR .
 
-    TRIPLEAPOSTROFE shift and go to state 167
+    NEWLINE         reduce using rule 92 (MLBUNESCAPED -> CHAR .)
+    TWODOT_SEP      reduce using rule 92 (MLBUNESCAPED -> CHAR .)
+    DOT_SEP         reduce using rule 92 (MLBUNESCAPED -> CHAR .)
+    VIRGULA         reduce using rule 92 (MLBUNESCAPED -> CHAR .)
+    ASPA            reduce using rule 92 (MLBUNESCAPED -> CHAR .)
+    DOUBLEASPA      reduce using rule 92 (MLBUNESCAPED -> CHAR .)
+    ESCAPE          reduce using rule 92 (MLBUNESCAPED -> CHAR .)
+    WHITESPACE      reduce using rule 92 (MLBUNESCAPED -> CHAR .)
+    CHAR            reduce using rule 92 (MLBUNESCAPED -> CHAR .)
+    ESC_QUOTE       reduce using rule 92 (MLBUNESCAPED -> CHAR .)
+    ESC_REVERSE     reduce using rule 92 (MLBUNESCAPED -> CHAR .)
+    ESC_BACKSPACE   reduce using rule 92 (MLBUNESCAPED -> CHAR .)
+    ESC_FF          reduce using rule 92 (MLBUNESCAPED -> CHAR .)
+    ESC_NL          reduce using rule 92 (MLBUNESCAPED -> CHAR .)
+    ESC_CRETURN     reduce using rule 92 (MLBUNESCAPED -> CHAR .)
+    ESC_TAB         reduce using rule 92 (MLBUNESCAPED -> CHAR .)
+    ESC_HEX4        reduce using rule 92 (MLBUNESCAPED -> CHAR .)
+    ESC_HEX8        reduce using rule 92 (MLBUNESCAPED -> CHAR .)
+    TRIPLEASPA      reduce using rule 92 (MLBUNESCAPED -> CHAR .)
 
 
 state 148
 
-    (111) MLLITERALBODY -> MLLC .
+    (107) MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY . TRIPLEAPOSTROFE
 
-    TRIPLEAPOSTROFE reduce using rule 111 (MLLITERALBODY -> MLLC .)
+    TRIPLEAPOSTROFE shift and go to state 167
 
 
 state 149
 
-    (112) MLLC -> MLLCONTENTQUOTES . MLLC
-    (112) MLLC -> . MLLCONTENTQUOTES MLLC
-    (115) MLLC -> .
-    (113) MLLCONTENTQUOTES -> . MLLCONTENT
-    (114) MLLCONTENTQUOTES -> . MLLQUOTES
-    (116) MLLCONTENT -> . MLLCHAR
-    (117) MLLCONTENT -> . NEWLINE
-    (122) MLLQUOTES -> . DOUBLEAPOSTROFE
-    (123) MLLQUOTES -> . APOSTROFE
-    (124) MLLQUOTES -> .
-    (118) MLLCHAR -> . CHAR
-    (119) MLLCHAR -> . DOT_SEP
-    (120) MLLCHAR -> . WHITESPACE
-    (121) MLLCHAR -> . VIRGULA
+    (110) MLLITERALBODY -> MLLC .
+
+    TRIPLEAPOSTROFE reduce using rule 110 (MLLITERALBODY -> MLLC .)
+
+
+state 150
+
+    (111) MLLC -> MLLCONTENTQUOTES . MLLC
+    (111) MLLC -> . MLLCONTENTQUOTES MLLC
+    (114) MLLC -> .
+    (112) MLLCONTENTQUOTES -> . MLLCONTENT
+    (113) MLLCONTENTQUOTES -> . MLLQUOTES
+    (115) MLLCONTENT -> . MLLCHAR
+    (116) MLLCONTENT -> . NEWLINE
+    (121) MLLQUOTES -> . DOUBLEAPOSTROFE
+    (122) MLLQUOTES -> . APOSTROFE
+    (123) MLLQUOTES -> .
+    (117) MLLCHAR -> . CHAR
+    (118) MLLCHAR -> . DOT_SEP
+    (119) MLLCHAR -> . WHITESPACE
+    (120) MLLCHAR -> . VIRGULA
 
   ! shift/reduce conflict for NEWLINE resolved as shift
   ! shift/reduce conflict for DOUBLEAPOSTROFE resolved as shift
   ! shift/reduce conflict for APOSTROFE resolved as shift
-  ! reduce/reduce conflict for TRIPLEAPOSTROFE resolved using rule 115 (MLLC -> .)
+  ! reduce/reduce conflict for TRIPLEAPOSTROFE resolved using rule 114 (MLLC -> .)
   ! shift/reduce conflict for CHAR resolved as shift
   ! shift/reduce conflict for DOT_SEP resolved as shift
   ! shift/reduce conflict for WHITESPACE resolved as shift
   ! shift/reduce conflict for VIRGULA resolved as shift
-    TRIPLEAPOSTROFE reduce using rule 115 (MLLC -> .)
-    NEWLINE         shift and go to state 153
-    DOUBLEAPOSTROFE shift and go to state 154
-    APOSTROFE       shift and go to state 155
-    CHAR            shift and go to state 156
-    DOT_SEP         shift and go to state 157
-    WHITESPACE      shift and go to state 158
-    VIRGULA         shift and go to state 159
+    TRIPLEAPOSTROFE reduce using rule 114 (MLLC -> .)
+    NEWLINE         shift and go to state 154
+    DOUBLEAPOSTROFE shift and go to state 155
+    APOSTROFE       shift and go to state 156
+    CHAR            shift and go to state 157
+    DOT_SEP         shift and go to state 158
+    WHITESPACE      shift and go to state 159
+    VIRGULA         shift and go to state 160
 
-  ! NEWLINE         [ reduce using rule 124 (MLLQUOTES -> .) ]
-  ! DOUBLEAPOSTROFE [ reduce using rule 124 (MLLQUOTES -> .) ]
-  ! APOSTROFE       [ reduce using rule 124 (MLLQUOTES -> .) ]
-  ! CHAR            [ reduce using rule 124 (MLLQUOTES -> .) ]
-  ! DOT_SEP         [ reduce using rule 124 (MLLQUOTES -> .) ]
-  ! WHITESPACE      [ reduce using rule 124 (MLLQUOTES -> .) ]
-  ! VIRGULA         [ reduce using rule 124 (MLLQUOTES -> .) ]
-  ! TRIPLEAPOSTROFE [ reduce using rule 124 (MLLQUOTES -> .) ]
+  ! NEWLINE         [ reduce using rule 123 (MLLQUOTES -> .) ]
+  ! DOUBLEAPOSTROFE [ reduce using rule 123 (MLLQUOTES -> .) ]
+  ! APOSTROFE       [ reduce using rule 123 (MLLQUOTES -> .) ]
+  ! CHAR            [ reduce using rule 123 (MLLQUOTES -> .) ]
+  ! DOT_SEP         [ reduce using rule 123 (MLLQUOTES -> .) ]
+  ! WHITESPACE      [ reduce using rule 123 (MLLQUOTES -> .) ]
+  ! VIRGULA         [ reduce using rule 123 (MLLQUOTES -> .) ]
+  ! TRIPLEAPOSTROFE [ reduce using rule 123 (MLLQUOTES -> .) ]
 
-    MLLCONTENTQUOTES               shift and go to state 149
+    MLLCONTENTQUOTES               shift and go to state 150
     MLLC                           shift and go to state 168
-    MLLCONTENT                     shift and go to state 150
-    MLLQUOTES                      shift and go to state 151
-    MLLCHAR                        shift and go to state 152
-
-state 150
-
-    (113) MLLCONTENTQUOTES -> MLLCONTENT .
-
-    NEWLINE         reduce using rule 113 (MLLCONTENTQUOTES -> MLLCONTENT .)
-    DOUBLEAPOSTROFE reduce using rule 113 (MLLCONTENTQUOTES -> MLLCONTENT .)
-    APOSTROFE       reduce using rule 113 (MLLCONTENTQUOTES -> MLLCONTENT .)
-    CHAR            reduce using rule 113 (MLLCONTENTQUOTES -> MLLCONTENT .)
-    DOT_SEP         reduce using rule 113 (MLLCONTENTQUOTES -> MLLCONTENT .)
-    WHITESPACE      reduce using rule 113 (MLLCONTENTQUOTES -> MLLCONTENT .)
-    VIRGULA         reduce using rule 113 (MLLCONTENTQUOTES -> MLLCONTENT .)
-    TRIPLEAPOSTROFE reduce using rule 113 (MLLCONTENTQUOTES -> MLLCONTENT .)
-
+    MLLCONTENT                     shift and go to state 151
+    MLLQUOTES                      shift and go to state 152
+    MLLCHAR                        shift and go to state 153
 
 state 151
 
-    (114) MLLCONTENTQUOTES -> MLLQUOTES .
+    (112) MLLCONTENTQUOTES -> MLLCONTENT .
 
-    NEWLINE         reduce using rule 114 (MLLCONTENTQUOTES -> MLLQUOTES .)
-    DOUBLEAPOSTROFE reduce using rule 114 (MLLCONTENTQUOTES -> MLLQUOTES .)
-    APOSTROFE       reduce using rule 114 (MLLCONTENTQUOTES -> MLLQUOTES .)
-    CHAR            reduce using rule 114 (MLLCONTENTQUOTES -> MLLQUOTES .)
-    DOT_SEP         reduce using rule 114 (MLLCONTENTQUOTES -> MLLQUOTES .)
-    WHITESPACE      reduce using rule 114 (MLLCONTENTQUOTES -> MLLQUOTES .)
-    VIRGULA         reduce using rule 114 (MLLCONTENTQUOTES -> MLLQUOTES .)
-    TRIPLEAPOSTROFE reduce using rule 114 (MLLCONTENTQUOTES -> MLLQUOTES .)
+    NEWLINE         reduce using rule 112 (MLLCONTENTQUOTES -> MLLCONTENT .)
+    DOUBLEAPOSTROFE reduce using rule 112 (MLLCONTENTQUOTES -> MLLCONTENT .)
+    APOSTROFE       reduce using rule 112 (MLLCONTENTQUOTES -> MLLCONTENT .)
+    CHAR            reduce using rule 112 (MLLCONTENTQUOTES -> MLLCONTENT .)
+    DOT_SEP         reduce using rule 112 (MLLCONTENTQUOTES -> MLLCONTENT .)
+    WHITESPACE      reduce using rule 112 (MLLCONTENTQUOTES -> MLLCONTENT .)
+    VIRGULA         reduce using rule 112 (MLLCONTENTQUOTES -> MLLCONTENT .)
+    TRIPLEAPOSTROFE reduce using rule 112 (MLLCONTENTQUOTES -> MLLCONTENT .)
 
 
 state 152
 
-    (116) MLLCONTENT -> MLLCHAR .
+    (113) MLLCONTENTQUOTES -> MLLQUOTES .
 
-    NEWLINE         reduce using rule 116 (MLLCONTENT -> MLLCHAR .)
-    DOUBLEAPOSTROFE reduce using rule 116 (MLLCONTENT -> MLLCHAR .)
-    APOSTROFE       reduce using rule 116 (MLLCONTENT -> MLLCHAR .)
-    CHAR            reduce using rule 116 (MLLCONTENT -> MLLCHAR .)
-    DOT_SEP         reduce using rule 116 (MLLCONTENT -> MLLCHAR .)
-    WHITESPACE      reduce using rule 116 (MLLCONTENT -> MLLCHAR .)
-    VIRGULA         reduce using rule 116 (MLLCONTENT -> MLLCHAR .)
-    TRIPLEAPOSTROFE reduce using rule 116 (MLLCONTENT -> MLLCHAR .)
+    NEWLINE         reduce using rule 113 (MLLCONTENTQUOTES -> MLLQUOTES .)
+    DOUBLEAPOSTROFE reduce using rule 113 (MLLCONTENTQUOTES -> MLLQUOTES .)
+    APOSTROFE       reduce using rule 113 (MLLCONTENTQUOTES -> MLLQUOTES .)
+    CHAR            reduce using rule 113 (MLLCONTENTQUOTES -> MLLQUOTES .)
+    DOT_SEP         reduce using rule 113 (MLLCONTENTQUOTES -> MLLQUOTES .)
+    WHITESPACE      reduce using rule 113 (MLLCONTENTQUOTES -> MLLQUOTES .)
+    VIRGULA         reduce using rule 113 (MLLCONTENTQUOTES -> MLLQUOTES .)
+    TRIPLEAPOSTROFE reduce using rule 113 (MLLCONTENTQUOTES -> MLLQUOTES .)
 
 
 state 153
 
-    (117) MLLCONTENT -> NEWLINE .
+    (115) MLLCONTENT -> MLLCHAR .
 
-    NEWLINE         reduce using rule 117 (MLLCONTENT -> NEWLINE .)
-    DOUBLEAPOSTROFE reduce using rule 117 (MLLCONTENT -> NEWLINE .)
-    APOSTROFE       reduce using rule 117 (MLLCONTENT -> NEWLINE .)
-    CHAR            reduce using rule 117 (MLLCONTENT -> NEWLINE .)
-    DOT_SEP         reduce using rule 117 (MLLCONTENT -> NEWLINE .)
-    WHITESPACE      reduce using rule 117 (MLLCONTENT -> NEWLINE .)
-    VIRGULA         reduce using rule 117 (MLLCONTENT -> NEWLINE .)
-    TRIPLEAPOSTROFE reduce using rule 117 (MLLCONTENT -> NEWLINE .)
+    NEWLINE         reduce using rule 115 (MLLCONTENT -> MLLCHAR .)
+    DOUBLEAPOSTROFE reduce using rule 115 (MLLCONTENT -> MLLCHAR .)
+    APOSTROFE       reduce using rule 115 (MLLCONTENT -> MLLCHAR .)
+    CHAR            reduce using rule 115 (MLLCONTENT -> MLLCHAR .)
+    DOT_SEP         reduce using rule 115 (MLLCONTENT -> MLLCHAR .)
+    WHITESPACE      reduce using rule 115 (MLLCONTENT -> MLLCHAR .)
+    VIRGULA         reduce using rule 115 (MLLCONTENT -> MLLCHAR .)
+    TRIPLEAPOSTROFE reduce using rule 115 (MLLCONTENT -> MLLCHAR .)
 
 
 state 154
 
-    (122) MLLQUOTES -> DOUBLEAPOSTROFE .
+    (116) MLLCONTENT -> NEWLINE .
 
-    NEWLINE         reduce using rule 122 (MLLQUOTES -> DOUBLEAPOSTROFE .)
-    DOUBLEAPOSTROFE reduce using rule 122 (MLLQUOTES -> DOUBLEAPOSTROFE .)
-    APOSTROFE       reduce using rule 122 (MLLQUOTES -> DOUBLEAPOSTROFE .)
-    CHAR            reduce using rule 122 (MLLQUOTES -> DOUBLEAPOSTROFE .)
-    DOT_SEP         reduce using rule 122 (MLLQUOTES -> DOUBLEAPOSTROFE .)
-    WHITESPACE      reduce using rule 122 (MLLQUOTES -> DOUBLEAPOSTROFE .)
-    VIRGULA         reduce using rule 122 (MLLQUOTES -> DOUBLEAPOSTROFE .)
-    TRIPLEAPOSTROFE reduce using rule 122 (MLLQUOTES -> DOUBLEAPOSTROFE .)
+    NEWLINE         reduce using rule 116 (MLLCONTENT -> NEWLINE .)
+    DOUBLEAPOSTROFE reduce using rule 116 (MLLCONTENT -> NEWLINE .)
+    APOSTROFE       reduce using rule 116 (MLLCONTENT -> NEWLINE .)
+    CHAR            reduce using rule 116 (MLLCONTENT -> NEWLINE .)
+    DOT_SEP         reduce using rule 116 (MLLCONTENT -> NEWLINE .)
+    WHITESPACE      reduce using rule 116 (MLLCONTENT -> NEWLINE .)
+    VIRGULA         reduce using rule 116 (MLLCONTENT -> NEWLINE .)
+    TRIPLEAPOSTROFE reduce using rule 116 (MLLCONTENT -> NEWLINE .)
 
 
 state 155
 
-    (123) MLLQUOTES -> APOSTROFE .
+    (121) MLLQUOTES -> DOUBLEAPOSTROFE .
 
-    NEWLINE         reduce using rule 123 (MLLQUOTES -> APOSTROFE .)
-    DOUBLEAPOSTROFE reduce using rule 123 (MLLQUOTES -> APOSTROFE .)
-    APOSTROFE       reduce using rule 123 (MLLQUOTES -> APOSTROFE .)
-    CHAR            reduce using rule 123 (MLLQUOTES -> APOSTROFE .)
-    DOT_SEP         reduce using rule 123 (MLLQUOTES -> APOSTROFE .)
-    WHITESPACE      reduce using rule 123 (MLLQUOTES -> APOSTROFE .)
-    VIRGULA         reduce using rule 123 (MLLQUOTES -> APOSTROFE .)
-    TRIPLEAPOSTROFE reduce using rule 123 (MLLQUOTES -> APOSTROFE .)
+    NEWLINE         reduce using rule 121 (MLLQUOTES -> DOUBLEAPOSTROFE .)
+    DOUBLEAPOSTROFE reduce using rule 121 (MLLQUOTES -> DOUBLEAPOSTROFE .)
+    APOSTROFE       reduce using rule 121 (MLLQUOTES -> DOUBLEAPOSTROFE .)
+    CHAR            reduce using rule 121 (MLLQUOTES -> DOUBLEAPOSTROFE .)
+    DOT_SEP         reduce using rule 121 (MLLQUOTES -> DOUBLEAPOSTROFE .)
+    WHITESPACE      reduce using rule 121 (MLLQUOTES -> DOUBLEAPOSTROFE .)
+    VIRGULA         reduce using rule 121 (MLLQUOTES -> DOUBLEAPOSTROFE .)
+    TRIPLEAPOSTROFE reduce using rule 121 (MLLQUOTES -> DOUBLEAPOSTROFE .)
 
 
 state 156
 
-    (118) MLLCHAR -> CHAR .
+    (122) MLLQUOTES -> APOSTROFE .
 
-    NEWLINE         reduce using rule 118 (MLLCHAR -> CHAR .)
-    DOUBLEAPOSTROFE reduce using rule 118 (MLLCHAR -> CHAR .)
-    APOSTROFE       reduce using rule 118 (MLLCHAR -> CHAR .)
-    CHAR            reduce using rule 118 (MLLCHAR -> CHAR .)
-    DOT_SEP         reduce using rule 118 (MLLCHAR -> CHAR .)
-    WHITESPACE      reduce using rule 118 (MLLCHAR -> CHAR .)
-    VIRGULA         reduce using rule 118 (MLLCHAR -> CHAR .)
-    TRIPLEAPOSTROFE reduce using rule 118 (MLLCHAR -> CHAR .)
+    NEWLINE         reduce using rule 122 (MLLQUOTES -> APOSTROFE .)
+    DOUBLEAPOSTROFE reduce using rule 122 (MLLQUOTES -> APOSTROFE .)
+    APOSTROFE       reduce using rule 122 (MLLQUOTES -> APOSTROFE .)
+    CHAR            reduce using rule 122 (MLLQUOTES -> APOSTROFE .)
+    DOT_SEP         reduce using rule 122 (MLLQUOTES -> APOSTROFE .)
+    WHITESPACE      reduce using rule 122 (MLLQUOTES -> APOSTROFE .)
+    VIRGULA         reduce using rule 122 (MLLQUOTES -> APOSTROFE .)
+    TRIPLEAPOSTROFE reduce using rule 122 (MLLQUOTES -> APOSTROFE .)
 
 
 state 157
 
-    (119) MLLCHAR -> DOT_SEP .
+    (117) MLLCHAR -> CHAR .
 
-    NEWLINE         reduce using rule 119 (MLLCHAR -> DOT_SEP .)
-    DOUBLEAPOSTROFE reduce using rule 119 (MLLCHAR -> DOT_SEP .)
-    APOSTROFE       reduce using rule 119 (MLLCHAR -> DOT_SEP .)
-    CHAR            reduce using rule 119 (MLLCHAR -> DOT_SEP .)
-    DOT_SEP         reduce using rule 119 (MLLCHAR -> DOT_SEP .)
-    WHITESPACE      reduce using rule 119 (MLLCHAR -> DOT_SEP .)
-    VIRGULA         reduce using rule 119 (MLLCHAR -> DOT_SEP .)
-    TRIPLEAPOSTROFE reduce using rule 119 (MLLCHAR -> DOT_SEP .)
+    NEWLINE         reduce using rule 117 (MLLCHAR -> CHAR .)
+    DOUBLEAPOSTROFE reduce using rule 117 (MLLCHAR -> CHAR .)
+    APOSTROFE       reduce using rule 117 (MLLCHAR -> CHAR .)
+    CHAR            reduce using rule 117 (MLLCHAR -> CHAR .)
+    DOT_SEP         reduce using rule 117 (MLLCHAR -> CHAR .)
+    WHITESPACE      reduce using rule 117 (MLLCHAR -> CHAR .)
+    VIRGULA         reduce using rule 117 (MLLCHAR -> CHAR .)
+    TRIPLEAPOSTROFE reduce using rule 117 (MLLCHAR -> CHAR .)
 
 
 state 158
 
-    (120) MLLCHAR -> WHITESPACE .
+    (118) MLLCHAR -> DOT_SEP .
 
-    NEWLINE         reduce using rule 120 (MLLCHAR -> WHITESPACE .)
-    DOUBLEAPOSTROFE reduce using rule 120 (MLLCHAR -> WHITESPACE .)
-    APOSTROFE       reduce using rule 120 (MLLCHAR -> WHITESPACE .)
-    CHAR            reduce using rule 120 (MLLCHAR -> WHITESPACE .)
-    DOT_SEP         reduce using rule 120 (MLLCHAR -> WHITESPACE .)
-    WHITESPACE      reduce using rule 120 (MLLCHAR -> WHITESPACE .)
-    VIRGULA         reduce using rule 120 (MLLCHAR -> WHITESPACE .)
-    TRIPLEAPOSTROFE reduce using rule 120 (MLLCHAR -> WHITESPACE .)
+    NEWLINE         reduce using rule 118 (MLLCHAR -> DOT_SEP .)
+    DOUBLEAPOSTROFE reduce using rule 118 (MLLCHAR -> DOT_SEP .)
+    APOSTROFE       reduce using rule 118 (MLLCHAR -> DOT_SEP .)
+    CHAR            reduce using rule 118 (MLLCHAR -> DOT_SEP .)
+    DOT_SEP         reduce using rule 118 (MLLCHAR -> DOT_SEP .)
+    WHITESPACE      reduce using rule 118 (MLLCHAR -> DOT_SEP .)
+    VIRGULA         reduce using rule 118 (MLLCHAR -> DOT_SEP .)
+    TRIPLEAPOSTROFE reduce using rule 118 (MLLCHAR -> DOT_SEP .)
 
 
 state 159
 
-    (121) MLLCHAR -> VIRGULA .
+    (119) MLLCHAR -> WHITESPACE .
 
-    NEWLINE         reduce using rule 121 (MLLCHAR -> VIRGULA .)
-    DOUBLEAPOSTROFE reduce using rule 121 (MLLCHAR -> VIRGULA .)
-    APOSTROFE       reduce using rule 121 (MLLCHAR -> VIRGULA .)
-    CHAR            reduce using rule 121 (MLLCHAR -> VIRGULA .)
-    DOT_SEP         reduce using rule 121 (MLLCHAR -> VIRGULA .)
-    WHITESPACE      reduce using rule 121 (MLLCHAR -> VIRGULA .)
-    VIRGULA         reduce using rule 121 (MLLCHAR -> VIRGULA .)
-    TRIPLEAPOSTROFE reduce using rule 121 (MLLCHAR -> VIRGULA .)
+    NEWLINE         reduce using rule 119 (MLLCHAR -> WHITESPACE .)
+    DOUBLEAPOSTROFE reduce using rule 119 (MLLCHAR -> WHITESPACE .)
+    APOSTROFE       reduce using rule 119 (MLLCHAR -> WHITESPACE .)
+    CHAR            reduce using rule 119 (MLLCHAR -> WHITESPACE .)
+    DOT_SEP         reduce using rule 119 (MLLCHAR -> WHITESPACE .)
+    WHITESPACE      reduce using rule 119 (MLLCHAR -> WHITESPACE .)
+    VIRGULA         reduce using rule 119 (MLLCHAR -> WHITESPACE .)
+    TRIPLEAPOSTROFE reduce using rule 119 (MLLCHAR -> WHITESPACE .)
 
 
 state 160
 
-    (125) ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR .
+    (120) MLLCHAR -> VIRGULA .
 
-    COMMENT         reduce using rule 125 (ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR .)
-    NEWLINE         reduce using rule 125 (ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR .)
-    ASPA            reduce using rule 125 (ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR .)
-    APOSTROFE       reduce using rule 125 (ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR .)
-    CHAR            reduce using rule 125 (ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR .)
-    INTEGER         reduce using rule 125 (ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR .)
-    MINUS           reduce using rule 125 (ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR .)
-    UNDERSCORE      reduce using rule 125 (ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR .)
-    APR             reduce using rule 125 (ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR .)
-    ATO             reduce using rule 125 (ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR .)
-    $end            reduce using rule 125 (ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR .)
-    WHITESPACE      reduce using rule 125 (ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR .)
-    FCH             reduce using rule 125 (ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR .)
-    VIRGULA         reduce using rule 125 (ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR .)
-    FPR             reduce using rule 125 (ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR .)
+    NEWLINE         reduce using rule 120 (MLLCHAR -> VIRGULA .)
+    DOUBLEAPOSTROFE reduce using rule 120 (MLLCHAR -> VIRGULA .)
+    APOSTROFE       reduce using rule 120 (MLLCHAR -> VIRGULA .)
+    CHAR            reduce using rule 120 (MLLCHAR -> VIRGULA .)
+    DOT_SEP         reduce using rule 120 (MLLCHAR -> VIRGULA .)
+    WHITESPACE      reduce using rule 120 (MLLCHAR -> VIRGULA .)
+    VIRGULA         reduce using rule 120 (MLLCHAR -> VIRGULA .)
+    TRIPLEAPOSTROFE reduce using rule 120 (MLLCHAR -> VIRGULA .)
 
 
 state 161
 
-    (129) ARRAYCONTEUDO -> WSCOMMENTNEWLINE . VIRGULA ARRAYVALUES
+    (124) ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR .
 
-    VIRGULA         shift and go to state 169
+    COMMENT         reduce using rule 124 (ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR .)
+    NEWLINE         reduce using rule 124 (ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR .)
+    ASPA            reduce using rule 124 (ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR .)
+    APOSTROFE       reduce using rule 124 (ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR .)
+    CHAR            reduce using rule 124 (ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR .)
+    INTEGER         reduce using rule 124 (ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR .)
+    MINUS           reduce using rule 124 (ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR .)
+    UNDERSCORE      reduce using rule 124 (ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR .)
+    APR             reduce using rule 124 (ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR .)
+    ATO             reduce using rule 124 (ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR .)
+    $end            reduce using rule 124 (ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR .)
+    WHITESPACE      reduce using rule 124 (ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR .)
+    FCH             reduce using rule 124 (ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR .)
+    VIRGULA         reduce using rule 124 (ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR .)
+    FPR             reduce using rule 124 (ARRAY -> APR ARRAYVALUES WSCOMMENTNEWLINE FPR .)
 
 
 state 162
 
-    (127) ARRAYVALUES -> WSCOMMENTNEWLINE VALUE ARRAYCONTEUDO .
+    (126) ARRAYVALUES -> WSCOMMENTNEWLINE VALUE WSCOMMENTNEWLINE . ARRAYCONTEUDO
+    (127) ARRAYCONTEUDO -> .
+    (128) ARRAYCONTEUDO -> . WSCOMMENTNEWLINE VIRGULA ARRAYVALUES
+    (129) WSCOMMENTNEWLINE -> .
+    (130) WSCOMMENTNEWLINE -> . INNERCOMMENT WSCOMMENTNEWLINE
+    (131) INNERCOMMENT -> . WHITESPACE
+    (132) INNERCOMMENT -> . COMMENTOUNAO NEWLINE
+    (133) INNERCOMMENT -> . NEWLINE
+    (134) COMMENTOUNAO -> . COMMENT
+    (135) COMMENTOUNAO -> .
 
-    WHITESPACE      reduce using rule 127 (ARRAYVALUES -> WSCOMMENTNEWLINE VALUE ARRAYCONTEUDO .)
-    COMMENT         reduce using rule 127 (ARRAYVALUES -> WSCOMMENTNEWLINE VALUE ARRAYCONTEUDO .)
-    FPR             reduce using rule 127 (ARRAYVALUES -> WSCOMMENTNEWLINE VALUE ARRAYCONTEUDO .)
-    NEWLINE         reduce using rule 127 (ARRAYVALUES -> WSCOMMENTNEWLINE VALUE ARRAYCONTEUDO .)
+  ! shift/reduce conflict for WHITESPACE resolved as shift
+  ! shift/reduce conflict for NEWLINE resolved as shift
+  ! shift/reduce conflict for COMMENT resolved as shift
+  ! shift/reduce conflict for NEWLINE resolved as shift
+    FPR             reduce using rule 127 (ARRAYCONTEUDO -> .)
+    VIRGULA         reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    WHITESPACE      shift and go to state 111
+    NEWLINE         shift and go to state 113
+    COMMENT         shift and go to state 114
 
+  ! WHITESPACE      [ reduce using rule 127 (ARRAYCONTEUDO -> .) ]
+  ! NEWLINE         [ reduce using rule 127 (ARRAYCONTEUDO -> .) ]
+  ! COMMENT         [ reduce using rule 127 (ARRAYCONTEUDO -> .) ]
+  ! NEWLINE         [ reduce using rule 135 (COMMENTOUNAO -> .) ]
+
+    WSCOMMENTNEWLINE               shift and go to state 169
+    ARRAYCONTEUDO                  shift and go to state 170
+    INNERCOMMENT                   shift and go to state 110
+    COMMENTOUNAO                   shift and go to state 112
 
 state 163
 
     (140) INLINETABLE -> ACH INLINETABLEWS INLINEKVALUE INLINETABLEWS . FCH
     (143) INLINEKVALUE -> INLINEKVALUE INLINETABLEWS . VIRGULA INLINETABLEWS KVALUE
 
-    FCH             shift and go to state 170
-    VIRGULA         shift and go to state 171
+    FCH             shift and go to state 171
+    VIRGULA         shift and go to state 172
 
 
 state 164
@@ -3975,116 +4032,93 @@ state 164
 
 state 165
 
-    (77) MLBC -> CONTENTQUOTE MLBC .
+    (76) MLBC -> CONTENTQUOTE MLBC .
 
-    TRIPLEASPA      reduce using rule 77 (MLBC -> CONTENTQUOTE MLBC .)
+    TRIPLEASPA      reduce using rule 76 (MLBC -> CONTENTQUOTE MLBC .)
 
 
 state 166
 
-    (94) MLBESCAPEDNL -> ESCAPE NEWLINE . WHNL
-    (95) WHNL -> . SPACENEWLINE WHNL
-    (96) WHNL -> .
-    (97) SPACENEWLINE -> . WHITESPACE
-    (98) SPACENEWLINE -> . NEWLINE
+    (93) MLBESCAPEDNL -> ESCAPE NEWLINE . WHNL
+    (94) WHNL -> . SPACENEWLINE WHNL
+    (95) WHNL -> .
+    (96) SPACENEWLINE -> . WHITESPACE
+    (97) SPACENEWLINE -> . NEWLINE
 
   ! shift/reduce conflict for WHITESPACE resolved as shift
   ! shift/reduce conflict for NEWLINE resolved as shift
-    TWODOT_SEP      reduce using rule 96 (WHNL -> .)
-    DOT_SEP         reduce using rule 96 (WHNL -> .)
-    VIRGULA         reduce using rule 96 (WHNL -> .)
-    ASPA            reduce using rule 96 (WHNL -> .)
-    DOUBLEASPA      reduce using rule 96 (WHNL -> .)
-    ESCAPE          reduce using rule 96 (WHNL -> .)
-    CHAR            reduce using rule 96 (WHNL -> .)
-    ESC_QUOTE       reduce using rule 96 (WHNL -> .)
-    ESC_REVERSE     reduce using rule 96 (WHNL -> .)
-    ESC_BACKSPACE   reduce using rule 96 (WHNL -> .)
-    ESC_FF          reduce using rule 96 (WHNL -> .)
-    ESC_NL          reduce using rule 96 (WHNL -> .)
-    ESC_CRETURN     reduce using rule 96 (WHNL -> .)
-    ESC_TAB         reduce using rule 96 (WHNL -> .)
-    ESC_HEX4        reduce using rule 96 (WHNL -> .)
-    ESC_HEX8        reduce using rule 96 (WHNL -> .)
-    TRIPLEASPA      reduce using rule 96 (WHNL -> .)
-    WHITESPACE      shift and go to state 175
-    NEWLINE         shift and go to state 172
+    TWODOT_SEP      reduce using rule 95 (WHNL -> .)
+    DOT_SEP         reduce using rule 95 (WHNL -> .)
+    VIRGULA         reduce using rule 95 (WHNL -> .)
+    ASPA            reduce using rule 95 (WHNL -> .)
+    DOUBLEASPA      reduce using rule 95 (WHNL -> .)
+    ESCAPE          reduce using rule 95 (WHNL -> .)
+    CHAR            reduce using rule 95 (WHNL -> .)
+    ESC_QUOTE       reduce using rule 95 (WHNL -> .)
+    ESC_REVERSE     reduce using rule 95 (WHNL -> .)
+    ESC_BACKSPACE   reduce using rule 95 (WHNL -> .)
+    ESC_FF          reduce using rule 95 (WHNL -> .)
+    ESC_NL          reduce using rule 95 (WHNL -> .)
+    ESC_CRETURN     reduce using rule 95 (WHNL -> .)
+    ESC_TAB         reduce using rule 95 (WHNL -> .)
+    ESC_HEX4        reduce using rule 95 (WHNL -> .)
+    ESC_HEX8        reduce using rule 95 (WHNL -> .)
+    TRIPLEASPA      reduce using rule 95 (WHNL -> .)
+    WHITESPACE      shift and go to state 176
+    NEWLINE         shift and go to state 173
 
-  ! NEWLINE         [ reduce using rule 96 (WHNL -> .) ]
-  ! WHITESPACE      [ reduce using rule 96 (WHNL -> .) ]
+  ! NEWLINE         [ reduce using rule 95 (WHNL -> .) ]
+  ! WHITESPACE      [ reduce using rule 95 (WHNL -> .) ]
 
-    WHNL                           shift and go to state 173
-    SPACENEWLINE                   shift and go to state 174
+    WHNL                           shift and go to state 174
+    SPACENEWLINE                   shift and go to state 175
 
 state 167
 
-    (108) MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE .
+    (107) MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE .
 
-    COMMENT         reduce using rule 108 (MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE .)
-    NEWLINE         reduce using rule 108 (MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE .)
-    ASPA            reduce using rule 108 (MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE .)
-    APOSTROFE       reduce using rule 108 (MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE .)
-    CHAR            reduce using rule 108 (MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE .)
-    INTEGER         reduce using rule 108 (MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE .)
-    MINUS           reduce using rule 108 (MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE .)
-    UNDERSCORE      reduce using rule 108 (MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE .)
-    APR             reduce using rule 108 (MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE .)
-    ATO             reduce using rule 108 (MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE .)
-    $end            reduce using rule 108 (MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE .)
-    WHITESPACE      reduce using rule 108 (MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE .)
-    FCH             reduce using rule 108 (MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE .)
-    VIRGULA         reduce using rule 108 (MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE .)
-    FPR             reduce using rule 108 (MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE .)
+    COMMENT         reduce using rule 107 (MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE .)
+    NEWLINE         reduce using rule 107 (MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE .)
+    ASPA            reduce using rule 107 (MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE .)
+    APOSTROFE       reduce using rule 107 (MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE .)
+    CHAR            reduce using rule 107 (MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE .)
+    INTEGER         reduce using rule 107 (MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE .)
+    MINUS           reduce using rule 107 (MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE .)
+    UNDERSCORE      reduce using rule 107 (MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE .)
+    APR             reduce using rule 107 (MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE .)
+    ATO             reduce using rule 107 (MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE .)
+    $end            reduce using rule 107 (MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE .)
+    WHITESPACE      reduce using rule 107 (MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE .)
+    FCH             reduce using rule 107 (MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE .)
+    VIRGULA         reduce using rule 107 (MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE .)
+    FPR             reduce using rule 107 (MLLITERALSTRING -> TRIPLEAPOSTROFE NLR MLLITERALBODY TRIPLEAPOSTROFE .)
 
 
 state 168
 
-    (112) MLLC -> MLLCONTENTQUOTES MLLC .
+    (111) MLLC -> MLLCONTENTQUOTES MLLC .
 
-    TRIPLEAPOSTROFE reduce using rule 112 (MLLC -> MLLCONTENTQUOTES MLLC .)
+    TRIPLEAPOSTROFE reduce using rule 111 (MLLC -> MLLCONTENTQUOTES MLLC .)
 
 
 state 169
 
-    (129) ARRAYCONTEUDO -> WSCOMMENTNEWLINE VIRGULA . ARRAYVALUES
-    (126) ARRAYVALUES -> .
-    (127) ARRAYVALUES -> . WSCOMMENTNEWLINE VALUE ARRAYCONTEUDO
-    (130) WSCOMMENTNEWLINE -> .
-    (131) WSCOMMENTNEWLINE -> . INNERCOMMENT WSCOMMENTNEWLINE
-    (132) INNERCOMMENT -> . WHITESPACE
-    (133) INNERCOMMENT -> . COMMENTOUNAO NEWLINE
-    (134) COMMENTOUNAO -> . COMMENT
-    (135) COMMENTOUNAO -> .
+    (128) ARRAYCONTEUDO -> WSCOMMENTNEWLINE . VIRGULA ARRAYVALUES
 
-  ! shift/reduce conflict for WHITESPACE resolved as shift
-  ! shift/reduce conflict for COMMENT resolved as shift
-  ! reduce/reduce conflict for NEWLINE resolved using rule 126 (ARRAYVALUES -> .)
-    FPR             reduce using rule 126 (ARRAYVALUES -> .)
-    NEWLINE         reduce using rule 126 (ARRAYVALUES -> .)
-    BOOLEAN         reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    INTEGER         reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    FLOAT           reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    APR             reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    ACH             reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    TRIPLEASPA      reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    ASPA            reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    TRIPLEAPOSTROFE reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    APOSTROFE       reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    DATE            reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    TIME            reduce using rule 130 (WSCOMMENTNEWLINE -> .)
-    WHITESPACE      shift and go to state 111
-    COMMENT         shift and go to state 113
+    VIRGULA         shift and go to state 177
 
-  ! WHITESPACE      [ reduce using rule 126 (ARRAYVALUES -> .) ]
-  ! COMMENT         [ reduce using rule 126 (ARRAYVALUES -> .) ]
-  ! NEWLINE         [ reduce using rule 135 (COMMENTOUNAO -> .) ]
-
-    WSCOMMENTNEWLINE               shift and go to state 109
-    ARRAYVALUES                    shift and go to state 176
-    INNERCOMMENT                   shift and go to state 110
-    COMMENTOUNAO                   shift and go to state 112
 
 state 170
+
+    (126) ARRAYVALUES -> WSCOMMENTNEWLINE VALUE WSCOMMENTNEWLINE ARRAYCONTEUDO .
+
+    WHITESPACE      reduce using rule 126 (ARRAYVALUES -> WSCOMMENTNEWLINE VALUE WSCOMMENTNEWLINE ARRAYCONTEUDO .)
+    NEWLINE         reduce using rule 126 (ARRAYVALUES -> WSCOMMENTNEWLINE VALUE WSCOMMENTNEWLINE ARRAYCONTEUDO .)
+    COMMENT         reduce using rule 126 (ARRAYVALUES -> WSCOMMENTNEWLINE VALUE WSCOMMENTNEWLINE ARRAYCONTEUDO .)
+    FPR             reduce using rule 126 (ARRAYVALUES -> WSCOMMENTNEWLINE VALUE WSCOMMENTNEWLINE ARRAYCONTEUDO .)
+
+
+state 171
 
     (140) INLINETABLE -> ACH INLINETABLEWS INLINEKVALUE INLINETABLEWS FCH .
 
@@ -4105,7 +4139,7 @@ state 170
     FPR             reduce using rule 140 (INLINETABLE -> ACH INLINETABLEWS INLINEKVALUE INLINETABLEWS FCH .)
 
 
-state 171
+state 172
 
     (143) INLINEKVALUE -> INLINEKVALUE INLINETABLEWS VIRGULA . INLINETABLEWS KVALUE
     (141) INLINETABLEWS -> .
@@ -4117,132 +4151,165 @@ state 171
     INTEGER         reduce using rule 141 (INLINETABLEWS -> .)
     MINUS           reduce using rule 141 (INLINETABLEWS -> .)
     UNDERSCORE      reduce using rule 141 (INLINETABLEWS -> .)
-    WHITESPACE      shift and go to state 116
+    WHITESPACE      shift and go to state 117
 
-    INLINETABLEWS                  shift and go to state 177
-
-state 172
-
-    (98) SPACENEWLINE -> NEWLINE .
-
-    WHITESPACE      reduce using rule 98 (SPACENEWLINE -> NEWLINE .)
-    NEWLINE         reduce using rule 98 (SPACENEWLINE -> NEWLINE .)
-    TWODOT_SEP      reduce using rule 98 (SPACENEWLINE -> NEWLINE .)
-    DOT_SEP         reduce using rule 98 (SPACENEWLINE -> NEWLINE .)
-    VIRGULA         reduce using rule 98 (SPACENEWLINE -> NEWLINE .)
-    ASPA            reduce using rule 98 (SPACENEWLINE -> NEWLINE .)
-    DOUBLEASPA      reduce using rule 98 (SPACENEWLINE -> NEWLINE .)
-    ESCAPE          reduce using rule 98 (SPACENEWLINE -> NEWLINE .)
-    CHAR            reduce using rule 98 (SPACENEWLINE -> NEWLINE .)
-    ESC_QUOTE       reduce using rule 98 (SPACENEWLINE -> NEWLINE .)
-    ESC_REVERSE     reduce using rule 98 (SPACENEWLINE -> NEWLINE .)
-    ESC_BACKSPACE   reduce using rule 98 (SPACENEWLINE -> NEWLINE .)
-    ESC_FF          reduce using rule 98 (SPACENEWLINE -> NEWLINE .)
-    ESC_NL          reduce using rule 98 (SPACENEWLINE -> NEWLINE .)
-    ESC_CRETURN     reduce using rule 98 (SPACENEWLINE -> NEWLINE .)
-    ESC_TAB         reduce using rule 98 (SPACENEWLINE -> NEWLINE .)
-    ESC_HEX4        reduce using rule 98 (SPACENEWLINE -> NEWLINE .)
-    ESC_HEX8        reduce using rule 98 (SPACENEWLINE -> NEWLINE .)
-    TRIPLEASPA      reduce using rule 98 (SPACENEWLINE -> NEWLINE .)
-
+    INLINETABLEWS                  shift and go to state 178
 
 state 173
 
-    (94) MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .
+    (97) SPACENEWLINE -> NEWLINE .
 
-    NEWLINE         reduce using rule 94 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
-    TWODOT_SEP      reduce using rule 94 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
-    DOT_SEP         reduce using rule 94 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
-    VIRGULA         reduce using rule 94 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
-    ASPA            reduce using rule 94 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
-    DOUBLEASPA      reduce using rule 94 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
-    ESCAPE          reduce using rule 94 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
-    WHITESPACE      reduce using rule 94 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
-    CHAR            reduce using rule 94 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
-    ESC_QUOTE       reduce using rule 94 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
-    ESC_REVERSE     reduce using rule 94 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
-    ESC_BACKSPACE   reduce using rule 94 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
-    ESC_FF          reduce using rule 94 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
-    ESC_NL          reduce using rule 94 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
-    ESC_CRETURN     reduce using rule 94 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
-    ESC_TAB         reduce using rule 94 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
-    ESC_HEX4        reduce using rule 94 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
-    ESC_HEX8        reduce using rule 94 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
-    TRIPLEASPA      reduce using rule 94 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
+    WHITESPACE      reduce using rule 97 (SPACENEWLINE -> NEWLINE .)
+    NEWLINE         reduce using rule 97 (SPACENEWLINE -> NEWLINE .)
+    TWODOT_SEP      reduce using rule 97 (SPACENEWLINE -> NEWLINE .)
+    DOT_SEP         reduce using rule 97 (SPACENEWLINE -> NEWLINE .)
+    VIRGULA         reduce using rule 97 (SPACENEWLINE -> NEWLINE .)
+    ASPA            reduce using rule 97 (SPACENEWLINE -> NEWLINE .)
+    DOUBLEASPA      reduce using rule 97 (SPACENEWLINE -> NEWLINE .)
+    ESCAPE          reduce using rule 97 (SPACENEWLINE -> NEWLINE .)
+    CHAR            reduce using rule 97 (SPACENEWLINE -> NEWLINE .)
+    ESC_QUOTE       reduce using rule 97 (SPACENEWLINE -> NEWLINE .)
+    ESC_REVERSE     reduce using rule 97 (SPACENEWLINE -> NEWLINE .)
+    ESC_BACKSPACE   reduce using rule 97 (SPACENEWLINE -> NEWLINE .)
+    ESC_FF          reduce using rule 97 (SPACENEWLINE -> NEWLINE .)
+    ESC_NL          reduce using rule 97 (SPACENEWLINE -> NEWLINE .)
+    ESC_CRETURN     reduce using rule 97 (SPACENEWLINE -> NEWLINE .)
+    ESC_TAB         reduce using rule 97 (SPACENEWLINE -> NEWLINE .)
+    ESC_HEX4        reduce using rule 97 (SPACENEWLINE -> NEWLINE .)
+    ESC_HEX8        reduce using rule 97 (SPACENEWLINE -> NEWLINE .)
+    TRIPLEASPA      reduce using rule 97 (SPACENEWLINE -> NEWLINE .)
 
 
 state 174
 
-    (95) WHNL -> SPACENEWLINE . WHNL
-    (95) WHNL -> . SPACENEWLINE WHNL
-    (96) WHNL -> .
-    (97) SPACENEWLINE -> . WHITESPACE
-    (98) SPACENEWLINE -> . NEWLINE
+    (93) MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .
 
-  ! shift/reduce conflict for WHITESPACE resolved as shift
-  ! shift/reduce conflict for NEWLINE resolved as shift
-    TWODOT_SEP      reduce using rule 96 (WHNL -> .)
-    DOT_SEP         reduce using rule 96 (WHNL -> .)
-    VIRGULA         reduce using rule 96 (WHNL -> .)
-    ASPA            reduce using rule 96 (WHNL -> .)
-    DOUBLEASPA      reduce using rule 96 (WHNL -> .)
-    ESCAPE          reduce using rule 96 (WHNL -> .)
-    CHAR            reduce using rule 96 (WHNL -> .)
-    ESC_QUOTE       reduce using rule 96 (WHNL -> .)
-    ESC_REVERSE     reduce using rule 96 (WHNL -> .)
-    ESC_BACKSPACE   reduce using rule 96 (WHNL -> .)
-    ESC_FF          reduce using rule 96 (WHNL -> .)
-    ESC_NL          reduce using rule 96 (WHNL -> .)
-    ESC_CRETURN     reduce using rule 96 (WHNL -> .)
-    ESC_TAB         reduce using rule 96 (WHNL -> .)
-    ESC_HEX4        reduce using rule 96 (WHNL -> .)
-    ESC_HEX8        reduce using rule 96 (WHNL -> .)
-    TRIPLEASPA      reduce using rule 96 (WHNL -> .)
-    WHITESPACE      shift and go to state 175
-    NEWLINE         shift and go to state 172
+    NEWLINE         reduce using rule 93 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
+    TWODOT_SEP      reduce using rule 93 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
+    DOT_SEP         reduce using rule 93 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
+    VIRGULA         reduce using rule 93 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
+    ASPA            reduce using rule 93 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
+    DOUBLEASPA      reduce using rule 93 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
+    ESCAPE          reduce using rule 93 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
+    WHITESPACE      reduce using rule 93 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
+    CHAR            reduce using rule 93 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
+    ESC_QUOTE       reduce using rule 93 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
+    ESC_REVERSE     reduce using rule 93 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
+    ESC_BACKSPACE   reduce using rule 93 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
+    ESC_FF          reduce using rule 93 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
+    ESC_NL          reduce using rule 93 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
+    ESC_CRETURN     reduce using rule 93 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
+    ESC_TAB         reduce using rule 93 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
+    ESC_HEX4        reduce using rule 93 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
+    ESC_HEX8        reduce using rule 93 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
+    TRIPLEASPA      reduce using rule 93 (MLBESCAPEDNL -> ESCAPE NEWLINE WHNL .)
 
-  ! NEWLINE         [ reduce using rule 96 (WHNL -> .) ]
-  ! WHITESPACE      [ reduce using rule 96 (WHNL -> .) ]
-
-    SPACENEWLINE                   shift and go to state 174
-    WHNL                           shift and go to state 178
 
 state 175
 
-    (97) SPACENEWLINE -> WHITESPACE .
+    (94) WHNL -> SPACENEWLINE . WHNL
+    (94) WHNL -> . SPACENEWLINE WHNL
+    (95) WHNL -> .
+    (96) SPACENEWLINE -> . WHITESPACE
+    (97) SPACENEWLINE -> . NEWLINE
 
-    WHITESPACE      reduce using rule 97 (SPACENEWLINE -> WHITESPACE .)
-    NEWLINE         reduce using rule 97 (SPACENEWLINE -> WHITESPACE .)
-    TWODOT_SEP      reduce using rule 97 (SPACENEWLINE -> WHITESPACE .)
-    DOT_SEP         reduce using rule 97 (SPACENEWLINE -> WHITESPACE .)
-    VIRGULA         reduce using rule 97 (SPACENEWLINE -> WHITESPACE .)
-    ASPA            reduce using rule 97 (SPACENEWLINE -> WHITESPACE .)
-    DOUBLEASPA      reduce using rule 97 (SPACENEWLINE -> WHITESPACE .)
-    ESCAPE          reduce using rule 97 (SPACENEWLINE -> WHITESPACE .)
-    CHAR            reduce using rule 97 (SPACENEWLINE -> WHITESPACE .)
-    ESC_QUOTE       reduce using rule 97 (SPACENEWLINE -> WHITESPACE .)
-    ESC_REVERSE     reduce using rule 97 (SPACENEWLINE -> WHITESPACE .)
-    ESC_BACKSPACE   reduce using rule 97 (SPACENEWLINE -> WHITESPACE .)
-    ESC_FF          reduce using rule 97 (SPACENEWLINE -> WHITESPACE .)
-    ESC_NL          reduce using rule 97 (SPACENEWLINE -> WHITESPACE .)
-    ESC_CRETURN     reduce using rule 97 (SPACENEWLINE -> WHITESPACE .)
-    ESC_TAB         reduce using rule 97 (SPACENEWLINE -> WHITESPACE .)
-    ESC_HEX4        reduce using rule 97 (SPACENEWLINE -> WHITESPACE .)
-    ESC_HEX8        reduce using rule 97 (SPACENEWLINE -> WHITESPACE .)
-    TRIPLEASPA      reduce using rule 97 (SPACENEWLINE -> WHITESPACE .)
+  ! shift/reduce conflict for WHITESPACE resolved as shift
+  ! shift/reduce conflict for NEWLINE resolved as shift
+    TWODOT_SEP      reduce using rule 95 (WHNL -> .)
+    DOT_SEP         reduce using rule 95 (WHNL -> .)
+    VIRGULA         reduce using rule 95 (WHNL -> .)
+    ASPA            reduce using rule 95 (WHNL -> .)
+    DOUBLEASPA      reduce using rule 95 (WHNL -> .)
+    ESCAPE          reduce using rule 95 (WHNL -> .)
+    CHAR            reduce using rule 95 (WHNL -> .)
+    ESC_QUOTE       reduce using rule 95 (WHNL -> .)
+    ESC_REVERSE     reduce using rule 95 (WHNL -> .)
+    ESC_BACKSPACE   reduce using rule 95 (WHNL -> .)
+    ESC_FF          reduce using rule 95 (WHNL -> .)
+    ESC_NL          reduce using rule 95 (WHNL -> .)
+    ESC_CRETURN     reduce using rule 95 (WHNL -> .)
+    ESC_TAB         reduce using rule 95 (WHNL -> .)
+    ESC_HEX4        reduce using rule 95 (WHNL -> .)
+    ESC_HEX8        reduce using rule 95 (WHNL -> .)
+    TRIPLEASPA      reduce using rule 95 (WHNL -> .)
+    WHITESPACE      shift and go to state 176
+    NEWLINE         shift and go to state 173
 
+  ! NEWLINE         [ reduce using rule 95 (WHNL -> .) ]
+  ! WHITESPACE      [ reduce using rule 95 (WHNL -> .) ]
+
+    SPACENEWLINE                   shift and go to state 175
+    WHNL                           shift and go to state 179
 
 state 176
 
-    (129) ARRAYCONTEUDO -> WSCOMMENTNEWLINE VIRGULA ARRAYVALUES .
+    (96) SPACENEWLINE -> WHITESPACE .
 
-    WHITESPACE      reduce using rule 129 (ARRAYCONTEUDO -> WSCOMMENTNEWLINE VIRGULA ARRAYVALUES .)
-    COMMENT         reduce using rule 129 (ARRAYCONTEUDO -> WSCOMMENTNEWLINE VIRGULA ARRAYVALUES .)
-    FPR             reduce using rule 129 (ARRAYCONTEUDO -> WSCOMMENTNEWLINE VIRGULA ARRAYVALUES .)
-    NEWLINE         reduce using rule 129 (ARRAYCONTEUDO -> WSCOMMENTNEWLINE VIRGULA ARRAYVALUES .)
+    WHITESPACE      reduce using rule 96 (SPACENEWLINE -> WHITESPACE .)
+    NEWLINE         reduce using rule 96 (SPACENEWLINE -> WHITESPACE .)
+    TWODOT_SEP      reduce using rule 96 (SPACENEWLINE -> WHITESPACE .)
+    DOT_SEP         reduce using rule 96 (SPACENEWLINE -> WHITESPACE .)
+    VIRGULA         reduce using rule 96 (SPACENEWLINE -> WHITESPACE .)
+    ASPA            reduce using rule 96 (SPACENEWLINE -> WHITESPACE .)
+    DOUBLEASPA      reduce using rule 96 (SPACENEWLINE -> WHITESPACE .)
+    ESCAPE          reduce using rule 96 (SPACENEWLINE -> WHITESPACE .)
+    CHAR            reduce using rule 96 (SPACENEWLINE -> WHITESPACE .)
+    ESC_QUOTE       reduce using rule 96 (SPACENEWLINE -> WHITESPACE .)
+    ESC_REVERSE     reduce using rule 96 (SPACENEWLINE -> WHITESPACE .)
+    ESC_BACKSPACE   reduce using rule 96 (SPACENEWLINE -> WHITESPACE .)
+    ESC_FF          reduce using rule 96 (SPACENEWLINE -> WHITESPACE .)
+    ESC_NL          reduce using rule 96 (SPACENEWLINE -> WHITESPACE .)
+    ESC_CRETURN     reduce using rule 96 (SPACENEWLINE -> WHITESPACE .)
+    ESC_TAB         reduce using rule 96 (SPACENEWLINE -> WHITESPACE .)
+    ESC_HEX4        reduce using rule 96 (SPACENEWLINE -> WHITESPACE .)
+    ESC_HEX8        reduce using rule 96 (SPACENEWLINE -> WHITESPACE .)
+    TRIPLEASPA      reduce using rule 96 (SPACENEWLINE -> WHITESPACE .)
 
 
 state 177
+
+    (128) ARRAYCONTEUDO -> WSCOMMENTNEWLINE VIRGULA . ARRAYVALUES
+    (125) ARRAYVALUES -> .
+    (126) ARRAYVALUES -> . WSCOMMENTNEWLINE VALUE WSCOMMENTNEWLINE ARRAYCONTEUDO
+    (129) WSCOMMENTNEWLINE -> .
+    (130) WSCOMMENTNEWLINE -> . INNERCOMMENT WSCOMMENTNEWLINE
+    (131) INNERCOMMENT -> . WHITESPACE
+    (132) INNERCOMMENT -> . COMMENTOUNAO NEWLINE
+    (133) INNERCOMMENT -> . NEWLINE
+    (134) COMMENTOUNAO -> . COMMENT
+    (135) COMMENTOUNAO -> .
+
+  ! shift/reduce conflict for WHITESPACE resolved as shift
+  ! shift/reduce conflict for NEWLINE resolved as shift
+  ! shift/reduce conflict for COMMENT resolved as shift
+  ! shift/reduce conflict for NEWLINE resolved as shift
+    FPR             reduce using rule 125 (ARRAYVALUES -> .)
+    BOOLEAN         reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    INTEGER         reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    FLOAT           reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    APR             reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    ACH             reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    TRIPLEASPA      reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    ASPA            reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    TRIPLEAPOSTROFE reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    APOSTROFE       reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    DATE            reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    TIME            reduce using rule 129 (WSCOMMENTNEWLINE -> .)
+    WHITESPACE      shift and go to state 111
+    NEWLINE         shift and go to state 113
+    COMMENT         shift and go to state 114
+
+  ! WHITESPACE      [ reduce using rule 125 (ARRAYVALUES -> .) ]
+  ! NEWLINE         [ reduce using rule 125 (ARRAYVALUES -> .) ]
+  ! COMMENT         [ reduce using rule 125 (ARRAYVALUES -> .) ]
+  ! NEWLINE         [ reduce using rule 135 (COMMENTOUNAO -> .) ]
+
+    WSCOMMENTNEWLINE               shift and go to state 109
+    ARRAYVALUES                    shift and go to state 180
+    INNERCOMMENT                   shift and go to state 110
+    COMMENTOUNAO                   shift and go to state 112
+
+state 178
 
     (143) INLINEKVALUE -> INLINEKVALUE INLINETABLEWS VIRGULA INLINETABLEWS . KVALUE
     (13) KVALUE -> . KEY kvwhitespace IGUAL kvwhitespace VALUE
@@ -4255,7 +4322,7 @@ state 177
     (28) QUOTEDKEY -> . LITERALSTRING
     (20) UNQUOTEDKEY -> . OCCURRENCES UNQUOTEDKEYAUX
     (49) BASICSTRING -> . ASPA BC ASPA
-    (99) LITERALSTRING -> . APOSTROFE LCH APOSTROFE
+    (98) LITERALSTRING -> . APOSTROFE LCH APOSTROFE
     (23) OCCURRENCES -> . CHAR
     (24) OCCURRENCES -> . INTEGER
     (25) OCCURRENCES -> . MINUS
@@ -4268,7 +4335,7 @@ state 177
     MINUS           shift and go to state 16
     UNDERSCORE      shift and go to state 17
 
-    KVALUE                         shift and go to state 179
+    KVALUE                         shift and go to state 181
     KEY                            shift and go to state 4
     SIMPLEKEY                      shift and go to state 5
     DOTKEY                         shift and go to state 6
@@ -4278,32 +4345,42 @@ state 177
     LITERALSTRING                  shift and go to state 10
     OCCURRENCES                    shift and go to state 11
 
-state 178
-
-    (95) WHNL -> SPACENEWLINE WHNL .
-
-    NEWLINE         reduce using rule 95 (WHNL -> SPACENEWLINE WHNL .)
-    TWODOT_SEP      reduce using rule 95 (WHNL -> SPACENEWLINE WHNL .)
-    DOT_SEP         reduce using rule 95 (WHNL -> SPACENEWLINE WHNL .)
-    VIRGULA         reduce using rule 95 (WHNL -> SPACENEWLINE WHNL .)
-    ASPA            reduce using rule 95 (WHNL -> SPACENEWLINE WHNL .)
-    DOUBLEASPA      reduce using rule 95 (WHNL -> SPACENEWLINE WHNL .)
-    ESCAPE          reduce using rule 95 (WHNL -> SPACENEWLINE WHNL .)
-    WHITESPACE      reduce using rule 95 (WHNL -> SPACENEWLINE WHNL .)
-    CHAR            reduce using rule 95 (WHNL -> SPACENEWLINE WHNL .)
-    ESC_QUOTE       reduce using rule 95 (WHNL -> SPACENEWLINE WHNL .)
-    ESC_REVERSE     reduce using rule 95 (WHNL -> SPACENEWLINE WHNL .)
-    ESC_BACKSPACE   reduce using rule 95 (WHNL -> SPACENEWLINE WHNL .)
-    ESC_FF          reduce using rule 95 (WHNL -> SPACENEWLINE WHNL .)
-    ESC_NL          reduce using rule 95 (WHNL -> SPACENEWLINE WHNL .)
-    ESC_CRETURN     reduce using rule 95 (WHNL -> SPACENEWLINE WHNL .)
-    ESC_TAB         reduce using rule 95 (WHNL -> SPACENEWLINE WHNL .)
-    ESC_HEX4        reduce using rule 95 (WHNL -> SPACENEWLINE WHNL .)
-    ESC_HEX8        reduce using rule 95 (WHNL -> SPACENEWLINE WHNL .)
-    TRIPLEASPA      reduce using rule 95 (WHNL -> SPACENEWLINE WHNL .)
-
-
 state 179
+
+    (94) WHNL -> SPACENEWLINE WHNL .
+
+    NEWLINE         reduce using rule 94 (WHNL -> SPACENEWLINE WHNL .)
+    TWODOT_SEP      reduce using rule 94 (WHNL -> SPACENEWLINE WHNL .)
+    DOT_SEP         reduce using rule 94 (WHNL -> SPACENEWLINE WHNL .)
+    VIRGULA         reduce using rule 94 (WHNL -> SPACENEWLINE WHNL .)
+    ASPA            reduce using rule 94 (WHNL -> SPACENEWLINE WHNL .)
+    DOUBLEASPA      reduce using rule 94 (WHNL -> SPACENEWLINE WHNL .)
+    ESCAPE          reduce using rule 94 (WHNL -> SPACENEWLINE WHNL .)
+    WHITESPACE      reduce using rule 94 (WHNL -> SPACENEWLINE WHNL .)
+    CHAR            reduce using rule 94 (WHNL -> SPACENEWLINE WHNL .)
+    ESC_QUOTE       reduce using rule 94 (WHNL -> SPACENEWLINE WHNL .)
+    ESC_REVERSE     reduce using rule 94 (WHNL -> SPACENEWLINE WHNL .)
+    ESC_BACKSPACE   reduce using rule 94 (WHNL -> SPACENEWLINE WHNL .)
+    ESC_FF          reduce using rule 94 (WHNL -> SPACENEWLINE WHNL .)
+    ESC_NL          reduce using rule 94 (WHNL -> SPACENEWLINE WHNL .)
+    ESC_CRETURN     reduce using rule 94 (WHNL -> SPACENEWLINE WHNL .)
+    ESC_TAB         reduce using rule 94 (WHNL -> SPACENEWLINE WHNL .)
+    ESC_HEX4        reduce using rule 94 (WHNL -> SPACENEWLINE WHNL .)
+    ESC_HEX8        reduce using rule 94 (WHNL -> SPACENEWLINE WHNL .)
+    TRIPLEASPA      reduce using rule 94 (WHNL -> SPACENEWLINE WHNL .)
+
+
+state 180
+
+    (128) ARRAYCONTEUDO -> WSCOMMENTNEWLINE VIRGULA ARRAYVALUES .
+
+    WHITESPACE      reduce using rule 128 (ARRAYCONTEUDO -> WSCOMMENTNEWLINE VIRGULA ARRAYVALUES .)
+    NEWLINE         reduce using rule 128 (ARRAYCONTEUDO -> WSCOMMENTNEWLINE VIRGULA ARRAYVALUES .)
+    COMMENT         reduce using rule 128 (ARRAYCONTEUDO -> WSCOMMENTNEWLINE VIRGULA ARRAYVALUES .)
+    FPR             reduce using rule 128 (ARRAYCONTEUDO -> WSCOMMENTNEWLINE VIRGULA ARRAYVALUES .)
+
+
+state 181
 
     (143) INLINEKVALUE -> INLINEKVALUE INLINETABLEWS VIRGULA INLINETABLEWS KVALUE .
 
@@ -4331,87 +4408,96 @@ WARNING: shift/reduce conflict for ATO in state 62 resolved as shift
 WARNING: shift/reduce conflict for COMMENT in state 78 resolved as shift
 WARNING: shift/reduce conflict for NEWLINE in state 78 resolved as shift
 WARNING: shift/reduce conflict for WHITESPACE in state 97 resolved as shift
+WARNING: shift/reduce conflict for NEWLINE in state 97 resolved as shift
 WARNING: shift/reduce conflict for COMMENT in state 97 resolved as shift
+WARNING: shift/reduce conflict for NEWLINE in state 97 resolved as shift
 WARNING: shift/reduce conflict for NEWLINE in state 102 resolved as shift
 WARNING: shift/reduce conflict for NEWLINE in state 103 resolved as shift
-WARNING: shift/reduce conflict for NEWLINE in state 118 resolved as shift
-WARNING: shift/reduce conflict for TWODOT_SEP in state 118 resolved as shift
-WARNING: shift/reduce conflict for DOT_SEP in state 118 resolved as shift
-WARNING: shift/reduce conflict for VIRGULA in state 118 resolved as shift
-WARNING: shift/reduce conflict for ASPA in state 118 resolved as shift
-WARNING: shift/reduce conflict for DOUBLEASPA in state 118 resolved as shift
-WARNING: shift/reduce conflict for ESCAPE in state 118 resolved as shift
-WARNING: shift/reduce conflict for WHITESPACE in state 118 resolved as shift
-WARNING: shift/reduce conflict for CHAR in state 118 resolved as shift
-WARNING: shift/reduce conflict for ESC_QUOTE in state 118 resolved as shift
-WARNING: shift/reduce conflict for ESC_REVERSE in state 118 resolved as shift
-WARNING: shift/reduce conflict for ESC_BACKSPACE in state 118 resolved as shift
-WARNING: shift/reduce conflict for ESC_FF in state 118 resolved as shift
-WARNING: shift/reduce conflict for ESC_NL in state 118 resolved as shift
-WARNING: shift/reduce conflict for ESC_CRETURN in state 118 resolved as shift
-WARNING: shift/reduce conflict for ESC_TAB in state 118 resolved as shift
-WARNING: shift/reduce conflict for ESC_HEX4 in state 118 resolved as shift
-WARNING: shift/reduce conflict for ESC_HEX8 in state 118 resolved as shift
-WARNING: shift/reduce conflict for NEWLINE in state 120 resolved as shift
-WARNING: shift/reduce conflict for DOUBLEAPOSTROFE in state 120 resolved as shift
-WARNING: shift/reduce conflict for APOSTROFE in state 120 resolved as shift
-WARNING: shift/reduce conflict for CHAR in state 120 resolved as shift
-WARNING: shift/reduce conflict for DOT_SEP in state 120 resolved as shift
-WARNING: shift/reduce conflict for WHITESPACE in state 120 resolved as shift
-WARNING: shift/reduce conflict for VIRGULA in state 120 resolved as shift
-WARNING: shift/reduce conflict for WHITESPACE in state 124 resolved as shift
-WARNING: shift/reduce conflict for COMMENT in state 124 resolved as shift
-WARNING: shift/reduce conflict for NEWLINE in state 131 resolved as shift
-WARNING: shift/reduce conflict for TWODOT_SEP in state 131 resolved as shift
-WARNING: shift/reduce conflict for DOT_SEP in state 131 resolved as shift
-WARNING: shift/reduce conflict for VIRGULA in state 131 resolved as shift
-WARNING: shift/reduce conflict for ASPA in state 131 resolved as shift
-WARNING: shift/reduce conflict for DOUBLEASPA in state 131 resolved as shift
-WARNING: shift/reduce conflict for ESCAPE in state 131 resolved as shift
-WARNING: shift/reduce conflict for WHITESPACE in state 131 resolved as shift
-WARNING: shift/reduce conflict for CHAR in state 131 resolved as shift
-WARNING: shift/reduce conflict for ESC_QUOTE in state 131 resolved as shift
-WARNING: shift/reduce conflict for ESC_REVERSE in state 131 resolved as shift
-WARNING: shift/reduce conflict for ESC_BACKSPACE in state 131 resolved as shift
-WARNING: shift/reduce conflict for ESC_FF in state 131 resolved as shift
-WARNING: shift/reduce conflict for ESC_NL in state 131 resolved as shift
-WARNING: shift/reduce conflict for ESC_CRETURN in state 131 resolved as shift
-WARNING: shift/reduce conflict for ESC_TAB in state 131 resolved as shift
-WARNING: shift/reduce conflict for ESC_HEX4 in state 131 resolved as shift
-WARNING: shift/reduce conflict for ESC_HEX8 in state 131 resolved as shift
-WARNING: shift/reduce conflict for NEWLINE in state 149 resolved as shift
-WARNING: shift/reduce conflict for DOUBLEAPOSTROFE in state 149 resolved as shift
-WARNING: shift/reduce conflict for APOSTROFE in state 149 resolved as shift
-WARNING: shift/reduce conflict for CHAR in state 149 resolved as shift
-WARNING: shift/reduce conflict for DOT_SEP in state 149 resolved as shift
-WARNING: shift/reduce conflict for WHITESPACE in state 149 resolved as shift
-WARNING: shift/reduce conflict for VIRGULA in state 149 resolved as shift
+WARNING: shift/reduce conflict for NEWLINE in state 108 resolved as shift
+WARNING: shift/reduce conflict for WHITESPACE in state 110 resolved as shift
+WARNING: shift/reduce conflict for NEWLINE in state 110 resolved as shift
+WARNING: shift/reduce conflict for COMMENT in state 110 resolved as shift
+WARNING: shift/reduce conflict for NEWLINE in state 110 resolved as shift
+WARNING: shift/reduce conflict for NEWLINE in state 119 resolved as shift
+WARNING: shift/reduce conflict for TWODOT_SEP in state 119 resolved as shift
+WARNING: shift/reduce conflict for DOT_SEP in state 119 resolved as shift
+WARNING: shift/reduce conflict for VIRGULA in state 119 resolved as shift
+WARNING: shift/reduce conflict for ASPA in state 119 resolved as shift
+WARNING: shift/reduce conflict for DOUBLEASPA in state 119 resolved as shift
+WARNING: shift/reduce conflict for ESCAPE in state 119 resolved as shift
+WARNING: shift/reduce conflict for WHITESPACE in state 119 resolved as shift
+WARNING: shift/reduce conflict for CHAR in state 119 resolved as shift
+WARNING: shift/reduce conflict for ESC_QUOTE in state 119 resolved as shift
+WARNING: shift/reduce conflict for ESC_REVERSE in state 119 resolved as shift
+WARNING: shift/reduce conflict for ESC_BACKSPACE in state 119 resolved as shift
+WARNING: shift/reduce conflict for ESC_FF in state 119 resolved as shift
+WARNING: shift/reduce conflict for ESC_NL in state 119 resolved as shift
+WARNING: shift/reduce conflict for ESC_CRETURN in state 119 resolved as shift
+WARNING: shift/reduce conflict for ESC_TAB in state 119 resolved as shift
+WARNING: shift/reduce conflict for ESC_HEX4 in state 119 resolved as shift
+WARNING: shift/reduce conflict for ESC_HEX8 in state 119 resolved as shift
+WARNING: shift/reduce conflict for NEWLINE in state 121 resolved as shift
+WARNING: shift/reduce conflict for DOUBLEAPOSTROFE in state 121 resolved as shift
+WARNING: shift/reduce conflict for APOSTROFE in state 121 resolved as shift
+WARNING: shift/reduce conflict for CHAR in state 121 resolved as shift
+WARNING: shift/reduce conflict for DOT_SEP in state 121 resolved as shift
+WARNING: shift/reduce conflict for WHITESPACE in state 121 resolved as shift
+WARNING: shift/reduce conflict for VIRGULA in state 121 resolved as shift
+WARNING: shift/reduce conflict for WHITESPACE in state 125 resolved as shift
+WARNING: shift/reduce conflict for NEWLINE in state 125 resolved as shift
+WARNING: shift/reduce conflict for COMMENT in state 125 resolved as shift
+WARNING: shift/reduce conflict for NEWLINE in state 125 resolved as shift
+WARNING: shift/reduce conflict for NEWLINE in state 132 resolved as shift
+WARNING: shift/reduce conflict for TWODOT_SEP in state 132 resolved as shift
+WARNING: shift/reduce conflict for DOT_SEP in state 132 resolved as shift
+WARNING: shift/reduce conflict for VIRGULA in state 132 resolved as shift
+WARNING: shift/reduce conflict for ASPA in state 132 resolved as shift
+WARNING: shift/reduce conflict for DOUBLEASPA in state 132 resolved as shift
+WARNING: shift/reduce conflict for ESCAPE in state 132 resolved as shift
+WARNING: shift/reduce conflict for WHITESPACE in state 132 resolved as shift
+WARNING: shift/reduce conflict for CHAR in state 132 resolved as shift
+WARNING: shift/reduce conflict for ESC_QUOTE in state 132 resolved as shift
+WARNING: shift/reduce conflict for ESC_REVERSE in state 132 resolved as shift
+WARNING: shift/reduce conflict for ESC_BACKSPACE in state 132 resolved as shift
+WARNING: shift/reduce conflict for ESC_FF in state 132 resolved as shift
+WARNING: shift/reduce conflict for ESC_NL in state 132 resolved as shift
+WARNING: shift/reduce conflict for ESC_CRETURN in state 132 resolved as shift
+WARNING: shift/reduce conflict for ESC_TAB in state 132 resolved as shift
+WARNING: shift/reduce conflict for ESC_HEX4 in state 132 resolved as shift
+WARNING: shift/reduce conflict for ESC_HEX8 in state 132 resolved as shift
+WARNING: shift/reduce conflict for NEWLINE in state 150 resolved as shift
+WARNING: shift/reduce conflict for DOUBLEAPOSTROFE in state 150 resolved as shift
+WARNING: shift/reduce conflict for APOSTROFE in state 150 resolved as shift
+WARNING: shift/reduce conflict for CHAR in state 150 resolved as shift
+WARNING: shift/reduce conflict for DOT_SEP in state 150 resolved as shift
+WARNING: shift/reduce conflict for WHITESPACE in state 150 resolved as shift
+WARNING: shift/reduce conflict for VIRGULA in state 150 resolved as shift
+WARNING: shift/reduce conflict for WHITESPACE in state 162 resolved as shift
+WARNING: shift/reduce conflict for NEWLINE in state 162 resolved as shift
+WARNING: shift/reduce conflict for COMMENT in state 162 resolved as shift
+WARNING: shift/reduce conflict for NEWLINE in state 162 resolved as shift
 WARNING: shift/reduce conflict for WHITESPACE in state 166 resolved as shift
 WARNING: shift/reduce conflict for NEWLINE in state 166 resolved as shift
-WARNING: shift/reduce conflict for WHITESPACE in state 169 resolved as shift
-WARNING: shift/reduce conflict for COMMENT in state 169 resolved as shift
-WARNING: shift/reduce conflict for WHITESPACE in state 174 resolved as shift
-WARNING: shift/reduce conflict for NEWLINE in state 174 resolved as shift
+WARNING: shift/reduce conflict for WHITESPACE in state 175 resolved as shift
+WARNING: shift/reduce conflict for NEWLINE in state 175 resolved as shift
+WARNING: shift/reduce conflict for WHITESPACE in state 177 resolved as shift
+WARNING: shift/reduce conflict for NEWLINE in state 177 resolved as shift
+WARNING: shift/reduce conflict for COMMENT in state 177 resolved as shift
+WARNING: shift/reduce conflict for NEWLINE in state 177 resolved as shift
 WARNING: reduce/reduce conflict in state 2 resolved using rule (GROUPS -> <empty>)
 WARNING: rejected rule (SECCAO -> <empty>) in state 2
 WARNING: reduce/reduce conflict in state 36 resolved using rule (BASICCHAR -> ESCAPED)
 WARNING: rejected rule (BASICUNESCAPED -> ESCAPED) in state 36
 WARNING: reduce/reduce conflict in state 62 resolved using rule (GROUPS -> <empty>)
 WARNING: rejected rule (SECCAO -> <empty>) in state 62
-WARNING: reduce/reduce conflict in state 97 resolved using rule (ARRAYVALUES -> <empty>)
-WARNING: rejected rule (COMMENTOUNAO -> <empty>) in state 97
-WARNING: reduce/reduce conflict in state 118 resolved using rule (MLBC -> <empty>)
-WARNING: rejected rule (MLBQUOTES -> <empty>) in state 118
-WARNING: reduce/reduce conflict in state 120 resolved using rule (MLLC -> <empty>)
-WARNING: rejected rule (MLLQUOTES -> <empty>) in state 120
-WARNING: reduce/reduce conflict in state 124 resolved using rule (ARRAYCONTEUDO -> <empty>)
-WARNING: rejected rule (COMMENTOUNAO -> <empty>) in state 124
-WARNING: reduce/reduce conflict in state 131 resolved using rule (MLBC -> <empty>)
-WARNING: rejected rule (MLBQUOTES -> <empty>) in state 131
-WARNING: reduce/reduce conflict in state 149 resolved using rule (MLLC -> <empty>)
-WARNING: rejected rule (MLLQUOTES -> <empty>) in state 149
-WARNING: reduce/reduce conflict in state 169 resolved using rule (ARRAYVALUES -> <empty>)
-WARNING: rejected rule (COMMENTOUNAO -> <empty>) in state 169
+WARNING: reduce/reduce conflict in state 119 resolved using rule (MLBC -> <empty>)
+WARNING: rejected rule (MLBQUOTES -> <empty>) in state 119
+WARNING: reduce/reduce conflict in state 121 resolved using rule (MLLC -> <empty>)
+WARNING: rejected rule (MLLQUOTES -> <empty>) in state 121
+WARNING: reduce/reduce conflict in state 132 resolved using rule (MLBC -> <empty>)
+WARNING: rejected rule (MLBQUOTES -> <empty>) in state 132
+WARNING: reduce/reduce conflict in state 150 resolved using rule (MLLC -> <empty>)
+WARNING: rejected rule (MLLQUOTES -> <empty>) in state 150
 WARNING: Rule (BASICUNESCAPED -> ESCAPED) is never reduced
 WARNING: Rule (MLBQUOTES -> <empty>) is never reduced
 WARNING: Rule (MLLQUOTES -> <empty>) is never reduced
