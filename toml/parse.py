@@ -1,4 +1,4 @@
-import tomlex
+import tomyacc
 import sys
 import json
 
@@ -7,11 +7,7 @@ def call(path):
     with open(path,'r') as file:
         toml = file.read()
 
-    tomlex.lexer.input(toml)
-    while tok:=tomlex.lexer.token():
-        print(tok)
-        pass
-    result = tomlex.parser.parse(toml)  
+    result = tomyacc.parser.parse(toml)  
     #print(result)
     #jsonobj = json.loads(result)
     jsonobj=json.dumps(result,indent=4,ensure_ascii=False)

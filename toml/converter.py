@@ -23,9 +23,7 @@ def fusion(origindict, secdict):
     for (k,v) in secdict.items():
         if (k in origindict and isinstance(origindict[k], dict) and isinstance(secdict[k], dict)):
             fusion(origindict[k], secdict[k])
-        elif k in origindict and isinstance(origindict[k], list):
-            a=1
-            #print(secdict[k])
+        elif k in origindict and isinstance(origindict[k], list) and isinstance(secdict[k],list):
             if(len(origindict[k])>=1):
                 size =len(secdict[k])
                 i=0
