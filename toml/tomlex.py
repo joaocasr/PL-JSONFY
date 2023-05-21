@@ -78,7 +78,7 @@ def t_ESCAPE(t): r'\\';return t
 def t_FLOAT(t):r'((?:\+|-)?\d(?:_\d|\d)*\.(?:\d(?:_\d|\d)*)+(?:[eE](?:\+|-)?\d(?:_\d|\d)*)?|(?:\+|-)?\d+(?:[eE](?:\+|-)?\d(?:_\d|\d)*))';return t 
 
 def t_DATE(t):r'\d{4}-(1[0-2]|0\d)-[0-3]\d'; return t
-def t_TIME(t):r'[Tt ]?[0-2]\d:[0-5]\d:[0-6]\d(\.\d+)?(Z|(\+|\-)[0-2]\d:[0-5]\d)'; return t
+def t_TIME(t):r'[Tt ]?[0-2]\d:[0-5]\d:[0-6]\d(\.\d+)?(Z|(\+|\-)[0-2]\d:[0-5]\d)?'; return t
 
 def t_CHAR(t):r'[a-zA-Z]';return t
 def t_MINUS(t):r'-';return t
@@ -92,8 +92,6 @@ def t_OCT(t):r'0o[0-7](?:(?:_[0-7])|[0-7])*';return t
 def t_BIN(t):r'0b[01](?:(?:_[01])|[01])*';return t
 def t_INF(t):r'(?:\+|-)?inf';return t
 def t_NAN(t):r'(?:\+|-)?nan';return t
-
-
 
 def t_ATO(t):r'\[\[';return t
 def t_ATC(t):r'\]\]';return t
@@ -286,31 +284,21 @@ def p_VALUE6(p):
     p[0] = p[1]    
 
 def p_DATETIME1(p):
-    "DATETIME : OFFSETDATETIME"
-    p[0] = p[1]
-
-def p_DATETIME2(p):
     "DATETIME : LOCALDATETIME"
     p[0] = p[1]
 
-def p_DATETIME3(p):
+def p_DATETIME2(p):
     "DATETIME : LOCALDATE"
     p[0] = p[1]
 
-def p_DATETIME4(p):
+def p_DATETIME3(p):
     "DATETIME : LOCALTIME"
     p[0] = p[1]
-    
-
-def p_OFFSETDATETIME(p):
-    "OFFSETDATETIME : DATE TIME"
-    p[0] = p[1] + p[2]
 
 def p_LOCALDATETIME(p):
-    "LOCALDATETIME : DATE TIME"
+    "LOCALDATETIME : LOCALDATE LOCALTIME"
     p[0] = p[1] + p[2]
     
-
 def p_LOCALDATE(p):
     "LOCALDATE : DATE"
     p[0] = p[1]
@@ -344,16 +332,16 @@ def p_STRING4(p) :
     p[0]=p[1]
     
 
-def p_BASICSTRING1(p):
+def p_BASICSTRING(p):
     "BASICSTRING : ASPA BC ASPA"
     p[0]= p[2]
     
 
-def p_BASICSTRING2(p):
+def p_BC(p):
     "BC : BASICCHAR BC"
     p[0] = p[1] + str(p[2])
 
-def p_BASICSTRING3(p):
+def p_BC2(p):
     "BC :"
     p[0]=""
 
@@ -369,32 +357,37 @@ def p_BASICCHAR2(p):
 def p_BASICUNESCAPED1(p):
     "BASICUNESCAPED : WHITESPACE"
     p[0]= p[1]
-    
 
 def p_BASICUNESCAPED2(p):
     "BASICUNESCAPED : CHAR"
     p[0] = p[1]
-    
 
 def p_BASICUNESCAPED3(p):
     "BASICUNESCAPED : INTEGER"
     p[0]= str(p[1])
 
 def p_BASICUNESCAPED4(p):
+    "BASICUNESCAPED : FLOAT"
+    p[0]= str(p[1])
+
+def p_BASICUNESCAPED5(p):
     "BASICUNESCAPED : MINUS"
     p[0] = p[1]
 
-
-def p_BASICUNESCAPED5(p):
+def p_BASICUNESCAPED6(p):
     "BASICUNESCAPED : APOSTROFE"
     p[0] = p[1]
     
-def p_BASICUNESCAPED6(p):
+def p_BASICUNESCAPED7(p):
     "BASICUNESCAPED : ESCAPED"
     p[0] = p[1]
 
-def p_BASICUNESCAPED7(p):
+def p_BASICUNESCAPED8(p):
     "BASICUNESCAPED : DOT_SEP"
+    p[0]= p[1]
+
+def p_BASICUNESCAPED9(p):
+    "BASICUNESCAPED : TWODOT_SEP"
     p[0]= p[1]
     
 
