@@ -39,7 +39,6 @@ def p_SECCAO2(p):
 
 def p_ATRIBUICOES1(p):
     "ATRIBUICOES : KVALUE EXPRESSION ATRIBUICOES"
-    #(p[1],p[3])
     p[1].update(p[3])
     p[0] = p[1]
 
@@ -321,13 +320,11 @@ def p_ESCAPED7(p):
 def p_ESCAPED8(p): 
     "ESCAPED : ESC_HEX4"
     p[0]=str(chr(int(p[1].split("\\u")[1], 16)))
-    #p[1]=chr(int(p[1].split("\\u")[1], 16))
     
     
 def p_ESCAPED9(p): 
     "ESCAPED : ESC_HEX8"
     p[0]=str(chr(int(p[1].split("\\u")[1], 32)))
-    #p[1]=chr(int(p[1].split("\\u")[1], 32))
     
 
 def p_MULTILINEBASICSTRING(p):
@@ -565,18 +562,6 @@ def p_ARRAYVALUES3(p):
 def p_ARRAYVALUES4(p):
     "ARRAYCONTEUDO : WSCOMMENTNEWLINE VIRGULA ARRAYVALUES"
     p[0] = p[3]
-
-#def p_ARRAYVALUES3(p):
-#    "ARRAYVALUES : WSCOMMENTNEWLINE VALUE WSCOMMENTNEWLINE SEPARATOR"
-#    
-
-#def p_SEPARATOR(p):
-#    "SEPARATOR :"
-#    
-
-#def p_SEPARATOR(p):
-#    "SEPARATOR : VIRGULA"
-#    
 
 def p_WSCOMMENTNEWLINE1(p):
     "WSCOMMENTNEWLINE :"

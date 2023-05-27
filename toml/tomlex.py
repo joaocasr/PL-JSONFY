@@ -11,9 +11,7 @@ tokens = [
     'TRIPLEASPA',
     'DOUBLEASPA',
     'ASPA',
-    'UNDERSC0RE',
     'MINUS',
-    'PLUS',
     'TRIPLEAPOSTROFE',
     'DOUBLEAPOSTROFE',
     'APOSTROFE',
@@ -36,14 +34,8 @@ tokens = [
     'BOOLEAN',
     'INTEGER',
     'FLOAT',
-    'INF',
-    'NAN',
-    'HEX',
-    'OCT',
-    'BIN',
     'IGUAL',
     'DATE',
-    'TIME_DELIM',
     'TIME',
     'ATO',
     'ATC'
@@ -80,10 +72,8 @@ def t_TIME(t):r'[Tt ]?[0-2]\d:[0-5]\d:[0-6]\d(\.\d+)?(Z|(\+|\-)[0-2]\d:[0-5]\d)?
 
 def t_CHAR(t):r'[a-zA-Z]';return t
 def t_MINUS(t):r'-';return t
-def t_PLUS(t):r'\+';return t
 def t_DOT_SEP(t):r'\.';return t
 
-def t_UNDERSC0RE(t):r'_';return t
 def t_INTEGER(t):r'(?:\+|-)?\d(?:(?:_\d)|\d)*';return t
 def t_HEX(t):r'0x[\da-fA-F](?:(?:_[\da-fA-F])|[\da-fA-F])*';return t
 def t_OCT(t):r'0o[0-7](?:(?:_[0-7])|[0-7])*';return t

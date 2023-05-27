@@ -1,16 +1,5 @@
 Created by PLY version 3.11 (http://www.dabeaz.com/ply)
 
-Unused terminals:
-
-    BIN
-    HEX
-    INF
-    NAN
-    OCT
-    PLUS
-    TIME_DELIM
-    UNDERSC0RE
-
 Grammar
 
 Rule 0     S' -> TOML
@@ -168,7 +157,6 @@ APR                  : 124 138
 ASPA                 : 49 49 88 105
 ATC                  : 145
 ATO                  : 145
-BIN                  : 
 BOOLEAN              : 33
 CHAR                 : 23 55 92 101 117
 COMMENT              : 10 134
@@ -189,21 +177,14 @@ ESC_TAB              : 69
 FCH                  : 139 140
 FLOAT                : 44 57
 FPR                  : 124 138
-HEX                  : 
 IGUAL                : 13
-INF                  : 
 INTEGER              : 24 34 56
 MINUS                : 25 58
-NAN                  : 
 NEWLINE              : 11 73 81 93 97 108 116 132 133
-OCT                  : 
-PLUS                 : 
 TIME                 : 43
-TIME_DELIM           : 
 TRIPLEAPOSTROFE      : 107 107
 TRIPLEASPA           : 72 72
 TWODOT_SEP           : 62 83 104
-UNDERSC0RE           : 
 UNDERSCORE           : 26
 VIRGULA              : 85 120 128 143
 WHITESPACE           : 14 54 91 96 103 119 131 142
