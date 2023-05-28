@@ -3,7 +3,7 @@ import subprocess
 import parse
 from os import getcwd
 from webbrowser import open as wbOpen
-from requests import get as rGet
+from sys import platform
 
 title = "|" + "-"*10 + "PL-JSONFY UI" + "-"*10 + "|"
 mMenu = """1) Open in Browser
@@ -13,7 +13,13 @@ print(title)
 print("1) JSON-Server Compatible\n2) Print Output")
 op = int(input(">> "))
 fp = input("Introduce TOML Pathname >> ")
-fp = getcwd() + "\\" + fp
+if platform == "linux" or platform == "linux2":
+    fp = getcwd() + "//" + fp
+elif platform == "darwin":
+    fp = getcwd() + "//" + fp
+elif platform == "win32":
+    fp = getcwd() + "\\" + fp
+
 parse.call(fp)
 fp = fp.replace(".toml", ".json")
 
