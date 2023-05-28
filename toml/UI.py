@@ -13,9 +13,9 @@ print(title)
 print("1) JSON-Server Compatible\n2) Print Output")
 op = int(input(">> "))
 fp = input("Introduce TOML Pathname >> ")
+fp = getcwd() + "\\" + fp
 parse.call(fp)
 fp = fp.replace(".toml", ".json")
-fp = getcwd() + "\\" + fp
 
 if op == 1:
     serverProc = subprocess.Popen(["json-server", "--watch", fp], shell=True, 

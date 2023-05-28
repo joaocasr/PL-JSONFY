@@ -1,0 +1,26 @@
+{
+    "blog": {
+        "posts": {
+            "entry": {
+                "tags": [
+                    {
+                        "name": "tag1"
+                    },
+                    {
+                        "name": "tag2"
+                    }
+                ],
+                "comments": [
+                    {
+                        "author": "John",
+                        "text": "Great post"
+                    },
+                    {
+                        "author": "Jane",
+                        "text": "Interesting read"
+                    }
+                ]
+            }
+        }
+    }
+}

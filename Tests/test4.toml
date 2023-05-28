@@ -1,0 +1,13 @@
+[[blog.posts.entry.tags]]
+name = "tag1"
+
+[[blog.posts.entry.tags]]
+name = "tag2"
+
+[[blog.posts.entry.comments]]
+author = "John"
+text = "Great post"
+
+[[blog.posts.entry.comments]]
+author = "Jane"
+text = "Interesting read"

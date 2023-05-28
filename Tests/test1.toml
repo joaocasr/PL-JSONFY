@@ -1,0 +1,20 @@
+[info]
+name = "John Smith"
+age = 35
+tags = ["tag1", "tag2", "tag3"]
+
+[info.location]
+city = "London"
+country = "UK"
+
+[info.options]
+enabled = true
+ratio = 0.75
+
+[info.dates]
+start = 2023-05-27
+end = 2023-05-31
+
+[info.timestamps]
+created_at = 2023-05-27T10:00:00Z
+updated_at = 2023-05-27T15:30:00+02:00
