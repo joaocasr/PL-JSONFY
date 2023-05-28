@@ -7,8 +7,6 @@ from requests import get as rGet
 
 title = "|" + "-"*10 + "PL-JSONFY UI" + "-"*10 + "|"
 mMenu = """1) Open in Browser
-2) Send GET
-3) Send DEL
 0) Exit""" 
 
 print(title)
@@ -18,8 +16,8 @@ fp = input("Introduce TOML Pathname >> ")
 parse.call(fp)
 fp = fp.replace(".toml", ".json")
 fp = getcwd() + "\\" + fp
+
 if op == 1:
-    global serverProc
     serverProc = subprocess.Popen(["json-server", "--watch", fp], shell=True, 
                                   stdout=subprocess.DEVNULL)
 
@@ -27,12 +25,9 @@ if op == 1:
         print(title)
         print(mMenu)
 
-        match int(input(">> ")):
-            case 0:
-                serverProc.kill() # not working right
-                break
-            case 1:
-                wbOpen("http://localhost:3000", new=0, autoraise=True)
-            case 2:
-                ir = input("Path >> ")
-                rGet("http://localhost:3000", )
+        x = int(input(">> "))
+        if x == 0:
+            serverProc.kill()
+            break
+        if x == 1:
+            wbOpen("http://localhost:3000", new=0, autoraise=True)
