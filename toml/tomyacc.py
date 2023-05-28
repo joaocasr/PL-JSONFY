@@ -30,7 +30,6 @@ def p_SECCAO1(p):
     "SECCAO : TABLE EXPRESSION ATRIBUICOES"
     converter.insertLast(p[1],p[3])
     p[0]=p[1]
-    a=1
 
 
 def p_SECCAO2(p):

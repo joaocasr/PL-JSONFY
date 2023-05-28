@@ -13,7 +13,6 @@ def insertLast(dictionary, new):
     for k in keys[0:len(keys)-1]:
         currentdict = currentdict[k]
     if(type(currentdict[keys[-1]]) is list):
-        #print(currentdict[keys[-1]])
         currentdict[keys[-1]].append(new)
     else:
         currentdict[keys[-1]]=new
