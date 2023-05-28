@@ -14,9 +14,9 @@ print("1) JSON-Server Compatible\n2) Print Output")
 op = int(input(">> "))
 fp = input("Introduce TOML Pathname >> ")
 if platform == "linux" or platform == "linux2":
-    fp = getcwd() + "//" + fp
+    fp = getcwd() + "/" + fp
 elif platform == "darwin":
-    fp = getcwd() + "//" + fp
+    fp = getcwd() + "/" + fp
 elif platform == "win32":
     fp = getcwd() + "\\" + fp
 
@@ -24,9 +24,16 @@ parse.call(fp)
 fp = fp.replace(".toml", ".json")
 
 if op == 1:
-    serverProc = subprocess.Popen(["json-server", "--watch", fp], shell=True, 
+    if platform == "linux" or platform == "linux2":
+        subprocess.run(["json-server", "--watch", fp], shell=True, stdout=subprocess.DEVNULL,
+                                  stderr=subprocess.DEVNULL)
+    elif platform == "darwin":
+        subprocess.run(["json-server", "--watch", fp], shell=True, stdout=subprocess.DEVNULL,
+                                  stderr=subprocess.DEVNULL)
+    elif platform == "win32":
+        serverProc = subprocess.Popen(["json-server", "--watch", fp], shell=True, 
                                   stdout=subprocess.DEVNULL)
-
+        
     while 1:
         print(title)
         print(mMenu)
