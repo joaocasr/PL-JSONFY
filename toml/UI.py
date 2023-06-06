@@ -26,7 +26,7 @@ fp = fp.replace(".toml", ".json")
 if op == 1:
     if platform == "linux" or platform == "linux2":
         print(fp)
-        subprocess.run(["json-server", "-w", fp], shell=True, stdout=subprocess.DEVNULL,
+        subprocess.run(["json-server", "--watch", fp], shell=True, stdout=subprocess.DEVNULL,
                                   stderr=subprocess.DEVNULL)
     elif platform == "darwin":
         subprocess.run(["json-server", "--watch", fp], shell=True, stdout=subprocess.DEVNULL,
