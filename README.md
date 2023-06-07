@@ -15,6 +15,15 @@ Option 2) will output the transformed data and will produce a JSON file.
 ```
 pyhon toml/UI.py
 ```
+3. Select one of the following options
+```
+1) JSON-Server Compatible
+2) Print Output
+```
+4. Write the pathname from your TOML file. eg.:
+```
+Tests/test1.toml
+```
 
 ## Development Team
 This project was developed by the following members:
